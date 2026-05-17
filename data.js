@@ -27,7 +27,7 @@ const TIMELINES = {
     { year: 2017, event: "Revised settlement (joint with Raza) adds equal-protection bar and Civilian Representative", kind: "modification" },
     { year: 2017, event: "Stephen Robinson appointed first Civilian Representative", kind: "monitor" },
     { year: 2023, event: "Muhammad U. Faridi succeeds Robinson as Civilian Representative", kind: "monitor" },
-    { year: 2025, event: "Judge Haight takes inactive senior status (May)", kind: "event" },
+    { year: 2025, event: "Judge Haight on senior status; active case management uncertain", kind: "event" },
     { year: 2026, event: "Seventh Annual Report of the Civilian Representative filed (Jan 27)", kind: "event" }
   ],
   "nycha-hud-agreement": [
@@ -57,7 +57,7 @@ const TIMELINES = {
     { year: 1979, event: "Robert Hayes files case on behalf of homeless men", kind: "event" },
     { year: 1981, event: "Consent decree entered: right to shelter for single adult men", kind: "entered" },
     { year: 1983, event: "Eldredge extends decree to single women", kind: "modification" },
-    { year: 2008, event: "Boston successor agreement covers families with children", kind: "modification" },
+    { year: 2008, event: "Boston v. NYC (parallel resolution for the family-shelter branch) finalizes family right-to-shelter framework", kind: "event" },
     { year: 2023, event: "Mayor Adams seeks to suspend right-to-shelter during migrant surge", kind: "event" },
     { year: 2024, event: "March stipulation: 30/60-day stays for adult migrants under State of Emergency; underlying right preserved", actor: "Justice Gerald Lebovits", kind: "modification" }
   ],
@@ -80,7 +80,7 @@ const TIMELINES = {
     { year: 2009, event: "Liability ruling: FDNY entrance exam had disparate impact and was discriminatory", actor: "Judge Nicholas Garaufis", kind: "event" },
     { year: 2014, event: "Comprehensive injunctive-relief decree entered; new exam approved", kind: "entered" },
     { year: 2015, event: "$99M monetary relief consent decree approved; court monitor appointed", kind: "modification" },
-    { year: 2025, event: "Most diverse academy classes in FDNY history (17% Black, 24% Latino) under decree", kind: "event" }
+    { year: 2025, event: "Increasingly diverse academy classes under decree (e.g., March 2024 graduating class was 16% Black, 30% Hispanic; class diversity continues to grow)", kind: "event" }
   ],
   "gulino-doe": [
     { year: 1996, event: "Class action filed challenging NYC teacher licensing exams as discriminatory", kind: "event" },
@@ -270,10 +270,10 @@ const TIMELINES = {
   ],
   "gowanus-canal-superfund": [
     {"year": 2010, "event": "EPA lists Gowanus Canal on Superfund NPL; NYC identified as PRP", "kind": "event"},
-    {"year": 2013, "event": "EPA Record of Decision issued (Sept. 27); Administrative Settlement Agreement binds NYC to design and build Head-End and Owl's Head/4th Street CSO retention tanks", "kind": "entered"},
+    {"year": 2013, "event": "EPA Record of Decision issued (Sept. 27); Administrative Settlement Agreement binds NYC to design and build Head-End and Salt Lot (2nd Ave / 5th St) CSO retention tanks", "kind": "entered"},
     {"year": 2024, "event": "Dredging of upper canal completed", "kind": "event"},
     {"year": 2028, "event": "Head-End CSO tank construction targeted for completion", "kind": "event"},
-    {"year": 2030, "event": "Owl's Head/4th Street CSO tank construction targeted for completion", "kind": "event"}
+    {"year": 2030, "event": "Salt Lot (2nd Ave / 5th St) CSO tank construction targeted for completion", "kind": "event"}
   ],
   "nyc-watershed-fad": [
     {"year": 1993, "event": "EPA notifies NYC it must either filter Catskill/Delaware water or adopt watershed-protection program", "kind": "event"},
@@ -295,11 +295,9 @@ const TIMELINES = {
     {"year": 2025, "event": "AALDEF and Chhaya CDC document continued interpreter-staffing shortfalls at South Asian-heavy sites", "kind": "event"}
   ],
   "cchr-douglas-elliman-soi": [
-    {"year": 2020, "event": "CCHR multi-year testing investigation initiated into Douglas Elliman SOI practices", "kind": "event"},
-    {"year": 2022, "event": "Conciliation agreement entered requiring system-wide subsidy acceptance, $120,000 penalty, training, and 3-year compliance reporting", "kind": "entered"},
-    {"year": 2022, "event": "CCHR Law Enforcement Bureau begins 3-year compliance term", "kind": "monitor"},
-    {"year": 2024, "event": "Agreement cited as model in two large management-firm settlements", "kind": "event"},
-    {"year": 2025, "event": "Compliance phase concludes", "kind": "event"}
+    {"year": 2020, "event": "CCHR testing investigation initiated into Douglas Elliman SOI practices", "kind": "event"},
+    {"year": 2021, "event": "Conciliation agreement covering Smith Street office: $20,000 penalty, training and policy reforms", "kind": "entered"},
+    {"year": 2024, "event": "Portfolio-level settlement: $35,000 penalty + $15,000 fair-housing-fund contribution", "kind": "modification"}
   ],
   "us-v-nyc-dot-aps": [
     {"year": 2012, "event": "DOJ opens Title II ADA investigation of NYC DOT signalized intersections", "kind": "event"},
@@ -2329,7 +2327,7 @@ const DECREES = [
       "Traffic stop must be lawful in the first instance"
     ],
     "holding": "A police officer's reaching into a passenger compartment to move papers obscuring the VIN does not violate the Fourth Amendment.",
-    "vote": "7-2", "justice_authoring": "Sandra Day O'Connor",
+    "vote": "6-3", "justice_authoring": "Sandra Day O'Connor",
     "legacy": "Class remains the controlling authority for NYPD VIN inspections during vehicle stops and is routinely cited in NYC traffic-stop suppression motions.",
     "links": [
       {"label": "Opinion (Justia)", "url": "https://supreme.justia.com/cases/federal/us/475/106/"},
@@ -2813,7 +2811,7 @@ const DECREES = [
     "year_filed": 2016, "year_entered": 2019, "status": "active",
     "agencies": ["NYS BOE", "BOE"], "issue_area": "Voting", "court": "S.D.N.Y.",
     "plaintiffs": "Voters with print disabilities (Disability Rights Advocates and ACLU)",
-    "summary": "ADA and Rehabilitation Act challenge to inaccessible online voter registration and absentee ballots. The February 2019 settlement required NYS BOE and DMV to make voter-registration websites screen-reader accessible by 2021; a follow-on agreement required the State to deploy a remote accessible vote-by-mail (RAVBM) system by June 2022 statewide.",
+    "summary": "ADA and Rehabilitation Act challenge to inaccessible online voter registration. The February 2019 settlement required NYS BOE and DMV to make voter-registration websites screen-reader accessible by 2021. The related separate case Hernandez v. NYS BOE produced an April 2022 settlement requiring statewide remote accessible vote-by-mail (RAVBM) deployment.",
     "daily_effects": "NYC voters with visual or print disabilities can register online and request, receive, and mark absentee ballots electronically through the state RAVBM system, with NYC BOE handling local intake and counting.",
     "monitor": "Outside accessibility consultant; court-supervised compliance",
     "key_obligations": [
@@ -2953,8 +2951,8 @@ const DECREES = [
     "agencies": ["DEP"], "issue_area": "Environmental Justice",
     "court": "U.S. EPA Region 2; S.D.N.Y. for judicial consent decrees",
     "plaintiffs": "U.S. EPA",
-    "summary": "EPA's 2013 Record of Decision for the Gowanus Canal Superfund site allocated cleanup responsibility among PRPs including NYC (as historical operator of municipal incinerators and current owner of CSO outfalls). The City is bound by an Administrative Settlement Agreement to design and build two CSO retention tanks (Head-End and Owl's Head/4th Street) integrated with the dredging remedy.",
-    "daily_effects": "Forces DEP to build the 8-million-gallon Head-End tank and the 4-million-gallon Owl's Head tank under EPA-enforceable schedules. Construction has displaced city property at Thomas Greene Playground and the Double D Pool, requiring replacement facilities. Sets the tempo for adjacent Gowanus rezoning infrastructure work.",
+    "summary": "EPA's 2013 Record of Decision for the Gowanus Canal Superfund site allocated cleanup responsibility among PRPs including NYC (as historical operator of municipal incinerators and current owner of CSO outfalls). The City is bound by an Administrative Settlement Agreement to design and build two CSO retention tanks (Head-End and Salt Lot (2nd Ave / 5th St)) integrated with the dredging remedy.",
+    "daily_effects": "Forces DEP to build the 8-million-gallon Head-End tank and the 4-million-gallon Salt Lot tank under EPA-enforceable schedules. Construction has displaced city property at Thomas Greene Playground and the Double D Pool, requiring replacement facilities. Sets the tempo for adjacent Gowanus rezoning infrastructure work.",
     "monitor": null,
     "key_obligations": [
       "Design, build, and operate two CSO retention tanks per EPA schedule",
@@ -3078,7 +3076,7 @@ const DECREES = [
       "Report complaints to OAG for 3-year compliance term",
       "Pay $115,000 in penalties and costs"
     ],
-    "legacy": "Compliance term expired in 2022; precedent cited in CCHR enforcement against Douglas Elliman (2022) and a 2024 portfolio settlement with A&E Real Estate.",
+    "legacy": "Note: a May 2026 fact-check could not independently confirm this specific 2019 stipulated judgment of $115,000 in the OAG public press archive. The broader 2018–2019 OAG source-of-income enforcement initiative is well-documented but the Cushman & Wakefield-specific resolution warrants additional verification.",
     "links": [
       {"label": "NYS OAG — 2019 settlement", "url": "https://ag.ny.gov/press-release/2019/ag-james-announces-settlement-cushman-wakefield-discriminating-against-tenants"}
     ]
@@ -3086,24 +3084,25 @@ const DECREES = [
   {
     "id": "cchr-douglas-elliman-soi",
     "case_name": "NYC Commission on Human Rights v. Douglas Elliman (source-of-income discrimination)",
-    "citation": "CCHR Conciliation Agreement (2022)",
-    "year_filed": 2020, "year_entered": 2022, "status": "active",
+    "citation": "CCHR Settlements (2021, 2024)",
+    "year_filed": 2020, "year_entered": 2021, "status": "active",
     "agencies": ["NYC Commission on Human Rights"], "issue_area": "Housing",
     "court": "NYC CCHR administrative",
     "plaintiffs": "NYC Commission on Human Rights Law Enforcement Bureau",
-    "summary": "After a multi-year testing investigation, CCHR entered a conciliation agreement with Douglas Elliman in 2022 requiring system-wide acceptance of rental subsidies, $120,000 in penalties, mandatory training, and three years of compliance reporting.",
-    "daily_effects": "Forces real-time training and monitoring of one of NYC's largest residential brokerages, with quarterly reports to CCHR. Created a template for follow-on agreements with other brokerages through 2025.",
-    "monitor": "CCHR Law Enforcement Bureau (3-year compliance term)",
+    "summary": "After CCHR testing investigations identified source-of-income discrimination at Douglas Elliman's Brooklyn offices, the Commission entered a 2021 conciliation agreement covering the Smith Street office ($20,000 penalty) and a 2024 portfolio-level settlement ($35,000 penalty plus $15,000 fair-housing-fund contribution), with training, policy, and compliance-reporting obligations across NYC operations.",
+    "daily_effects": "Required updates to Elliman's anti-discrimination policies, training of NYC-licensed agents, and reporting to CCHR. Established CCHR's enforcement pattern against major NYC brokerages on source-of-income discrimination.",
+    "monitor": "CCHR Law Enforcement Bureau",
     "key_obligations": [
-      "Maintain anti-discrimination policy accepting all lawful sources of income",
-      "Train all NYC agents and brokers annually",
-      "Quarterly reporting of complaints and testing-based audits to CCHR",
+      "Maintain anti-discrimination policy accepting Section 8, CityFHEPS, and other lawful sources of income",
+      "Train all NYC agents and brokers",
+      "Reporting of complaints and audits to CCHR",
       "Post anti-discrimination notice on listings",
-      "Pay $120,000 penalty"
+      "Pay penalties and contribute to fair-housing fund"
     ],
-    "recent_status": "Agreement remains in compliance phase through 2025; cited as model in 2024 settlements with two large management firms.",
+    "recent_status": "Pattern of CCHR enforcement continues; 2024 portfolio settlement followed the 2021 Smith Street agreement.",
     "links": [
-      {"label": "NYC CCHR press page", "url": "https://www.nyc.gov/site/cchr/media/press-releases.page"}
+      {"label": "NYC CCHR 2021 Settlement Highlights", "url": "https://www.nyc.gov/site/cchr/enforcement/2021-settlements.page"},
+      {"label": "NYC CCHR 2024 Settlements", "url": "https://www.nyc.gov/site/cchr/enforcement/2024-settlements.page"}
     ]
   },
   {
@@ -3181,12 +3180,12 @@ const DECREES = [
     "year_filed": 2018, "year_entered": 2021, "status": "active",
     "agencies": ["DOT"], "issue_area": "Disability Rights", "court": "S.D.N.Y.",
     "plaintiffs": "American Council of the Blind of NY and individual blind pedestrians (Disability Rights Advocates)",
-    "summary": "Following a 2020 liability ruling that DOT's lack of Accessible Pedestrian Signals violated Title II of the ADA, the parties entered a 2021 consent decree requiring APS installation at all of NYC's ~13,200 signalized intersections by 2031.",
-    "daily_effects": "DOT must install APS at roughly 9% of remaining intersections each year and prioritize sites near schools, hospitals, senior centers, and transit hubs. Decree triggers stipulated penalties for missed targets and required hiring of additional traffic engineers.",
+    "summary": "Following a 2020 liability ruling that DOT's lack of Accessible Pedestrian Signals violated Title II of the ADA, the parties entered a December 2021 consent decree requiring APS installation at at least 10,000 of NYC's ~13,200 signalized intersections by the end of 2031 (Phase 1), with all remaining intersections by end of 2036 (Phase 2).",
+    "daily_effects": "DOT must meet a tiered annual schedule ramping from 400 intersections in 2022 to 1,000–1,200 per year by the late 2020s, prioritizing sites near schools, hospitals, senior centers, and transit hubs. Decree triggers stipulated penalties for missed targets and required hiring of additional traffic engineers.",
     "monitor": "Court-appointed monitor and DRA compliance counsel",
     "key_obligations": [
-      "Install APS at 100% of signalized intersections by 2031",
-      "Meet annual installation milestones (~1,200 intersections/yr)",
+      "Install APS at ≥10,000 intersections by end of 2031 (Phase 1); all remaining by end of 2036 (Phase 2)",
+      "Meet tiered annual milestones (400 in 2022 ramping to 1,000–1,200/yr by late 2020s)",
       "Maintain APS once installed",
       "Submit semi-annual reports to plaintiffs and court",
       "Pay attorney fees and compliance-monitoring costs"
