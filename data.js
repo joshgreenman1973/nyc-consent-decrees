@@ -1,3 +1,171 @@
+const TIMELINES = {
+  "nunez-doc": [
+    { year: 2011, event: "Class action filed", actor: "Legal Aid + ECBAWM", kind: "event" },
+    { year: 2015, event: "Consent judgment entered; Steve J. Martin (Tillid Group) appointed federal monitor", kind: "entered" },
+    { year: 2017, event: "First major use-of-force reforms phased in", kind: "event" },
+    { year: 2020, event: "Monitor reports describe \"alarming\" violence levels", kind: "event" },
+    { year: 2022, event: "Action Plan ordered; additional reform deadlines imposed", kind: "modification" },
+    { year: 2023, event: "Monitor reports city in non-compliance on use-of-force and supervision", kind: "event" },
+    { year: 2024, event: "Court finds City in contempt of 18 consent-judgment provisions", actor: "Judge Laura Taylor Swain", kind: "contempt" },
+    { year: 2025, event: "Court orders appointment of Remediation Manager with sweeping authority", kind: "modification" },
+    { year: 2026, event: "Nicholas Deml named Remediation Manager (Jan 27)", kind: "monitor" }
+  ],
+  "floyd-nypd": [
+    { year: 2008, event: "Class action filed challenging NYPD stop-and-frisk", actor: "CCR + co-counsel", kind: "event" },
+    { year: 2013, event: "Liability ruling (Aug): pattern of unconstitutional and racially discriminatory stops; Peter Zimroth appointed federal monitor", actor: "Judge Shira Scheindlin", kind: "entered" },
+    { year: 2013, event: "Second Circuit removes Scheindlin from case", kind: "event" },
+    { year: 2014, event: "Reassigned to Judge Analisa Torres; reforms proceed", kind: "event" },
+    { year: 2017, event: "Joint Remedial Process recommendations submitted", kind: "event" },
+    { year: 2022, event: "Mylan L. Denerstein (Gibson Dunn) succeeds Zimroth as monitor", kind: "monitor" },
+    { year: 2024, event: "Monitor reports persistent undocumented stops and supervisory rubber-stamping", kind: "event" },
+    { year: 2026, event: "Monitor: 11% of audited stops unconstitutional; ~⅓ of encounters unreported or miscategorized", kind: "event" }
+  ],
+  "handschu-nypd": [
+    { year: 1971, event: "Class action filed by political activists challenging NYPD \"Red Squad\" surveillance", kind: "event" },
+    { year: 1985, event: "Original Handschu Consent Decree entered; Handschu Authority created", kind: "entered" },
+    { year: 2003, event: "Modified Handschu Guidelines relax post-9/11 restrictions", kind: "modification" },
+    { year: 2017, event: "Revised settlement (joint with Raza) adds equal-protection bar and Civilian Representative", kind: "modification" },
+    { year: 2017, event: "Stephen Robinson appointed first Civilian Representative", kind: "monitor" },
+    { year: 2023, event: "Muhammad U. Faridi succeeds Robinson as Civilian Representative", kind: "monitor" },
+    { year: 2025, event: "Judge Haight takes inactive senior status (May)", kind: "event" },
+    { year: 2026, event: "Seventh Annual Report of the Civilian Representative filed (Jan 27)", kind: "event" }
+  ],
+  "nycha-hud-agreement": [
+    { year: 2015, event: "SDNY US Attorney investigation begins; NYCHA admits false lead-inspection certifications", kind: "event" },
+    { year: 2018, event: "US v. NYCHA complaint filed; original settlement rejected by court", kind: "event" },
+    { year: 2019, event: "Revised HUD Agreement approved; Bart Schwartz (Guidepost Solutions) appointed federal monitor", kind: "entered" },
+    { year: 2020, event: "City commits $2.2B over 10 years to lead, mold, heat, elevator work", kind: "modification" },
+    { year: 2023, event: "Agreement extended an additional 5 years (May)", kind: "modification" },
+    { year: 2024, event: "Schwartz steps down; Neil Barofsky + Matt Cipolla (Jenner & Block) take over as co-monitors (Feb)", kind: "monitor" },
+    { year: 2024, event: "New co-monitors issue first mixed-review report (Sep)", kind: "event" }
+  ],
+  "baez-nycha-mold": [
+    { year: 2013, event: "Class action filed by NYCHA tenants with asthma", actor: "NRDC + NCLEJ", kind: "event" },
+    { year: 2014, event: "Initial consent decree entered", kind: "entered" },
+    { year: 2018, event: "Revised consent decree adds Ombudsperson, Special Master, deadlines", kind: "modification" },
+    { year: 2021, event: "Judge William Pauley III dies; case reassigned", kind: "event" },
+    { year: 2023, event: "Mold-complaint backlog hits 90,589 (from 35,718 in 2019)", kind: "event" },
+    { year: 2024, event: "Ten-year review: decree transformed response but delays persist", kind: "event" }
+  ],
+  "brad-h-doc-dohmh": [
+    { year: 1999, event: "Class action filed against City's middle-of-the-night discharge practice", actor: "Urban Justice Center + NYLPI", kind: "event" },
+    { year: 2003, event: "Settlement entered requiring discharge planning for incarcerated people with mental illness", kind: "entered" },
+    { year: 2016, event: "43% of incarcerated people receiving Brad H. flag", kind: "event" },
+    { year: 2025, event: "Brad H. flag rate up to 57%; Comptroller audits follow-up", kind: "event" }
+  ],
+  "callahan-shelter": [
+    { year: 1979, event: "Robert Hayes files case on behalf of homeless men", kind: "event" },
+    { year: 1981, event: "Consent decree entered: right to shelter for single adult men", kind: "entered" },
+    { year: 1983, event: "Eldredge extends decree to single women", kind: "modification" },
+    { year: 2008, event: "Boston successor agreement covers families with children", kind: "modification" },
+    { year: 2023, event: "Mayor Adams seeks to suspend right-to-shelter during migrant surge", kind: "event" },
+    { year: 2024, event: "March stipulation: 30/60-day stays for adult migrants under State of Emergency; underlying right preserved", actor: "Justice Gerald Lebovits", kind: "modification" }
+  ],
+  "jose-p-doe": [
+    { year: 1979, event: "Class action filed under predecessor to IDEA", kind: "event" },
+    { year: 1980, event: "Judgment entered: timelines for special-ed evaluations and placements", kind: "entered" },
+    { year: 1983, event: "Modified order on compliance and reporting", actor: "Judge Eugene Nickerson", kind: "modification" },
+    { year: 2003, event: "L.V. v. NYC DOE filed to enforce IDEA hearing-order implementation", kind: "event" },
+    { year: 2020, event: "J.S.M. v. NYC DOE filed targeting due-process hearing backlog", kind: "event" }
+  ],
+  "lv-doe-hearing-orders": [
+    { year: 2003, event: "Class action filed by Advocates for Children", kind: "event" },
+    { year: 2007, event: "Initial settlement entered: 35-day implementation default", kind: "entered" },
+    { year: 2023, event: "Judge Loretta Preska enters 51-step reform order with Special Master oversight (July)", kind: "modification" },
+    { year: 2025, event: "Monitor report: only 21 of 51 reforms implemented (July)", kind: "event" },
+    { year: 2026, event: "Modified enforcement / contempt proceedings anticipated", kind: "event" }
+  ],
+  "vulcan-fdny": [
+    { year: 2007, event: "DOJ files Title VII action; Vulcan Society intervenes", kind: "event" },
+    { year: 2009, event: "Liability ruling: FDNY entrance exam had disparate impact and was discriminatory", actor: "Judge Nicholas Garaufis", kind: "event" },
+    { year: 2014, event: "Comprehensive injunctive-relief decree entered; new exam approved", kind: "entered" },
+    { year: 2015, event: "$99M monetary relief consent decree approved; court monitor appointed", kind: "modification" },
+    { year: 2025, event: "Most diverse academy classes in FDNY history (17% Black, 24% Latino) under decree", kind: "event" }
+  ],
+  "gulino-doe": [
+    { year: 1996, event: "Class action filed challenging NYC teacher licensing exams as discriminatory", kind: "event" },
+    { year: 2006, event: "2d Circuit liability ruling: LAST exam violated Title VII", kind: "event" },
+    { year: 2015, event: "Remedy proceedings begin under Judge Kimba Wood with Special Master", kind: "entered" },
+    { year: 2023, event: "Individualized damages awards continue; aggregate liability in hundreds of millions", kind: "event" },
+    { year: 2025, event: "Court orders issued as recently as October 2025; total exposure near $1.8B", kind: "event" }
+  ],
+  "willowbrook-opwdd": [
+    { year: 1972, event: "Class action filed after Geraldo Rivera exposé of Willowbrook State School", kind: "event" },
+    { year: 1975, event: "Willowbrook Consent Judgment entered: community placement and services", kind: "entered" },
+    { year: 1987, event: "Willowbrook State School closes", kind: "event" },
+    { year: 1993, event: "Permanent Injunction replaces 1975 decree", kind: "modification" },
+    { year: 2025, event: "50th anniversary observed; Permanent Injunction remains in force", kind: "event" }
+  ],
+  "marisol-acs": [
+    { year: 1995, event: "Class action filed after Elisa Izquierdo's death", kind: "event" },
+    { year: 1996, event: "ACS established as independent agency in response", kind: "event" },
+    { year: 1998, event: "Settlement reached creating Advisory Panel of outside experts", kind: "entered" },
+    { year: 1999, event: "Settlement approved by court", kind: "modification" },
+    { year: 2001, event: "State-side jurisdiction terminated", kind: "event" },
+    { year: 2018, event: "Court relinquishes jurisdiction over City settlement (Aug 6)", kind: "terminated" }
+  ],
+  "people-ny-nypd-protests": [
+    { year: 2020, event: "George Floyd protests; NYPD response prompts multiple suits", kind: "event" },
+    { year: 2021, event: "NY AG Letitia James files action under NYPD's pattern of protest response", kind: "event" },
+    { year: 2023, event: "Joint settlement reached with AG, NYCLU, Legal Aid (Sep)", kind: "entered" },
+    { year: 2024, event: "Court authorizes reforms over PBA opposition (Feb)", actor: "Judge Colleen McMahon", kind: "modification" },
+    { year: 2025, event: "Implementation continues under external oversight committee", kind: "event" }
+  ],
+  "sow-nypd-protests": [
+    { year: 2020, event: "BLM protesters arrested in mass kettlings May 28–June 4", kind: "event" },
+    { year: 2021, event: "Class action filed by National Lawyers Guild", kind: "event" },
+    { year: 2023, event: "$13M settlement announced (July)", kind: "entered" },
+    { year: 2024, event: "Court grants final approval (Feb 22)", actor: "Judge Colleen McMahon", kind: "modification" }
+  ],
+  "mccain-v-koch": [
+    { year: 1983, event: "Class action filed on behalf of homeless families with children", kind: "event" },
+    { year: 1986, event: "Appellate Division affirms right to family shelter", kind: "entered" },
+    { year: 2008, event: "Boston successor agreement replaces McCain framework", kind: "modification" },
+    { year: 2008, event: "Court closes McCain after 25 years", kind: "terminated" }
+  ],
+  "aspira-consent-decree": [
+    { year: 1972, event: "Class action filed by ASPIRA for bilingual education", kind: "event" },
+    { year: 1974, event: "Consent decree signed (Aug 29): first systemwide bilingual program in US", actor: "Judge Marvin Frankel", kind: "entered" },
+    { year: 2018, event: "U.S. v. NYC DOE ELL compliance agreement updates obligations", kind: "modification" }
+  ],
+  "goldberg-v-kelly": [
+    { year: 1968, event: "Suit filed by NYC welfare recipients", actor: "Mobilization for Youth Legal Services", kind: "event" },
+    { year: 1970, event: "Supreme Court decision (Mar 23): pre-termination hearings required", actor: "Justice Brennan, 5-3", kind: "entered" }
+  ],
+  "penn-central-v-nyc": [
+    { year: 1969, event: "Landmarks Commission denies Grand Central office-tower proposal", kind: "event" },
+    { year: 1978, event: "Supreme Court decision: landmark designation not a taking; three-factor test announced", actor: "Justice Brennan, 6-3", kind: "entered" }
+  ],
+  "nysrpa-v-bruen": [
+    { year: 1913, event: "Sullivan Law enacted establishing NY's 'proper cause' concealed-carry standard", kind: "event" },
+    { year: 2018, event: "NYSRPA files suit challenging proper-cause requirement", kind: "event" },
+    { year: 2022, event: "Supreme Court strikes down proper-cause requirement; text-history-tradition test announced", actor: "Justice Thomas, 6-3", kind: "entered" },
+    { year: 2022, event: "NY enacts Concealed Carry Improvement Act creating 'sensitive locations'", kind: "modification" }
+  ],
+  "payton-v-new-york": [
+    { year: 1970, event: "NYPD enters Bronx and Queens apartments without warrants", kind: "event" },
+    { year: 1980, event: "Supreme Court decision: warrantless home arrest unconstitutional absent exigency", actor: "Justice Stevens, 6-3", kind: "entered" }
+  ],
+  "bd-of-estimate-v-morris": [
+    { year: 1981, event: "Brooklyn voters file suit against Board of Estimate structure", kind: "event" },
+    { year: 1989, event: "Supreme Court decision: Board violates one person, one vote", actor: "Justice White, 9-0", kind: "entered" },
+    { year: 1989, event: "NYC Charter revised; Board of Estimate abolished; modern Council–Mayor balance established", kind: "modification" }
+  ],
+  "cidny-mta-subway-accessibility": [
+    { year: 2017, event: "State court class action filed by CIDNY", kind: "event" },
+    { year: 2019, event: "Federal companion case De La Rosa filed", kind: "event" },
+    { year: 2022, event: "Settlement announced (June): 95% accessibility by 2055; 14.69% capital-plan set-aside", kind: "entered" },
+    { year: 2023, event: "Federal court grants final approval (Apr 24)", actor: "Judge Edgardo Ramos", kind: "modification" },
+    { year: 2025, event: "2025–2029 MTA Capital Plan is first full plan under 14.69% set-aside", kind: "event" }
+  ],
+  "us-v-nyc-dep-cso": [
+    { year: 2005, event: "Original CSO Consent Order entered with NYSDEC", kind: "entered" },
+    { year: 2012, event: "Order modified to incorporate waterbody-specific LTCPs", kind: "modification" },
+    { year: 2018, event: "Order modified to add green infrastructure targets", kind: "modification" },
+    { year: 2024, event: "Order modified to add Bronx River and Coney Island Creek obligations", kind: "modification" }
+  ]
+};
+
 const JUDGES = {
   "nunez-doc": { judge: "Hon. Laura Taylor Swain", judge_note: "Chief Judge, S.D.N.Y.; ordered appointment of Remediation Manager May 2025" },
   "nunez-rikers-receivership": { judge: "Hon. Laura Taylor Swain", judge_note: "Chief Judge, S.D.N.Y." },

@@ -446,6 +446,66 @@ select {
 }
 .links-list a:hover { color: var(--red); }
 
+/* TIMELINE */
+.timeline-list {
+  position: relative;
+  padding-left: 0;
+  list-style: none;
+  margin: 0.25rem 0 0;
+}
+.timeline-list::before {
+  content: '';
+  position: absolute;
+  left: 4.5rem;
+  top: 0.3rem;
+  bottom: 0.3rem;
+  width: 1px;
+  background: var(--rule-heavy);
+}
+.timeline-item {
+  display: grid;
+  grid-template-columns: 4rem 1.5rem 1fr;
+  align-items: baseline;
+  gap: 0;
+  padding: 0.5rem 0 0.5rem 0;
+  position: relative;
+}
+.timeline-year {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-align: right;
+  padding-right: 0.75rem;
+  align-self: center;
+}
+.timeline-dot {
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 2px solid var(--gold);
+  align-self: center;
+  justify-self: center;
+  z-index: 1;
+  position: relative;
+}
+.timeline-item.kind-entered .timeline-dot { background: var(--gold); }
+.timeline-item.kind-contempt .timeline-dot { background: var(--red); border-color: var(--red); }
+.timeline-item.kind-modification .timeline-dot { background: var(--amber); border-color: var(--amber); }
+.timeline-item.kind-monitor .timeline-dot { background: var(--navy); border-color: var(--navy); }
+.timeline-item.kind-terminated .timeline-dot { background: var(--slate); border-color: var(--slate); }
+.timeline-event {
+  font-size: 0.92rem;
+  line-height: 1.4;
+  padding-left: 0.75rem;
+  color: var(--ink);
+}
+.timeline-event-actor {
+  color: var(--slate);
+  font-size: 0.84rem;
+  font-style: italic;
+}
+
 /* FOOTER */
 .footer {
   background: var(--navy);
@@ -571,6 +631,12 @@ select {
   .modal-section p { font-size: 0.92rem; line-height: 1.5; }
   .modal-section li { font-size: 0.88rem; line-height: 1.45; }
   .links-list a { font-size: 0.82rem; }
+  .timeline-item { grid-template-columns: 3rem 1.2rem 1fr; padding: 0.4rem 0; }
+  .timeline-list::before { left: 3.6rem; }
+  .timeline-year { font-size: 0.7rem; padding-right: 0.5rem; }
+  .timeline-event { font-size: 0.86rem; padding-left: 0.5rem; }
+  .timeline-event-actor { font-size: 0.78rem; }
+  .timeline-dot { width: 9px; height: 9px; }
 
   .footer { padding: 1.75rem 1rem; }
   .footer-inner { font-size: 0.82rem; line-height: 1.5; }
@@ -666,12 +732,14 @@ select {
   </div>
 </footer>
 
-<script src="data.js?v=20260517c"></script>
+<script src="data.js?v=20260517d"></script>
 <script>
-// Merge judge data into decree entries
+// Merge judge data and explicit timelines into decree entries
 DECREES.forEach(d => {
   const j = (typeof JUDGES !== 'undefined') && JUDGES[d.id];
   if (j) { d.judge = j.judge; d.judge_note = j.judge_note; }
+  const t = (typeof TIMELINES !== 'undefined') && TIMELINES[d.id];
+  if (t) { d.timeline = t; }
 });
 </script>
 <script>
@@ -694,6 +762,26 @@ const TAB_INTRO = {
 const state = { category: 'current', search: '', agency: '', issue: '', status: '' };
 
 function uniqueSorted(arr) { return [...new Set(arr)].sort(); }
+
+function buildTimeline(d) {
+  // If the entry provides its own timeline, use it as-is (sorted by year)
+  if (Array.isArray(d.timeline) && d.timeline.length) {
+    return [...d.timeline].sort((a, b) => (a.year || 0) - (b.year || 0));
+  }
+  // Otherwise auto-derive a minimal timeline from existing fields
+  const events = [];
+  if (d.year_filed) events.push({ year: d.year_filed, event: d.status === 'scotus' ? 'NYC action filed' : 'Case filed', kind: 'event' });
+  if (d.year_entered && d.year_entered !== d.year_filed) {
+    let label = 'Decree / settlement entered';
+    if (d.status === 'scotus') label = 'Supreme Court decision';
+    else if (d.status === 'pending') label = 'Operative order';
+    events.push({ year: d.year_entered, event: label, kind: 'entered' });
+  }
+  if (d.year_terminated && d.year_terminated !== d.year_entered) {
+    events.push({ year: d.year_terminated, event: 'Court relinquished jurisdiction / decree closed', kind: 'terminated' });
+  }
+  return events;
+}
 
 function inCategory(d, cat) {
   if (cat === 'current') return !['pending','historical','terminated-recent','scotus'].includes(d.status);
@@ -850,6 +938,21 @@ function openModal(id) {
       <h4>The holding</h4>
       <p><em>${d.holding}</em></p>
     </div>` : ''}
+
+    ${(() => {
+      const tl = buildTimeline(d);
+      if (!tl.length) return '';
+      return `<div class="modal-section">
+        <h4>Timeline</h4>
+        <ul class="timeline-list">
+          ${tl.map(e => `<li class="timeline-item kind-${e.kind || 'event'}">
+            <span class="timeline-year">${e.year}</span>
+            <span class="timeline-dot"></span>
+            <span class="timeline-event">${e.event}${e.actor ? ` <span class="timeline-event-actor">— ${e.actor}</span>` : ''}</span>
+          </li>`).join('')}
+        </ul>
+      </div>`;
+    })()}
 
     ${d.daily_effects ? `
     <div class="modal-section">
