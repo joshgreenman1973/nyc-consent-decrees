@@ -486,6 +486,118 @@ select {
   margin-bottom: 0.5rem;
   color: var(--ink);
 }
+
+/* ── MOBILE ── */
+@media (max-width: 640px) {
+  html { font-size: 15px; }
+  .masthead-inner { padding: 0 1rem; font-size: 0.62rem; letter-spacing: 0.06em; }
+  .header { padding: 1.5rem 1rem 1.25rem; }
+  .kicker { font-size: 0.62rem; letter-spacing: 0.14em; margin-bottom: 0.5rem; }
+  .header h1 {
+    font-size: 1.85rem;
+    line-height: 1.08;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.015em;
+  }
+  .header .dek {
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+  .header .meta { margin-top: 0.85rem; font-size: 0.6rem; }
+  .stats-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    padding: 0.85rem 1rem;
+  }
+  .stat-num { font-size: 1.4rem; }
+  .stat-label { font-size: 0.55rem; line-height: 1.2; margin-top: 0.15rem; }
+  .tabs-inner { padding: 0 0.5rem; }
+  .tab {
+    padding: 0.7rem 0.7rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+  }
+  .tab-count { font-size: 0.6rem; padding: 0.08rem 0.35rem; margin-left: 0.3rem; }
+  .tab-intro {
+    margin: 0.85rem 1rem 0;
+    padding-left: 0.7rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    border-left-width: 2px;
+    max-width: none;
+  }
+  .controls-inner { padding: 0.7rem 1rem; gap: 0.5rem; }
+  .controls-inner > * { min-width: 0; }
+  #search { font-size: 0.95rem; padding: 0.6rem 0.8rem; }
+  select { font-size: 0.65rem; padding: 0.6rem 0.5rem; width: 100%; }
+  .result-bar { padding: 0.7rem 1rem 0.3rem; font-size: 0.62rem; letter-spacing: 0.08em; }
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 0.6rem 1rem 2.5rem;
+    gap: 0.85rem;
+  }
+  .card {
+    padding: 1rem 1.1rem;
+    border-width: 1px;
+  }
+  .card-tags { gap: 0.3rem; margin-bottom: 0.55rem; }
+  .tag { font-size: 0.56rem; padding: 0.18rem 0.42rem; letter-spacing: 0.06em; }
+  .card h3 { font-size: 1.1rem; line-height: 1.18; }
+  .card .citation { font-size: 0.66rem; margin-bottom: 0.55rem; }
+  .card .summary { font-size: 0.88rem; line-height: 1.45; margin-bottom: 0.7rem; }
+  .card .footer { font-size: 0.62rem; padding-top: 0.55rem; }
+
+  /* Modal full-screen on mobile */
+  .modal-backdrop { padding: 0; }
+  .modal {
+    padding: 1.25rem 1rem 1.5rem;
+    min-height: 100vh;
+    border-top-width: 3px;
+  }
+  .modal-close { top: 0.5rem; right: 0.5rem; width: 32px; height: 32px; font-size: 1.1rem; }
+  .modal h2 { font-size: 1.45rem; line-height: 1.12; padding-right: 2.5rem; }
+  .modal .modal-citation { font-size: 0.72rem; }
+  .modal .modal-tags { margin-bottom: 0.9rem; padding-bottom: 0.8rem; }
+  .modal-meta-grid {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+    padding: 0.75rem 0.85rem;
+    margin-bottom: 1rem;
+  }
+  .meta-item .meta-label { font-size: 0.55rem; }
+  .meta-item .meta-value { font-size: 0.85rem; }
+  .modal-section { margin-bottom: 1rem; }
+  .modal-section h4 { font-size: 0.66rem; letter-spacing: 0.12em; }
+  .modal-section p { font-size: 0.92rem; line-height: 1.5; }
+  .modal-section li { font-size: 0.88rem; line-height: 1.45; }
+  .links-list a { font-size: 0.82rem; }
+
+  .footer { padding: 1.75rem 1rem; }
+  .footer-inner { font-size: 0.82rem; line-height: 1.5; }
+  .footer h3 { font-size: 1.05rem; }
+  .footer .small { font-size: 0.6rem; margin-top: 1rem; }
+}
+
+/* Tap-target / touch fixes for all small screens */
+@media (max-width: 800px) {
+  .tabs-inner {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .tabs-inner::-webkit-scrollbar { display: none; }
+  .tabs {
+    position: relative;
+  }
+  /* Right-edge fade hinting that tabs scroll */
+  .tabs::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 3px;
+    width: 28px;
+    background: linear-gradient(90deg, transparent, var(--ink));
+    pointer-events: none;
+  }
+}
 </style>
 </head>
 <body>
