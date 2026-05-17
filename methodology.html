@@ -53,6 +53,7 @@ code, .acronym {
   <li><strong>Currently in force</strong> &mdash; standing court orders, monitorships, and settlements that bind a New York City agency as of 2026.</li>
   <li><strong>Pending &amp; on the horizon</strong> &mdash; active litigation, federal investigations, and enforcement motions that have a credible likelihood of producing a new consent decree, settlement, or court-ordered injunction in the next 6 to 36 months. Inclusion requires (a) a filed case, (b) public sources documenting current posture, and (c) injunctive relief being sought.</li>
   <li><strong>Historical &amp; resolved</strong> &mdash; foundational decrees where a court has formally terminated jurisdiction, the decree has been fully superseded, or the original framework has been replaced by a successor agreement. Each entry includes a <em>legacy</em> note describing what residue of the decree remains embedded in current agency practice.</li>
+  <li><strong>U.S. Supreme Court</strong> &mdash; SCOTUS decisions that originated in New York City litigation or that directly shaped how a New York City agency must operate. Inclusion requires either NYC government as a party, or a decision that arose from a NYC agency practice <em>and</em> changed how that agency operates.</li>
 </ul>
 
 <h2>What counts as a "consent decree" here</h2>
@@ -91,7 +92,10 @@ code, .acronym {
   <dt>judge</dt><dd>The currently assigned district judge, justice, or chief judge presiding over enforcement (for active and pending cases) or the historically assigned judge (for closed cases). Null where current assignment could not be verified from public sources.</dd>
   <dt>expected_resolution</dt><dd><em>Pending only.</em> Short string describing the likely next procedural step or timeframe.</dd>
   <dt>year_terminated</dt><dd><em>Historical only.</em> Year the court relinquished jurisdiction or the decree was formally superseded.</dd>
-  <dt>legacy</dt><dd><em>Historical only.</em> What of the decree's reforms remain embedded in current agency practice even after closure.</dd>
+  <dt>legacy</dt><dd><em>Historical and SCOTUS.</em> What of the decree's reforms remain embedded in current agency practice.</dd>
+  <dt>holding</dt><dd><em>SCOTUS only.</em> The Court's one-sentence holding.</dd>
+  <dt>vote</dt><dd><em>SCOTUS only.</em> Vote breakdown.</dd>
+  <dt>justice_authoring</dt><dd><em>SCOTUS only.</em> Justice who authored the majority opinion.</dd>
   <dt>links</dt><dd>Primary sources: court orders, monitor reports, official agency notices, advocacy-group case pages, and reputable news coverage.</dd>
 </dl>
 
@@ -122,6 +126,20 @@ This is not an exhaustive list. New York City government is sprawling, and decre
   <li><strong>Recency.</strong> Status fields reflect public sources available at compilation. Federal monitor reports and court orders update frequently; check the linked primary sources for the latest posture.</li>
 </ul>
 <p>Suggestions, corrections, and missing cases are welcome &mdash; the goal is accuracy, not finality.</p>
+
+<h2>Fact-check status</h2>
+<p>A dedicated fact-check pass was performed in May 2026. It surfaced and corrected several errors in the initial dataset, including:</p>
+<ul>
+  <li><strong>Sow v. City of New York</strong> &mdash; docket corrected to 21-cv-533 (S.D.N.Y.); year of final approval corrected to 2024.</li>
+  <li><strong>J.S.M. v. NYC DOE</strong> &mdash; docket and court corrected to 20-cv-705 (E.D.N.Y.).</li>
+  <li><strong>ACS coercive-home-search case</strong> &mdash; lead-plaintiff caption corrected from generic "Doe" to <em>Gould v. City of New York</em>; docket 1:24-cv-01263 (E.D.N.Y.), filed Feb. 20, 2024.</li>
+  <li><strong>Reid v. DOC phone-surveillance case</strong> &mdash; corrected from federal S.D.N.Y. action to state Article 78 / class action filed in N.Y. Sup. Ct., Bronx County.</li>
+  <li><strong>NYPD gang database challenge</strong> &mdash; court corrected to E.D.N.Y., judge identified as Hon. Brian M. Cogan; status updated to reflect that motion to dismiss was denied in December 2025 but class certification was simultaneously denied, limiting the case to three named plaintiffs.</li>
+  <li><strong>Reynolds v. Giuliani</strong> &mdash; judge updated to Hon. Lewis J. Liman (succeeding the deceased Judge Pauley); status corrected from "effectively closed" to ongoing.</li>
+  <li><strong>Handschu</strong> &mdash; judge note updated to reflect that Hon. Charles S. Haight, Jr. took inactive senior status May 19, 2025; current active assignment requires docket verification.</li>
+  <li>Several filing-date precision corrections (NYPD vehicle stops, NYPD Domain Awareness, council-v-adams).</li>
+</ul>
+<p>Items the fact-check could not verify against public sources are marked with null and noted in the underlying data. Manual PACER pulls would be needed for true authoritative verification on a handful of older case dockets.</p>
 
 <h2>Sourcing standards</h2>
 <p>Every link in the database is a real URL drawn from primary documents (court filings, monitor reports, agency notices) or from established advocacy and news organizations. Where a primary monitor site could not be directly verified, an authoritative substitute (e.g., the firm hosting the monitorship) was used.</p>

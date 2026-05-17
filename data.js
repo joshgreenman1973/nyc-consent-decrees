@@ -6,10 +6,10 @@ const JUDGES = {
   "floyd-nypd": { judge: "Hon. Analisa Torres", judge_note: "S.D.N.Y.; reassigned from Judge Scheindlin after 2013 recusal" },
   "ligon-nypd": { judge: "Hon. Analisa Torres", judge_note: "S.D.N.Y.; consolidated with Floyd" },
   "davis-nypd-nycha": { judge: "Hon. Analisa Torres", judge_note: "S.D.N.Y.; transferred April 2015 to consolidate stop-and-frisk oversight" },
-  "handschu-nypd": { judge: "Hon. Charles S. Haight, Jr.", judge_note: "Senior status, S.D.N.Y.; has presided since the 1970s" },
+  "handschu-nypd": { judge: "Hon. Charles S. Haight, Jr.", judge_note: "S.D.N.Y.; presided 1985–2025; took inactive senior status May 19, 2025; current active assignment requires verification on docket" },
   "raza-nypd": { judge: "Hon. Pamela K. Chen", judge_note: "E.D.N.Y." },
   "nycha-hud-agreement": { judge: null, judge_note: "Case dismissed without prejudice 2019; oversight runs through federal monitor reporting to U.S. Attorney / HUD" },
-  "baez-nycha-mold": { judge: "Hon. Paul A. Engelmayer", judge_note: "S.D.N.Y.; reassigned after Judge Pauley's death in July 2021" },
+  "baez-nycha-mold": { judge: null, judge_note: "S.D.N.Y.; originally Judge William H. Pauley III (deceased 2021); current active assignment after Pauley's death not publicly verified" },
   "jose-p-doe": { judge: null, judge_note: "Originally Judge Eugene Nickerson (deceased 2002); current assignment not publicly verifiable" },
   "lv-doe-hearing-orders": { judge: "Hon. Loretta A. Preska", judge_note: "Senior status, S.D.N.Y.; issued February 20, 2025 order on IHMS delays" },
   "lv-doe-enforcement": { judge: "Hon. Loretta A. Preska", judge_note: "Senior status, S.D.N.Y." },
@@ -19,7 +19,7 @@ const JUDGES = {
   "callahan-migrant-transfers": { judge: "Hon. Gerald Lebovits", judge_note: "N.Y. Sup. Ct., N.Y. County" },
   "eldredge-shelter-women": { judge: null, judge_note: "Originally Justice Arnold G. Fraiman; enforcement now folded into Callahan framework before Justice Lebovits" },
   "boston-mccain-shelter-families": { judge: null, judge_note: "Originally Justice Helen E. Freedman; family right-to-shelter disputes now consolidated with Callahan before Justice Lebovits" },
-  "reynolds-hra": { judge: null, judge_note: "Originally Judge William H. Pauley III (deceased 2021); case effectively closed" },
+  "reynolds-hra": { judge: "Hon. Lewis J. Liman", judge_note: "S.D.N.Y.; succeeded Judge Pauley after Pauley's 2021 death; an April 2024 stipulation confirms ongoing oversight" },
   "vulcan-fdny": { judge: "Hon. Nicholas G. Garaufis", judge_note: "Senior status, E.D.N.Y.; receives status reports from monitor Mark Cohen" },
   "latino-officers-nypd": { judge: "Hon. Lewis A. Kaplan", judge_note: "Senior status, S.D.N.Y." },
   "willowbrook-opwdd": { judge: null, judge_note: "Originally Judges Orrin Judd and John R. Bartels (both deceased); current assignment not publicly verifiable" },
@@ -31,7 +31,8 @@ const JUDGES = {
   "marisol-acs": { judge: "Hon. Robert J. Ward", judge_note: "S.D.N.Y. (deceased 2003); historical assignment" },
   "dw-doe-evaluations": { judge: "Hon. Edgardo Ramos", judge_note: "S.D.N.Y.; denied motion to dismiss May 27, 2025" },
   "cidny-curb-ramps": { judge: "Hon. George B. Daniels", judge_note: "S.D.N.Y." },
-  "council-v-adams-rikers-ice": { judge: "Hon. Mary V. Rosado", judge_note: "N.Y. Sup. Ct., N.Y. County" }
+  "council-v-adams-rikers-ice": { judge: "Hon. Mary V. Rosado", judge_note: "N.Y. Sup. Ct., N.Y. County" },
+  "nypd-gang-database": { judge: "Hon. Brian M. Cogan", judge_note: "E.D.N.Y." }
 };
 
 const DECREES = [
@@ -391,13 +392,13 @@ const DECREES = [
   {
     "id": "jsm-doe-due-process",
     "case_name": "J.S.M. v. New York City Department of Education",
-    "citation": "20-cv-1097 (S.D.N.Y.)",
+    "citation": "20-cv-705 (E.D.N.Y.)",
     "year_filed": 2020,
     "year_entered": 2025,
     "status": "active",
     "agencies": ["DOE"],
     "issue_area": "Education",
-    "court": "S.D.N.Y.",
+    "court": "E.D.N.Y.",
     "plaintiffs": "Class of NYC students with disabilities whose IDEA due-process hearings were not held or decided within federal timelines",
     "summary": "Class action by NYLAG challenging the chronic backlog and delay in DOE/NYSED impartial hearings under the IDEA. The court granted final approval of the settlement on April 22, 2025, committing DOE to systemic reforms intended to clear the hearing backlog and meet federal due-process timelines.",
     "daily_effects": "Families requesting IDEA due-process hearings should see faster scheduling and decisions, and DOE must add hearing-officer capacity and procedural reforms. Class members gain enforceable rights to timely hearings and decisions on IEP disputes.",
@@ -753,9 +754,9 @@ const DECREES = [
   {
     "id": "sow-nypd-protests",
     "case_name": "Sow v. City of New York",
-    "citation": "20-cv-9737 (S.D.N.Y.)",
+    "citation": "21-cv-533 (S.D.N.Y.)",
     "year_filed": 2021,
-    "year_entered": 2023,
+    "year_entered": 2024,
     "status": "terminated-recent",
     "agencies": ["NYPD"],
     "issue_area": "Policing",
@@ -866,8 +867,8 @@ const DECREES = [
   },
   {
     "id": "acs-coercive-home-searches",
-    "case_name": "Doe v. City of New York (ACS coercive home-search class action)",
-    "citation": "E.D.N.Y. (filed Feb. 21, 2024)",
+    "case_name": "Gould v. City of New York (ACS coercive home-search class action)",
+    "citation": "1:24-cv-01263 (E.D.N.Y., filed Feb. 20, 2024)",
     "year_filed": 2024,
     "year_entered": null,
     "status": "pending",
@@ -896,13 +897,13 @@ const DECREES = [
   {
     "id": "nypd-gang-database",
     "case_name": "Challenge to NYPD Gang Database",
-    "citation": "S.D.N.Y. (filed Apr. 30, 2025)",
+    "citation": "E.D.N.Y. (filed Apr. 30, 2025)",
     "year_filed": 2025,
     "year_entered": null,
     "status": "pending",
     "agencies": ["NYPD"],
     "issue_area": "Policing",
-    "court": "S.D.N.Y.",
+    "court": "E.D.N.Y.",
     "plaintiffs": "Black and Latino New Yorkers listed on the database (NAACP LDF, Legal Aid, Bronx Defenders, LatinoJustice PRLDEF, Ballard Spahr)",
     "summary": "Federal class action alleging the NYPD's Criminal Group Database (commonly the 'gang database') is built and used in violation of the First, Fourth, and Fourteenth Amendments and city law. Plaintiffs note Black and Latino people comprise 99% of those listed.",
     "daily_effects": "Plaintiffs seek injunctive relief to halt new additions, audit and purge existing entries, require notice and a removal process, and end information-sharing with prosecutors, ICE, and schools. If granted, the database (with tens of thousands of names) could be substantially dismantled or operated under court oversight. The Mamdani administration has signaled openness to reform.",
@@ -914,7 +915,7 @@ const DECREES = [
       "End information-sharing with ICE and other agencies",
       "Independent oversight and public reporting"
     ],
-    "recent_status": "City's motion to dismiss denied January 2026; discovery and class certification underway; settlement discussions plausible given administration change.",
+    "recent_status": "Judge Brian M. Cogan denied the City's motion to dismiss in December 2025 but also denied class certification at the same time, limiting the case to the three named lead plaintiffs (with putative class allegations still in play); plaintiffs continue discovery.",
     "expected_resolution": "Settlement talks possible 2026-2027",
     "links": [
       {"label": "NAACP LDF: Plaintiffs Defeat City's Motion to Dismiss", "url": "https://www.naacpldf.org/press-release/plaintiffs-defeat-citys-motion-to-dismiss-in-litigation-challenging-the-nypds-unconstitutional-gang-database/"},
@@ -925,14 +926,14 @@ const DECREES = [
   {
     "id": "nypd-vehicle-stops",
     "case_name": "NAACP NY State Conference v. City of New York ('Stop-and-Frisk on Wheels')",
-    "citation": "S.D.N.Y. (filed Jan. 2026)",
+    "citation": "S.D.N.Y. (filed Jan. 26, 2026)",
     "year_filed": 2026,
     "year_entered": null,
     "status": "pending",
     "agencies": ["NYPD"],
     "issue_area": "Policing",
     "court": "S.D.N.Y.",
-    "plaintiffs": "NAACP NY State Conference and two Black drivers (NYCLU, Bronx Defenders, NAACP)",
+    "plaintiffs": "NAACP NY State Conference and two Black drivers (NYCLU, Bronx Defenders, NAACP, Milbank LLP)",
     "summary": "Class action alleging NYPD vehicle-search practices unlawfully target Black and Latino drivers. The complaint cites an 83% spike in traffic searches in 2024 and data that over 84% of searches from 2022-2025 were of Black or Latino drivers, with 96% turning up no weapons.",
     "daily_effects": "Plaintiffs seek a court-ordered overhaul of vehicle-search policies, training, supervision, and data reporting — analogous to the Floyd monitorship. A decree would likely require new consent rules, body-camera disclosure for searches, and an independent monitor. Hundreds of thousands of annual traffic stops would be subject to new constraints.",
     "monitor": null,
@@ -953,14 +954,14 @@ const DECREES = [
   },
   {
     "id": "doc-phone-surveillance",
-    "case_name": "Reid v. New York City Department of Correction (phone surveillance)",
-    "citation": "S.D.N.Y. (filed Apr. 2024)",
+    "case_name": "Matter of Reid v. New York City Department of Correction (phone surveillance)",
+    "citation": "Article 78 / class action (N.Y. Sup. Ct., Bronx County, filed Apr. 15, 2024)",
     "year_filed": 2024,
     "year_entered": null,
     "status": "pending",
     "agencies": ["DOC"],
     "issue_area": "Surveillance",
-    "court": "S.D.N.Y.",
+    "court": "N.Y. Sup. Ct., Bronx County",
     "plaintiffs": "Incarcerated New Yorkers and their attorneys (Bronx Defenders, Brooklyn Defender Services, New York County Defender Services, Cleary Gottlieb)",
     "summary": "Class action alleging DOC recorded and shared thousands of confidential attorney-client phone calls with prosecutors and law enforcement, and conducted mass surveillance of all calls placed on the jail phone system. Plaintiffs allege Sixth Amendment, statutory, and ethical violations.",
     "daily_effects": "Relief sought would force DOC to stop recording attorney-client calls, purge improperly retained recordings, and overhaul the Securus-operated phone system. A decree would likely impose technical safeguards (privileged-number registry), audit requirements, and remedies for past disclosures to prosecutors. Tens of thousands of detainees and their lawyers would gain protected legal communications.",
@@ -1039,7 +1040,7 @@ const DECREES = [
   {
     "id": "nypd-domain-awareness",
     "case_name": "Residents v. City of New York (NYPD Domain Awareness System surveillance)",
-    "citation": "S.D.N.Y. (filed Oct. 28, 2025)",
+    "citation": "1:25-cv-08903 (S.D.N.Y., filed Oct. 27, 2025)",
     "year_filed": 2025,
     "year_entered": null,
     "status": "pending",
@@ -1112,7 +1113,7 @@ const DECREES = [
       "Disclosure of city/federal coordination on detainer requests",
       "Compliance reporting on sanctuary law adherence"
     ],
-    "recent_status": "State Supreme Court issued final ruling blocking the executive order in September 2025; possible appeal and continued enforcement litigation through 2026.",
+    "recent_status": "Justice Mary V. Rosado issued the final ruling blocking the executive order on September 8, 2025; possible appeal and continued enforcement litigation through 2026.",
     "expected_resolution": "Appeal proceedings 2026; final injunction",
     "links": [
       {"label": "NYC Council press release", "url": "https://council.nyc.gov/news/2025/04/15/new-york-city-council-files-lawsuit-to-stop-mayor-adams-illegal-executive-order-inviting-president-trumps-ice-into-rikers-to-set-up-office-seeking-courts-immediate-halt-of/"},
@@ -1476,25 +1477,457 @@ const DECREES = [
     "citation": "397 U.S. 254 (1970)",
     "year_filed": 1968,
     "year_entered": 1970,
-    "year_terminated": 1970,
-    "status": "historical",
+    "status": "scotus",
     "agencies": ["HRA"],
     "issue_area": "Public Benefits",
     "court": "U.S. Supreme Court",
-    "plaintiffs": "John Kelly and other NYC residents whose public-assistance benefits had been terminated without prior hearing (Mobilization for Youth Legal Services and Center on Social Welfare Policy and Law)",
-    "summary": "Landmark Supreme Court decision originating in New York City's welfare system, holding that the Due Process Clause requires an evidentiary hearing before termination of public-assistance benefits. The City's prior practice of cutting benefits first and hearing complaints later was held unconstitutional.",
-    "daily_effects": "Goldberg forced HRA to implement pre-termination 'fair hearings' — written notice, opportunity to appear with counsel and witnesses, and a neutral decisionmaker — before stopping cash assistance, Medicaid, food stamps, or shelter benefits. The fair-hearing infrastructure HRA and the State Office of Temporary and Disability Assistance still operate descends directly from this case.",
+    "plaintiffs": "John Kelly and other NYC residents receiving AFDC and New York State Home Relief whose benefits were terminated without a prior hearing, suing NYC Commissioner of Social Services Jack R. Goldberg",
+    "summary": "NYC welfare recipients challenged the city's practice of terminating public assistance benefits without a pre-termination evidentiary hearing. The Supreme Court held that the Due Process Clause requires an evidentiary hearing before the government may terminate welfare benefits, because such benefits are a statutory entitlement and termination causes grievous loss.",
+    "daily_effects": "HRA must offer recipients timely written notice, the right to appear in person, the right to confront adverse witnesses, the right to counsel, and an impartial decision-maker before cutting off cash assistance, SNAP, or Medicaid. These 'Goldberg hearings' (now called Fair Hearings administered by the state OTDA) remain the backbone of NYC benefits administration, and HRA cannot stop a check based on a caseworker's determination alone.",
     "monitor": null,
     "key_obligations": [
-      "Provide pre-termination written notice",
-      "Permit oral presentation with counsel and witnesses",
-      "Decide before a neutral hearing officer",
-      "Issue a written decision based on the record"
+      "Provide timely and adequate written notice of the reasons for proposed termination",
+      "Afford recipients an opportunity to be heard in person before termination",
+      "Permit confrontation and cross-examination of adverse witnesses",
+      "Allow representation by retained counsel",
+      "Issue a written decision by an impartial decisionmaker stating reasons and evidence relied on"
     ],
-    "legacy": "Every aid-continuing fair hearing held under HRA and OTDA procedures today rests on Goldberg; the doctrine of pre-deprivation hearings now reaches Medicaid, SNAP, housing subsidies, and disability benefits.",
+    "holding": "The Due Process Clause requires that welfare recipients be afforded an evidentiary hearing before termination of benefits.",
+    "vote": "5-3",
+    "justice_authoring": "William J. Brennan Jr.",
+    "legacy": "Goldberg created the modern 'new property' doctrine and remains the foundation for every fair-hearing right HRA, NYCHA, and the city's Medicaid program must honor. It is cited daily in NYC administrative law practice.",
     "links": [
-      {"label": "Goldberg v. Kelly, 397 U.S. 254 (1970)", "url": "https://supreme.justia.com/cases/federal/us/397/254/"},
-      {"label": "NYU Law: Goldberg v. Kelly at 50", "url": "https://www.law.nyu.edu/news/goldberg-v-kelly-50-anniversary"}
+      {"label": "Opinion (Justia)", "url": "https://supreme.justia.com/cases/federal/us/397/254/"},
+      {"label": "Cornell LII", "url": "https://www.law.cornell.edu/supremecourt/text/397/254"},
+      {"label": "Oyez", "url": "https://www.oyez.org/cases/1969/62"}
+    ]
+  },
+  {
+    "id": "penn-central-v-nyc",
+    "case_name": "Penn Central Transportation Co. v. City of New York",
+    "citation": "438 U.S. 104 (1978)",
+    "year_filed": 1969, "year_entered": 1978, "status": "scotus",
+    "agencies": ["NYC Landmarks Preservation Commission", "DCP"],
+    "issue_area": "Land Use / Takings", "court": "U.S. Supreme Court",
+    "plaintiffs": "Penn Central Transportation Company, owner of Grand Central Terminal, after NYC's Landmarks Preservation Commission rejected its plans to build a 55-story office tower above the terminal",
+    "summary": "After the Landmarks Commission rejected two proposals to construct a high-rise above Grand Central, Penn Central sued claiming the 1965 Landmarks Law worked an unconstitutional taking. The Court held that landmark designation was not a taking, articulating the now-standard three-factor ad hoc test (economic impact, interference with investment-backed expectations, character of the government action).",
+    "daily_effects": "The Landmarks Preservation Commission can designate individual buildings, interiors, and historic districts and prohibit alterations or demolitions, with transferable development rights as a constitutional safety valve. Owners of designated properties must apply for Certificates of Appropriateness for exterior work, and the city today protects more than 38,000 landmarked properties because of the rule this case validated.",
+    "monitor": null,
+    "key_obligations": [
+      "Landmark regulation does not require compensation when it leaves a reasonable beneficial use",
+      "Cities may transfer development rights to adjacent parcels as compensation",
+      "Regulatory takings claims require a fact-specific, multi-factor inquiry",
+      "Owners retain the right to seek Certificates of Appropriateness for alterations",
+      "Designations must serve a substantial public purpose"
+    ],
+    "holding": "NYC's Landmarks Preservation Law, as applied to Grand Central Terminal, did not effect a taking requiring just compensation.",
+    "vote": "6-3", "justice_authoring": "William J. Brennan Jr.",
+    "legacy": "Penn Central is the constitutional foundation of the entire NYC landmarks regime and the most-cited regulatory takings case in American law. Every Landmarks Commission designation, every TDR transaction in Midtown, and every preservation fight in the city operates under this framework.",
+    "links": [
+      {"label": "Opinion (Justia)", "url": "https://supreme.justia.com/cases/federal/us/438/104/"},
+      {"label": "Cornell LII", "url": "https://www.law.cornell.edu/supremecourt/text/438/104"},
+      {"label": "Oyez", "url": "https://www.oyez.org/cases/1977/77-444"},
+      {"label": "NYC Landmarks Preservation Commission", "url": "https://www.nyc.gov/site/lpc/index.page"}
+    ]
+  },
+  {
+    "id": "monell-v-dss",
+    "case_name": "Monell v. Department of Social Services of the City of New York",
+    "citation": "436 U.S. 658 (1978)",
+    "year_filed": 1971, "year_entered": 1978, "status": "scotus",
+    "agencies": ["HRA", "DOE"], "issue_area": "Civil Rights", "court": "U.S. Supreme Court",
+    "plaintiffs": "Jane Monell and a class of female NYC Department of Social Services and Board of Education employees forced to take unpaid maternity leaves before medically necessary",
+    "summary": "Female NYC employees sued under 42 U.S.C. § 1983 challenging compelled unpaid pregnancy leave. The Court overruled Monroe v. Pape's holding that municipalities are not 'persons' under § 1983 and held that local governments may be sued directly under § 1983 for constitutional violations caused by official policy or custom.",
+    "daily_effects": "NYC and every NYC agency can be sued directly for damages in federal court when an official policy, custom, or practice causes a constitutional injury. 'Monell claims' against the city are the legal foundation for every major NYC civil-rights case (Floyd, Nunez, Handschu, wrongful-conviction settlements). The city's Law Department defends and settles Monell claims constantly.",
+    "monitor": null,
+    "key_obligations": [
+      "Municipalities are 'persons' suable under 42 U.S.C. § 1983",
+      "Liability attaches only for constitutional violations caused by official policy or custom",
+      "No respondeat superior liability for individual employee torts alone",
+      "Policy may be established by lawmakers, policymakers, or persistent custom",
+      "Failure to train can constitute policy where it amounts to deliberate indifference"
+    ],
+    "holding": "Local governments are 'persons' subject to suit under 42 U.S.C. § 1983 when the alleged constitutional violation results from an official policy or custom.",
+    "vote": "7-2", "justice_authoring": "William J. Brennan Jr.",
+    "legacy": "Monell, born in NYC's Board of Education and Department of Social Services, created the entire field of municipal civil-rights liability nationwide and is the doctrinal engine behind every major NYC consent decree, settlement, and federal civil-rights judgment of the past half century.",
+    "links": [
+      {"label": "Opinion (Justia)", "url": "https://supreme.justia.com/cases/federal/us/436/658/"},
+      {"label": "Cornell LII", "url": "https://www.law.cornell.edu/supremecourt/text/436/658"},
+      {"label": "Oyez", "url": "https://www.oyez.org/cases/1977/75-1914"}
+    ]
+  },
+  {
+    "id": "nyc-transit-v-beazer",
+    "case_name": "New York City Transit Authority v. Beazer",
+    "citation": "440 U.S. 568 (1979)",
+    "year_filed": 1976, "year_entered": 1979, "status": "scotus",
+    "agencies": ["NYC Transit Authority"], "issue_area": "Employment Discrimination", "court": "U.S. Supreme Court",
+    "plaintiffs": "Carl Beazer and other methadone-maintenance patients denied employment by the NYC Transit Authority under its blanket rule excluding users of narcotics including methadone",
+    "summary": "Methadone users challenged the Transit Authority's blanket employment ban as a violation of Title VII (disparate impact on Black and Hispanic applicants) and the Equal Protection Clause. The Supreme Court reversed the Second Circuit and upheld the policy, finding the rule was rationally related to legitimate safety and efficiency concerns.",
+    "daily_effects": "The Transit Authority retained broad latitude to set medical and drug-related employment standards for safety-sensitive transit work, and the decision validated bright-line drug rules used by NYC transit, sanitation, and uniformed agencies for decades. Subsequent ADA and state human-rights amendments narrowed the practical reach but the constitutional baseline remains.",
+    "monitor": null,
+    "key_obligations": [
+      "Public employers may impose employment exclusions rationally related to safety",
+      "Disparate-impact plaintiffs must show statistically meaningful adverse effect on a protected class",
+      "Generalized public-safety rationales receive deference under rational-basis review",
+      "Employment policies need not be the least restrictive alternative"
+    ],
+    "holding": "The Transit Authority's exclusion of methadone users does not violate Title VII or the Equal Protection Clause.",
+    "vote": "6-3", "justice_authoring": "John Paul Stevens",
+    "legacy": "Beazer remains the leading case on the constitutionality of categorical medical-fitness rules for municipal employment and is cited whenever NYC agencies defend bright-line hiring standards for uniformed positions.",
+    "links": [
+      {"label": "Opinion (Justia)", "url": "https://supreme.justia.com/cases/federal/us/440/568/"},
+      {"label": "Oyez", "url": "https://www.oyez.org/cases/1978/77-1427"}
+    ]
+  },
+  {
+    "id": "caban-v-mohammed",
+    "case_name": "Caban v. Mohammed",
+    "citation": "441 U.S. 380 (1979)",
+    "year_filed": 1976, "year_entered": 1979, "status": "scotus",
+    "agencies": ["ACS"], "issue_area": "Child Welfare", "court": "U.S. Supreme Court",
+    "plaintiffs": "Abdiel Caban, an unwed father in New York whose children were adopted by their mother's new husband under a New York statute that required only the mother's consent",
+    "summary": "Caban challenged § 111 of the New York Domestic Relations Law, which permitted adoption over an unwed father's objection while requiring an unwed mother's consent. The Court struck down the statute as gender discrimination violating the Equal Protection Clause where the father had a substantial relationship with the children.",
+    "daily_effects": "NYC Family Court and ACS must give unwed fathers who have established a relationship with their children the same notice and consent rights as mothers in adoption and termination-of-parental-rights proceedings. ACS adoption units developed putative-father registries and notice procedures following the decision.",
+    "monitor": null,
+    "key_obligations": [
+      "Provide unwed fathers with a relationship to their children the same consent rights as mothers in adoption",
+      "Apply heightened scrutiny to gender-based distinctions in family law",
+      "Maintain procedures to identify and notify putative fathers",
+      "Equalize notice in termination-of-parental-rights proceedings"
+    ],
+    "holding": "New York's statute giving unwed mothers but not unwed fathers a veto over adoption of their children violates the Equal Protection Clause.",
+    "vote": "5-4", "justice_authoring": "Lewis F. Powell Jr.",
+    "legacy": "Caban reshaped NYC Family Court practice and ACS adoption protocols and remains a cornerstone of unwed-father jurisprudence cited in nearly every contested NYC adoption involving an unmarried biological parent.",
+    "links": [
+      {"label": "Opinion (Justia)", "url": "https://supreme.justia.com/cases/federal/us/441/380/"},
+      {"label": "Oyez", "url": "https://www.oyez.org/cases/1978/77-6431"}
+    ]
+  },
+  {
+    "id": "payton-v-new-york",
+    "case_name": "Payton v. New York",
+    "citation": "445 U.S. 573 (1980)",
+    "year_filed": 1970, "year_entered": 1980, "status": "scotus",
+    "agencies": ["NYPD"], "issue_area": "Policing", "court": "U.S. Supreme Court",
+    "plaintiffs": "Theodore Payton and Obie Riddick, arrested by NYPD officers who entered their Bronx and Queens homes without warrants under a New York statute authorizing warrantless felony arrests in the home",
+    "summary": "NYPD officers entered Payton's apartment without a warrant to arrest him for murder, and separately entered Riddick's home without a warrant. The Court struck down the New York statute, holding that the Fourth Amendment prohibits warrantless and nonconsensual entry into a suspect's home to make a routine felony arrest absent exigent circumstances.",
+    "daily_effects": "NYPD officers must obtain an arrest warrant (or have valid exigent circumstances or consent) before entering a private residence to arrest a suspect. The rule reshaped patrol and detective protocols citywide and is the constitutional baseline for every warrantless-entry suppression motion in NYC.",
+    "monitor": null,
+    "key_obligations": [
+      "Obtain an arrest warrant before non-exigent entry into a suspect's home",
+      "Document exigent circumstances when warrantless entry is necessary",
+      "Obtain valid consent before entering a third party's home (later Steagald)",
+      "Treat the threshold of the home as the constitutional bright line",
+      "Provide training on warrant requirements to all patrol officers"
+    ],
+    "holding": "The Fourth Amendment prohibits the police from making a warrantless and nonconsensual entry into a suspect's home to make a routine felony arrest.",
+    "vote": "6-3", "justice_authoring": "John Paul Stevens",
+    "legacy": "Payton is one of the most operationally consequential Fourth Amendment decisions for NYPD and changed the way home arrests are made in the five boroughs. It is invoked in suppression hearings throughout NYC criminal court daily.",
+    "links": [
+      {"label": "Opinion (Justia)", "url": "https://supreme.justia.com/cases/federal/us/445/573/"},
+      {"label": "Oyez", "url": "https://www.oyez.org/cases/1979/78-5420"}
+    ]
+  },
+  {
+    "id": "new-york-v-belton",
+    "case_name": "New York v. Belton",
+    "citation": "453 U.S. 454 (1981)",
+    "year_filed": 1978, "year_entered": 1981, "status": "scotus",
+    "agencies": ["NYPD"], "issue_area": "Policing", "court": "U.S. Supreme Court",
+    "plaintiffs": "State of New York appealing the suppression of cocaine found by a state trooper in a jacket pocket inside a car after arresting Roger Belton",
+    "summary": "The Court created a bright-line rule that when a police officer makes a lawful custodial arrest of a vehicle occupant, the officer may search the passenger compartment and any containers found there as a contemporaneous incident of arrest. The decision dramatically expanded vehicle search authority for two decades.",
+    "daily_effects": "For 28 years NYPD officers routinely searched the passenger compartments and containers of vehicles after any custodial arrest. The rule was sharply narrowed in 2009 by Arizona v. Gant, which now governs NYPD vehicle searches incident to arrest in the five boroughs, though Belton's basic framework survives.",
+    "monitor": null,
+    "key_obligations": [
+      "Officers may search the passenger compartment of a vehicle incident to lawful arrest of an occupant",
+      "Containers within the passenger compartment may be opened during such searches",
+      "Bright-line rule (until Gant) applied regardless of whether arrestee retained access to the vehicle",
+      "Trunk searches require separate justification",
+      "Lawfulness depends on the arrest being valid"
+    ],
+    "holding": "When a police officer makes a lawful custodial arrest of an occupant of an automobile, the officer may search the passenger compartment as a contemporaneous incident of arrest.",
+    "vote": "6-3", "justice_authoring": "Potter Stewart",
+    "legacy": "Belton remains the doctrinal anchor for NYPD vehicle searches, though Arizona v. Gant (2009) limited the operational scope to circumstances where the arrestee can still reach the vehicle or police have reason to believe it contains evidence of the offense of arrest.",
+    "links": [
+      {"label": "Opinion (Justia)", "url": "https://supreme.justia.com/cases/federal/us/453/454/"},
+      {"label": "Oyez", "url": "https://www.oyez.org/cases/1980/80-328"}
+    ]
+  },
+  {
+    "id": "loretto-v-teleprompter",
+    "case_name": "Loretto v. Teleprompter Manhattan CATV Corp.",
+    "citation": "458 U.S. 419 (1982)",
+    "year_filed": 1976, "year_entered": 1982, "status": "scotus",
+    "agencies": ["DoITT", "DCWP"], "issue_area": "Land Use / Takings", "court": "U.S. Supreme Court",
+    "plaintiffs": "Jean Loretto, owner of a Manhattan apartment building on which Teleprompter installed cable equipment pursuant to a New York law prohibiting landlords from interfering with cable installation",
+    "summary": "A New York law authorized cable operators to install equipment on apartment buildings and barred landlords from charging more than a nominal fee. The Court held that any permanent physical occupation of property authorized by government, however minor, constitutes a per se taking requiring just compensation.",
+    "daily_effects": "NYC agencies that authorize permanent physical occupation of private property (cable, telecom equipment, small-cell wireless, etc.) must provide compensation. The rule shapes how the city structures utility and cable installations on private buildings citywide.",
+    "monitor": null,
+    "key_obligations": [
+      "Any permanent physical occupation of private property is a per se taking",
+      "Triviality of the occupation does not defeat the takings claim",
+      "Just compensation must be paid even for de minimis physical invasions",
+      "Temporary access regulations are evaluated under different (Penn Central) standard",
+      "State and city statutes authorizing private occupation must provide compensation mechanism"
+    ],
+    "holding": "A permanent physical occupation of private property authorized by government is a per se taking requiring just compensation, regardless of the public interest it serves or the size of the occupation.",
+    "vote": "6-3", "justice_authoring": "Thurgood Marshall",
+    "legacy": "Loretto, born in a Manhattan apartment-building dispute, established the per-se physical-takings rule that constrains NYC's authority to mandate physical installations on private property. Invoked in every modern small-cell wireless siting and cable-franchise dispute in the city.",
+    "links": [
+      {"label": "Opinion (Justia)", "url": "https://supreme.justia.com/cases/federal/us/458/419/"},
+      {"label": "Oyez", "url": "https://www.oyez.org/cases/1981/81-244"}
+    ]
+  },
+  {
+    "id": "new-york-v-ferber",
+    "case_name": "New York v. Ferber",
+    "citation": "458 U.S. 747 (1982)",
+    "year_filed": 1978, "year_entered": 1982, "status": "scotus",
+    "agencies": ["NYPD", "Manhattan DA"], "issue_area": "Free Speech", "court": "U.S. Supreme Court",
+    "plaintiffs": "State of New York appealing the reversal of Paul Ferber's Manhattan conviction under a New York statute criminalizing the promotion of sexual performances by children under 16",
+    "summary": "Ferber, the owner of a Manhattan bookstore, was prosecuted under NY Penal Law § 263.15 for selling films depicting underage boys. The Court upheld the statute, holding that child pornography is a category of speech outside First Amendment protection and that states may ban its production, distribution, and sale without satisfying the Miller obscenity test.",
+    "daily_effects": "NYPD's Vice Enforcement and Special Victims units and NYC borough DAs may prosecute production, distribution, and possession of child sexual abuse material under New York Penal Law without proving it meets the Miller obscenity test. The decision is the foundation of NYC's child-exploitation enforcement.",
+    "monitor": null,
+    "key_obligations": [
+      "Child sexual abuse material is unprotected speech",
+      "Statutes need not require obscenity findings to be constitutional",
+      "Production and distribution may both be criminalized",
+      "Material involving real minors falls outside First Amendment protection",
+      "Strict scienter requirements still apply to defendants"
+    ],
+    "holding": "States may prohibit the distribution of material depicting children engaged in sexual conduct without violating the First Amendment, even if the material is not legally obscene.",
+    "vote": "9-0", "justice_authoring": "Byron R. White",
+    "legacy": "Ferber, originating in a Manhattan prosecution, established the nationwide constitutional framework for child-exploitation enforcement and remains the legal foundation of every NYPD and DA prosecution of CSAM in New York City.",
+    "links": [
+      {"label": "Opinion (Justia)", "url": "https://supreme.justia.com/cases/federal/us/458/747/"},
+      {"label": "Oyez", "url": "https://www.oyez.org/cases/1981/81-55"}
+    ]
+  },
+  {
+    "id": "new-york-v-quarles",
+    "case_name": "New York v. Quarles",
+    "citation": "467 U.S. 649 (1984)",
+    "year_filed": 1980, "year_entered": 1984, "status": "scotus",
+    "agencies": ["NYPD"], "issue_area": "Policing", "court": "U.S. Supreme Court",
+    "plaintiffs": "State of New York appealing the suppression of statements and a firearm obtained after NYPD officers in a Queens supermarket asked Benjamin Quarles 'where is the gun?' before reading him Miranda warnings",
+    "summary": "After chasing Quarles into an A&P in Queens and finding an empty shoulder holster, an NYPD officer asked where the gun was before any Miranda warnings; Quarles gestured to a carton. The Court created the 'public safety exception' to Miranda, holding that officers may question a suspect without warnings when there is an objectively reasonable need to protect police or the public from immediate danger.",
+    "daily_effects": "NYPD patrol officers may ask limited, narrowly tailored questions about weapons or imminent threats before administering Miranda warnings, and the answers and derivative physical evidence are admissible at trial. The exception is invoked in NYC firearms arrests, terrorism investigations, and active-shooter situations.",
+    "monitor": null,
+    "key_obligations": [
+      "Officers may question suspects without Miranda warnings when public safety is at immediate risk",
+      "Questions must be objectively reasonable as necessary to neutralize the threat",
+      "Statements and derivative physical evidence are admissible",
+      "Exception is narrow and ends once the safety threat is contained",
+      "Standard scope of post-Miranda interrogation resumes thereafter"
+    ],
+    "holding": "Overriding considerations of public safety justify an officer's failure to provide Miranda warnings before asking questions necessary to secure his own safety or the safety of the public.",
+    "vote": "5-4", "justice_authoring": "William H. Rehnquist",
+    "legacy": "The Quarles public-safety exception is invoked by NYPD detectives in firearms cases and was famously cited by federal authorities to question the Boston Marathon bomber. It remains a routine fixture of NYC firearms-arrest interrogations.",
+    "links": [
+      {"label": "Opinion (Justia)", "url": "https://supreme.justia.com/cases/federal/us/467/649/"},
+      {"label": "Oyez", "url": "https://www.oyez.org/cases/1983/82-1213"}
+    ]
+  },
+  {
+    "id": "new-york-v-class",
+    "case_name": "New York v. Class",
+    "citation": "475 U.S. 106 (1986)",
+    "year_filed": 1981, "year_entered": 1986, "status": "scotus",
+    "agencies": ["NYPD"], "issue_area": "Policing", "court": "U.S. Supreme Court",
+    "plaintiffs": "State of New York appealing the suppression of a gun found by NYPD officers who reached into a car to clear papers off the dashboard to read the VIN",
+    "summary": "After stopping Class for traffic violations in the Bronx, an NYPD officer opened the car door and reached in to move papers obscuring the VIN, exposing a handgun under the driver's seat. The Court held the limited VIN-area intrusion did not violate the Fourth Amendment because there is no reasonable expectation of privacy in a VIN federal law requires to be visible from outside the vehicle.",
+    "daily_effects": "NYPD officers conducting traffic stops may reach into a vehicle's passenger compartment to view the VIN when it is obscured from outside, and any contraband in plain view during that limited intrusion is admissible. The rule shapes NYPD vehicle-stop protocol.",
+    "monitor": null,
+    "key_obligations": [
+      "No reasonable expectation of privacy exists in a vehicle's VIN",
+      "Officers may make limited intrusion into a vehicle to view a hidden VIN",
+      "Plain-view evidence observed during the VIN inspection is admissible",
+      "Intrusion must be narrowly tailored to viewing the VIN",
+      "Traffic stop must be lawful in the first instance"
+    ],
+    "holding": "A police officer's reaching into a passenger compartment to move papers obscuring the VIN does not violate the Fourth Amendment.",
+    "vote": "7-2", "justice_authoring": "Sandra Day O'Connor",
+    "legacy": "Class remains the controlling authority for NYPD VIN inspections during vehicle stops and is routinely cited in NYC traffic-stop suppression motions.",
+    "links": [
+      {"label": "Opinion (Justia)", "url": "https://supreme.justia.com/cases/federal/us/475/106/"},
+      {"label": "Oyez", "url": "https://www.oyez.org/cases/1985/84-1181"}
+    ]
+  },
+  {
+    "id": "new-york-v-burger",
+    "case_name": "New York v. Burger",
+    "citation": "482 U.S. 691 (1987)",
+    "year_filed": 1982, "year_entered": 1987, "status": "scotus",
+    "agencies": ["NYPD"], "issue_area": "Policing", "court": "U.S. Supreme Court",
+    "plaintiffs": "State of New York appealing suppression of stolen vehicles and parts seized by NYPD officers during a warrantless administrative inspection of a Brooklyn auto junkyard",
+    "summary": "NYPD's auto-crimes division conducted a warrantless inspection of a Brooklyn vehicle-dismantling yard and found stolen vehicles. The Court held the warrantless administrative inspection scheme constitutional because the junkyard industry is closely regulated, the inspections served a substantial state interest, and the statute provided an adequate substitute for a warrant.",
+    "daily_effects": "NYPD and DCWP can conduct warrantless administrative inspections of closely regulated NYC businesses (junkyards, pawn shops, scrap-metal dealers, certain liquor establishments). Inspectors may seize evidence of criminality found during a proper administrative inspection.",
+    "monitor": null,
+    "key_obligations": [
+      "Warrantless administrative inspections of closely regulated industries are permissible",
+      "The regulatory scheme must serve a substantial government interest",
+      "Inspections must be necessary to further the regulatory scheme",
+      "The statute must limit the discretion of inspecting officers in time, place, and scope",
+      "Evidence of crime discovered during proper inspection may be seized"
+    ],
+    "holding": "A warrantless inspection of a vehicle-dismantling business pursuant to a closely-regulated-industry statute does not violate the Fourth Amendment.",
+    "vote": "6-3", "justice_authoring": "Harry Blackmun",
+    "legacy": "Burger is the foundational authority for NYPD and city administrative inspections of regulated trades and is routinely cited whenever NYC inspectors enter pawn shops, scrap dealers, or other closely-regulated businesses without a warrant.",
+    "links": [
+      {"label": "Opinion (Justia)", "url": "https://supreme.justia.com/cases/federal/us/482/691/"},
+      {"label": "Oyez", "url": "https://www.oyez.org/cases/1986/86-80"}
+    ]
+  },
+  {
+    "id": "nys-club-assn-v-nyc",
+    "case_name": "New York State Club Association v. City of New York",
+    "citation": "487 U.S. 1 (1988)",
+    "year_filed": 1984, "year_entered": 1988, "status": "scotus",
+    "agencies": ["NYC Commission on Human Rights"], "issue_area": "Civil Rights", "court": "U.S. Supreme Court",
+    "plaintiffs": "New York State Club Association challenging NYC Local Law 63 (1984), which extended the city's public-accommodations anti-discrimination ban to large private clubs with more than 400 members",
+    "summary": "The Club Association argued the ordinance violated members' First Amendment freedom of association and was unconstitutionally vague. The Court unanimously upheld the law, holding the city's interest in eradicating discrimination justified the modest burden on associational rights.",
+    "daily_effects": "The NYC Commission on Human Rights enforces the public-accommodations ban against large private clubs (University, Century, Knickerbocker, NY Athletic Club, etc.) opening membership and event attendance to women and people of color. The decision underwrites all subsequent NYC Human Rights Law expansion into private memberships.",
+    "monitor": null,
+    "key_obligations": [
+      "Anti-discrimination laws may reach large private clubs that function as places of business",
+      "Facial First Amendment challenges to anti-discrimination laws face high bar",
+      "Membership thresholds (400+) plus commercial activity remove 'distinctly private' status",
+      "Cities may define public accommodations broadly within state authority",
+      "Vagueness challenges fail where the ordinance gives reasonable notice of covered conduct"
+    ],
+    "holding": "NYC Local Law 63 extending the public-accommodations anti-discrimination law to large private clubs does not on its face violate the First Amendment or the Due Process Clause.",
+    "vote": "9-0", "justice_authoring": "Byron R. White",
+    "legacy": "The decision desegregated NYC's elite private clubs and remains the constitutional backbone of NYC Human Rights Law enforcement against large private membership organizations.",
+    "links": [
+      {"label": "Opinion (Justia)", "url": "https://supreme.justia.com/cases/federal/us/487/1/"},
+      {"label": "Oyez", "url": "https://www.oyez.org/cases/1987/86-1836"}
+    ]
+  },
+  {
+    "id": "new-york-v-harris",
+    "case_name": "New York v. Harris",
+    "citation": "495 U.S. 14 (1990)",
+    "year_filed": 1984, "year_entered": 1990, "status": "scotus",
+    "agencies": ["NYPD"], "issue_area": "Policing", "court": "U.S. Supreme Court",
+    "plaintiffs": "State of New York appealing suppression of a Mirandized stationhouse confession by Bernard Harris, arrested in his Manhattan apartment by NYPD without a warrant in violation of Payton",
+    "summary": "NYPD entered Harris's home without a warrant in violation of Payton, then took a confession at the stationhouse after Miranda warnings. The Court held that, where police have probable cause, a stationhouse statement following a Payton violation is not subject to suppression because Payton protects the home, not statements made elsewhere after the suspect is in lawful custody.",
+    "daily_effects": "NYPD warrantless home entries that violate Payton still expose the agency to civil liability and home-found evidence remains suppressed, but a subsequent stationhouse confession after Miranda warnings is admissible at trial.",
+    "monitor": null,
+    "key_obligations": [
+      "Payton suppresses evidence found inside the home during a warrantless arrest",
+      "Stationhouse statements made after Miranda warnings are not subject to Payton suppression",
+      "Probable cause to arrest must precede any home entry",
+      "NYPD remains liable under § 1983 for Payton violations",
+      "Custody following lawful probable cause is not 'unlawful' for derivative-evidence purposes"
+    ],
+    "holding": "Where police have probable cause to arrest, a stationhouse statement taken after Miranda warnings need not be suppressed even though it followed a Payton violation in the home.",
+    "vote": "5-4", "justice_authoring": "Byron R. White",
+    "legacy": "Harris together with Payton shaped a generation of NYPD home-arrest practice and remains a daily fixture of NYC criminal motion practice on suppression of post-arrest statements.",
+    "links": [
+      {"label": "Opinion (Justia)", "url": "https://supreme.justia.com/cases/federal/us/495/14/"},
+      {"label": "Oyez", "url": "https://www.oyez.org/cases/1989/88-1000"}
+    ]
+  },
+  {
+    "id": "florence-v-burlington",
+    "case_name": "Florence v. Board of Chosen Freeholders of County of Burlington",
+    "citation": "566 U.S. 318 (2012)",
+    "year_filed": 2005, "year_entered": 2012, "status": "scotus",
+    "agencies": ["DOC"], "issue_area": "Jails/Corrections", "court": "U.S. Supreme Court",
+    "plaintiffs": "Albert Florence, a New Jersey resident strip-searched at two county jails after a wrongful warrant arrest (NJ case, included for direct NYC operational consequence)",
+    "summary": "Florence sued after being strip-searched on intake at two NJ jails for a minor offense. The Court held that jail officials may conduct suspicionless visual strip searches of all arrestees admitted to general population, regardless of offense severity, deferring to correctional officials' safety judgments.",
+    "daily_effects": "DOC may continue suspicionless strip searches of all detainees being admitted to general population at Rikers and other city jails, including those arrested on minor offenses. The decision overturned more protective lower-court rules; New York State and city policy and Nunez monitoring impose additional restrictions but the constitutional floor is set by Florence.",
+    "monitor": null,
+    "key_obligations": [
+      "Jails may conduct visual strip searches of all general-population admittees without individualized suspicion",
+      "Constitutional standard defers heavily to correctional officials",
+      "Severity of underlying offense does not change Fourth Amendment analysis",
+      "Cavity searches and physical contact remain subject to greater scrutiny",
+      "State/local law and consent decrees may impose stricter limits"
+    ],
+    "holding": "Jail officials may conduct suspicionless visual strip searches of all arrestees admitted to general population without violating the Fourth Amendment.",
+    "vote": "5-4", "justice_authoring": "Anthony Kennedy",
+    "legacy": "Florence sets the Fourth Amendment floor for DOC intake searches at Rikers and remains the operative authority on strip-search lawsuits arising from NYC jail admissions, though state law and the Nunez federal monitorship add additional protections.",
+    "links": [
+      {"label": "Opinion (Justia)", "url": "https://supreme.justia.com/cases/federal/us/566/318/"},
+      {"label": "Oyez", "url": "https://www.oyez.org/cases/2011/10-945"}
+    ]
+  },
+  {
+    "id": "trump-v-vance",
+    "case_name": "Trump v. Vance",
+    "citation": "591 U.S. 786 (2020)",
+    "year_filed": 2019, "year_entered": 2020, "status": "scotus",
+    "agencies": ["Manhattan DA"], "issue_area": "Criminal Procedure", "court": "U.S. Supreme Court",
+    "plaintiffs": "President Donald J. Trump challenging a grand jury subpoena issued by Manhattan District Attorney Cyrus Vance Jr. to Trump's accountants for personal and corporate financial records",
+    "summary": "The Manhattan DA's grand jury subpoenaed Trump's accounting firm for financial records. The Court rejected Trump's claim of absolute presidential immunity from state criminal process, holding that Article II and the Supremacy Clause do not categorically bar a state grand jury subpoena for a sitting president's personal records.",
+    "daily_effects": "The Manhattan DA (and by extension all five NYC borough DAs) retains full authority to use grand jury process to obtain records from sitting federal officials, including the president, subject to ordinary procedural protections. The case enabled the eventual Manhattan prosecution of Trump.",
+    "monitor": null,
+    "key_obligations": [
+      "A sitting president is not categorically immune from state grand jury process",
+      "Subpoenas remain subject to ordinary state-law procedural protections",
+      "No heightened need standard applies to state grand jury subpoenas",
+      "Federal officials may raise subpoena-specific challenges (overbreadth, bad faith)",
+      "State criminal investigations may proceed in parallel with federal litigation"
+    ],
+    "holding": "Article II and the Supremacy Clause do not categorically preclude or require a heightened need standard for issuance of a state criminal subpoena to a sitting president.",
+    "vote": "7-2", "justice_authoring": "John G. Roberts Jr.",
+    "legacy": "Trump v. Vance cleared the path for the Manhattan DA's investigation of Trump that produced the 2023-2024 indictment and 2024 conviction. It permanently expanded the operational reach of NYC borough DAs in investigating sitting federal officials.",
+    "links": [
+      {"label": "Opinion (Justia)", "url": "https://supreme.justia.com/cases/federal/us/591/19-635/"},
+      {"label": "Oyez", "url": "https://www.oyez.org/cases/2019/19-635"}
+    ]
+  },
+  {
+    "id": "nysrpa-v-bruen",
+    "case_name": "New York State Rifle & Pistol Association v. Bruen",
+    "citation": "597 U.S. 1 (2022)",
+    "year_filed": 2018, "year_entered": 2022, "status": "scotus",
+    "agencies": ["NYPD"], "issue_area": "Second Amendment", "court": "U.S. Supreme Court",
+    "plaintiffs": "NY State Rifle & Pistol Association and two individuals denied unrestricted concealed-carry licenses under New York's 1913 Sullivan Law 'proper cause' requirement",
+    "summary": "Plaintiffs challenged the New York concealed-carry licensing scheme that required applicants to demonstrate 'proper cause' (a special need for self-protection distinguishable from the general community). The Court struck down the proper-cause standard and announced a new 'text, history, and tradition' test, holding the Second Amendment protects the right to carry a handgun in public for self-defense.",
+    "daily_effects": "The NYPD License Division must issue concealed-carry permits to applicants who meet objective criteria (age, training, no disqualifying record) without requiring a showing of special need. Approval volume rose dramatically post-Bruen; New York responded with the Concealed Carry Improvement Act creating 'sensitive locations' where carry remains prohibited, and the NYPD adapted its licensing forms, training requirements, and background-check procedures.",
+    "monitor": null,
+    "key_obligations": [
+      "Issue concealed-carry permits on objective shall-issue criteria",
+      "Eliminate 'proper cause' subjective discretion in licensing",
+      "Apply text-history-tradition analysis to all NYC firearms regulations",
+      "Maintain 'sensitive places' enforcement under CCIA",
+      "Provide training, background-check, and character review consistent with shall-issue framework"
+    ],
+    "holding": "New York's requirement that concealed-carry applicants show 'proper cause' violates the Second and Fourteenth Amendments.",
+    "vote": "6-3", "justice_authoring": "Clarence Thomas",
+    "legacy": "Bruen transformed NYPD License Division operations and triggered ongoing litigation over the state's Concealed Carry Improvement Act. It is the most operationally consequential firearms ruling for NYC in a century, ending the Sullivan Law's century-old discretionary regime.",
+    "links": [
+      {"label": "Opinion (Justia)", "url": "https://supreme.justia.com/cases/federal/us/597/20-843/"},
+      {"label": "Oyez", "url": "https://www.oyez.org/cases/2021/20-843"},
+      {"label": "NYPD License Division", "url": "https://www.nyc.gov/site/nypd/services/permits/handgun-rifle-shotgun-permits.page"}
+    ]
+  },
+  {
+    "id": "williams-v-new-york",
+    "case_name": "Williams v. New York",
+    "citation": "337 U.S. 241 (1949)",
+    "year_filed": 1947, "year_entered": 1949, "status": "scotus",
+    "agencies": ["NYC Dept. of Probation"], "issue_area": "Criminal Procedure", "court": "U.S. Supreme Court",
+    "plaintiffs": "Samuel Tito Williams, convicted of murder in NYC and sentenced to death by a Kings County judge who relied on a probation officer's pre-sentence report containing information not introduced at trial",
+    "summary": "After a Brooklyn jury recommended life, the trial judge imposed a death sentence based on a pre-sentence report containing hearsay about uncharged conduct. The Court upheld the sentencing procedure, holding that a judge at sentencing may consider information from sources not subject to confrontation or cross-examination so long as the procedure is otherwise fair.",
+    "daily_effects": "NYC criminal court judges sentencing defendants may consider pre-sentence investigation reports, victim impact statements, and other extra-record information without strict evidentiary safeguards at the sentencing phase. The rule shaped NYC Department of Probation pre-sentence practice and continues to govern non-capital sentencing.",
+    "monitor": null,
+    "key_obligations": [
+      "Sentencing judges may consider information beyond the trial record",
+      "Confrontation Clause does not apply with full force at sentencing",
+      "Pre-sentence reports may include hearsay and uncharged conduct",
+      "Defendants must have opportunity to deny or explain adverse information",
+      "Capital sentencing has since been narrowed by later cases"
+    ],
+    "holding": "The Due Process Clause does not require that information considered by the sentencing judge be subject to confrontation and cross-examination.",
+    "vote": "7-2", "justice_authoring": "Hugo L. Black",
+    "legacy": "Williams remains the foundation of modern individualized sentencing and shaped NYC Department of Probation's pre-sentence report procedures used in every criminal sentencing in NYC Supreme and Criminal Court.",
+    "links": [
+      {"label": "Opinion (Justia)", "url": "https://supreme.justia.com/cases/federal/us/337/241/"},
+      {"label": "Oyez", "url": "https://www.oyez.org/cases/1948/671"}
     ]
   }
 ];

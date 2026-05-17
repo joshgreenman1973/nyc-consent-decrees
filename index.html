@@ -249,6 +249,7 @@ select {
 .tag-status.terminated-recent { background: var(--slate); color: white; }
 .tag-status.pending { background: var(--navy-mid); color: white; }
 .tag-status.historical { background: #5d4e36; color: white; }
+.tag-status.scotus { background: #6b1d1d; color: white; }
 
 /* TABS */
 .tabs {
@@ -512,6 +513,7 @@ select {
     <button class="tab active" data-category="current">Currently in force <span class="tab-count" id="count-current">0</span></button>
     <button class="tab" data-category="pending">Pending &amp; on the horizon <span class="tab-count" id="count-pending">0</span></button>
     <button class="tab" data-category="historical">Historical &amp; resolved <span class="tab-count" id="count-historical">0</span></button>
+    <button class="tab" data-category="scotus">U.S. Supreme Court <span class="tab-count" id="count-scotus">0</span></button>
   </div>
 </nav>
 
@@ -552,7 +554,7 @@ select {
   </div>
 </footer>
 
-<script src="data.js?v=20260517"></script>
+<script src="data.js?v=20260517b"></script>
 <script>
 // Merge judge data into decree entries
 DECREES.forEach(d => {
@@ -567,12 +569,14 @@ const STATUS_LABEL = {
   'in-modification': 'In modification',
   'terminated-recent': 'Recently terminated',
   'pending': 'Pending',
-  'historical': 'Historical'
+  'historical': 'Historical',
+  'scotus': 'Supreme Court'
 };
 const TAB_INTRO = {
   'current': 'Standing court orders, monitorships, and settlements that constrain New York City agencies as of 2026. Each card opens a plain-language explainer with sources.',
   'pending': 'Active litigation and federal investigations that may produce new consent decrees, settlements, or court-ordered relief in the next 6 to 36 months. Posture as of late 2025 / early 2026.',
-  'historical': 'Foundational New York City decrees that have been formally terminated or fully superseded but whose reforms remain embedded in how agencies operate today.'
+  'historical': 'Foundational New York City decrees that have been formally terminated or fully superseded but whose reforms remain embedded in how agencies operate today.',
+  'scotus': 'U.S. Supreme Court decisions that originated in or directly shaped how a New York City agency must operate — from welfare due process to stop-and-frisk to landmark preservation to firearms licensing.'
 };
 
 const state = { category: 'current', search: '', agency: '', issue: '', status: '' };
@@ -580,9 +584,10 @@ const state = { category: 'current', search: '', agency: '', issue: '', status: 
 function uniqueSorted(arr) { return [...new Set(arr)].sort(); }
 
 function inCategory(d, cat) {
-  if (cat === 'current') return !['pending','historical','terminated-recent'].includes(d.status);
+  if (cat === 'current') return !['pending','historical','terminated-recent','scotus'].includes(d.status);
   if (cat === 'pending') return d.status === 'pending';
   if (cat === 'historical') return d.status === 'historical' || d.status === 'terminated-recent';
+  if (cat === 'scotus') return d.status === 'scotus';
   return true;
 }
 
@@ -615,6 +620,14 @@ function buildStats() {
       [total, 'Pending matters'],
       [agencies, 'NYC agencies potentially affected']
     ];
+  } else if (state.category === 'scotus') {
+    const oldest = Math.min(...pool.map(d => d.year_entered || 9999).filter(y => y < 9999));
+    const newest = Math.max(...pool.map(d => d.year_entered || 0));
+    stats = [
+      [total, 'Supreme Court decisions'],
+      [agencies, 'NYC agencies shaped'],
+      [`${oldest === Infinity ? '—' : oldest}–${newest || '—'}`, 'Span']
+    ];
   } else {
     const oldest = Math.min(...pool.map(d => d.year_entered || 9999).filter(y => y < 9999));
     stats = [
@@ -628,7 +641,7 @@ function buildStats() {
   ).join('');
 
   // Update tab counts
-  ['current','pending','historical'].forEach(cat => {
+  ['current','pending','historical','scotus'].forEach(cat => {
     const el = document.getElementById('count-' + cat);
     if (el) el.textContent = DECREES.filter(d => inCategory(d, cat)).length;
   });
@@ -662,11 +675,13 @@ function renderGrid() {
   }
   grid.innerHTML = filtered.map(d => {
     let cite = d.citation || '';
-    if (d.status === 'pending' && d.year_filed) cite += ' &middot; filed ' + d.year_filed;
+    if (d.status === 'scotus') { /* citation already includes year */ }
+    else if (d.status === 'pending' && d.year_filed) cite += ' &middot; filed ' + d.year_filed;
     else if (d.status === 'historical' && d.year_entered) cite += ' &middot; ' + d.year_entered + (d.year_terminated ? '–' + d.year_terminated : '');
     else if (d.year_entered) cite += ' &middot; entered ' + d.year_entered;
     let footL = d.court || '';
-    if (d.status === 'pending' && d.expected_resolution) footL = d.expected_resolution;
+    if (d.status === 'scotus' && d.justice_authoring) footL = 'Opinion: ' + d.justice_authoring + (d.vote ? ' (' + d.vote + ')' : '');
+    else if (d.status === 'pending' && d.expected_resolution) footL = d.expected_resolution;
     else if (d.monitor) footL = 'Monitor: ' + d.monitor.split(',')[0];
     return `
     <article class="card" data-id="${d.id}">
@@ -701,10 +716,12 @@ function openModal(id) {
     <div class="modal-citation">${d.citation || ''}${d.court ? ' &middot; ' + d.court : ''}</div>
 
     <div class="modal-meta-grid">
-      ${d.year_filed ? `<div class="meta-item"><div class="meta-label">Filed</div><div class="meta-value">${d.year_filed}</div></div>` : ''}
-      ${d.year_entered ? `<div class="meta-item"><div class="meta-label">${d.status === 'historical' ? 'Decree entered' : 'Decree entered'}</div><div class="meta-value">${d.year_entered}</div></div>` : ''}
+      ${d.year_filed ? `<div class="meta-item"><div class="meta-label">${d.status === 'scotus' ? 'NYC action filed' : 'Filed'}</div><div class="meta-value">${d.year_filed}</div></div>` : ''}
+      ${d.year_entered ? `<div class="meta-item"><div class="meta-label">${d.status === 'scotus' ? 'Decided' : 'Decree entered'}</div><div class="meta-value">${d.year_entered}</div></div>` : ''}
       ${d.year_terminated ? `<div class="meta-item"><div class="meta-label">Terminated</div><div class="meta-value">${d.year_terminated}</div></div>` : ''}
       ${d.expected_resolution ? `<div class="meta-item"><div class="meta-label">Posture</div><div class="meta-value">${d.expected_resolution}</div></div>` : ''}
+      ${d.justice_authoring ? `<div class="meta-item"><div class="meta-label">Majority opinion by</div><div class="meta-value">${d.justice_authoring}</div></div>` : ''}
+      ${d.vote ? `<div class="meta-item"><div class="meta-label">Vote</div><div class="meta-value">${d.vote}</div></div>` : ''}
       ${d.judge ? `<div class="meta-item"><div class="meta-label">Presiding judge</div><div class="meta-value">${d.judge}${d.judge_note ? ' <span style="color:var(--slate); font-weight:400; font-size:0.78rem;">(' + d.judge_note + ')</span>' : ''}</div></div>` : ''}
       ${d.court && !d.judge ? `<div class="meta-item"><div class="meta-label">Court</div><div class="meta-value">${d.court}</div></div>` : ''}
       ${d.monitor ? `<div class="meta-item"><div class="meta-label">Monitor / oversight</div><div class="meta-value">${d.monitor}</div></div>` : ''}
@@ -712,13 +729,19 @@ function openModal(id) {
     </div>
 
     <div class="modal-section">
-      <h4>${d.status === 'pending' ? 'What the case alleges' : 'What the case is about'}</h4>
+      <h4>${d.status === 'pending' ? 'What the case alleges' : (d.status === 'scotus' ? 'The case' : 'What the case is about')}</h4>
       <p>${d.summary || ''}</p>
     </div>
 
+    ${d.holding ? `
+    <div class="modal-section">
+      <h4>The holding</h4>
+      <p><em>${d.holding}</em></p>
+    </div>` : ''}
+
     ${d.daily_effects ? `
     <div class="modal-section">
-      <h4>${d.status === 'pending' ? 'What relief is being sought' : (d.status === 'historical' ? 'What it changed' : 'What it changes day-to-day')}</h4>
+      <h4>${d.status === 'pending' ? 'What relief is being sought' : (d.status === 'historical' || d.status === 'scotus' ? 'What it changed' : 'What it changes day-to-day')}</h4>
       <p>${d.daily_effects}</p>
     </div>` : ''}
 
