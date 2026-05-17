@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Methodology — Consent decrees on New York City government</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400&display=swap');
+:root {
+  --navy: #0a1628; --ink: #0d1b2a; --cream: #f5f0e8; --parchment: #faf7f2;
+  --gold: #c8a43a; --red: #c23b22; --slate: #64748b; --rule: rgba(10,22,40,0.15);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Source Serif 4', Georgia, serif; background: var(--parchment); color: var(--ink); line-height: 1.65; }
+.header { background: var(--navy); color: var(--cream); padding: 2.5rem 1.5rem; border-bottom: 3px solid var(--gold); text-align: center; }
+.kicker { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+.header h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; }
+.back-link { display: inline-block; margin-top: 1rem; color: var(--cream); text-decoration: underline; text-decoration-color: var(--gold); font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; }
+main { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; margin: 2.25rem 0 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule); }
+h2:first-of-type { margin-top: 0; }
+h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; margin: 1.25rem 0 0.5rem; }
+p { margin-bottom: 0.9rem; font-size: 1.02rem; }
+ul, ol { margin: 0 0 1rem 1.5rem; }
+li { margin-bottom: 0.4rem; }
+a { color: var(--navy); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
+a:hover { color: var(--red); }
+code, .acronym {
+  font-family: 'JetBrains Mono', monospace;
+  background: var(--cream); padding: 0.05rem 0.35rem;
+  font-size: 0.85em; border: 1px solid var(--rule);
+}
+.gloss { display: grid; grid-template-columns: max-content 1fr; gap: 0.5rem 1rem; margin: 1rem 0; }
+.gloss dt { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; font-weight: 600; }
+.gloss dd { font-size: 0.95rem; }
+.callout { background: var(--cream); border-left: 4px solid var(--gold); padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 0.95rem; }
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="kicker">How this database was built</div>
+  <h1>Methodology, sources, and limits</h1>
+  <a href="index.html" class="back-link">&larr; Back to the database</a>
+</header>
+
+<main>
+
+<h2>What this is</h2>
+<p>This is a hand-curated, public-facing inventory of the consent decrees, court-ordered settlements, and federal monitorships that currently constrain how New York City government agencies operate. Every entry is sourced. Nothing here is generated from a black-box list.</p>
+
+<h2>What counts as a "consent decree" here</h2>
+<p>The term is used broadly. The database includes:</p>
+<ul>
+  <li><strong>True consent decrees</strong> &mdash; court-approved settlements entered as binding court orders, where a judge retains jurisdiction to enforce compliance (e.g., Nunez, Floyd, Handschu).</li>
+  <li><strong>Court-enforced settlement agreements</strong> &mdash; settlements that operate as judgments but may not formally carry the "consent decree" label (e.g., the 2019 NYCHA / HUD Agreement, the 2023 NYPD protest settlement).</li>
+  <li><strong>Stipulated injunctions and permanent injunctions</strong> arising from class-action liability findings (e.g., Willowbrook's 1993 Permanent Injunction).</li>
+  <li><strong>Recently terminated decrees</strong> whose structural reforms remain embedded in agency operations (e.g., Marisol).</li>
+</ul>
+<p>Excluded: ordinary one-off settlements without ongoing operational reforms; cases still in pre-judgment litigation without a settlement or injunction; purely state-government decrees that do not touch New York City agencies.</p>
+
+<h2>How cases were identified</h2>
+<p>Starting points:</p>
+<ul>
+  <li>Civil Rights Litigation Clearinghouse (University of Michigan Law) NYC case index.</li>
+  <li>NYC Law Department litigation reports and announcements.</li>
+  <li>Federal monitor websites (Nunez, NYPD, NYCHA).</li>
+  <li>Case pages from Legal Aid Society, NYCLU, NAACP LDF, Center for Constitutional Rights, NYLPI, NRDC, Advocates for Children, NYLAG, Coalition for the Homeless.</li>
+  <li>Recent news coverage from THE CITY, Gothamist, Daily News, City Limits, State Court Report, NY1.</li>
+</ul>
+<p>Each candidate case was checked for (a) current operative status as of 2025-2026 and (b) the presence of an enforceable mechanism that constrains a New York City agency's day-to-day operations.</p>
+
+<h2>Data fields</h2>
+<dl class="gloss">
+  <dt>case_name</dt><dd>The full case caption.</dd>
+  <dt>citation</dt><dd>The federal docket number where available, or state-court index number.</dd>
+  <dt>year_filed</dt><dd>Year the underlying complaint was filed.</dd>
+  <dt>year_entered</dt><dd>Year the operative consent decree, settlement, or injunction was entered. For long-running cases with multiple amendments, this is the date of the foundational order rather than every modification.</dd>
+  <dt>status</dt><dd>One of: <em>active</em>, <em>active-receivership</em> (a court-appointed receiver or remediation manager is in place), <em>in-modification</em> (the decree is being formally modified, e.g., Callahan), <em>terminated-recent</em> (formally closed since approximately 2018, included because reforms remain operationally relevant).</dd>
+  <dt>agencies</dt><dd>The New York City (or directly affecting) agencies bound. Some decrees nominally bind state defendants but shape city-agency operations.</dd>
+  <dt>monitor</dt><dd>The federal monitor, special master, civilian representative, or other oversight body, with appointment information where known.</dd>
+  <dt>key_obligations</dt><dd>The concrete operational requirements the decree imposes.</dd>
+  <dt>daily_effects</dt><dd>A plain-language summary of what the decree changes about how a New York City agency must function and what protections residents gain.</dd>
+  <dt>recent_status</dt><dd>Material developments in 2024-2026, including contempt findings, modifications, and receivership motions.</dd>
+  <dt>links</dt><dd>Primary sources: court orders, monitor reports, official agency notices, advocacy-group case pages, and reputable news coverage.</dd>
+</dl>
+
+<h2>Agency acronyms</h2>
+<dl class="gloss">
+  <dt>ACS</dt><dd>Administration for Children's Services</dd>
+  <dt>DHS</dt><dd>Department of Homeless Services</dd>
+  <dt>DOC</dt><dd>Department of Correction</dd>
+  <dt>DOE</dt><dd>Department of Education</dd>
+  <dt>DOHMH</dt><dd>Department of Health and Mental Hygiene</dd>
+  <dt>FDNY</dt><dd>Fire Department of the City of New York</dd>
+  <dt>HRA</dt><dd>Human Resources Administration</dd>
+  <dt>NYCHA</dt><dd>New York City Housing Authority</dd>
+  <dt>NYPD</dt><dd>New York City Police Department</dd>
+  <dt>OPWDD</dt><dd>New York State Office for People With Developmental Disabilities (included because the Willowbrook decree governs services delivered to New York City residents)</dd>
+</dl>
+
+<h2>Known gaps and limitations</h2>
+<div class="callout">
+This is not an exhaustive list. New York City government is sprawling, and decrees touch many corners of it. The database focuses on the major standing court orders most consequential to day-to-day operations.
+</div>
+<ul>
+  <li><strong>Older settled cases.</strong> Some long-running decrees that have functionally faded but technically remain on a federal docket are not included unless they still produce material reporting or compliance activity.</li>
+  <li><strong>Single-plaintiff settlements.</strong> Individual settlements without operational reforms are excluded, even when large in dollar terms.</li>
+  <li><strong>NYC Health + Hospitals.</strong> Some HHC-specific decrees (e.g., long-defunct mental-health institutional cases) may not be captured.</li>
+  <li><strong>Department of Investigation / monitorships outside Article III courts.</strong> Decrees of NYC's Conflicts of Interest Board, Office of Administrative Trials and Hearings, and similar bodies are out of scope.</li>
+  <li><strong>State decrees that indirectly bind New York City.</strong> Beyond Willowbrook and the Adult Homes Olmstead settlement, other state-defendant decrees may indirectly shape city operations and are not all captured.</li>
+  <li><strong>Recency.</strong> Status fields reflect public sources available at compilation. Federal monitor reports and court orders update frequently; check the linked primary sources for the latest posture.</li>
+</ul>
+<p>Suggestions, corrections, and missing cases are welcome &mdash; the goal is accuracy, not finality.</p>
+
+<h2>Sourcing standards</h2>
+<p>Every link in the database is a real URL drawn from primary documents (court filings, monitor reports, agency notices) or from established advocacy and news organizations. Where a primary monitor site could not be directly verified, an authoritative substitute (e.g., the firm hosting the monitorship) was used.</p>
+<p>Where a field could not be verified, it is left null rather than guessed. Long-running cases sometimes have multiple operative dates (liability ruling, remedial order, amended decree). Where that is the case, the most operationally meaningful date is recorded and explained in the narrative fields.</p>
+
+<h2>Disclaimers</h2>
+<p>This is an independent project. It is not affiliated with the City of New York, any plaintiff or defendant, or any monitor. It is not legal advice. Class members who believe they may be affected by any of these decrees should contact the relevant plaintiffs' counsel listed in the source links.</p>
+
+<p style="margin-top: 2rem;"><a href="index.html" class="back-link" style="color: var(--navy);">&larr; Back to the database</a></p>
+
+</main>
+</body>
+</html>
