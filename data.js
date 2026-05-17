@@ -163,6 +163,420 @@ const TIMELINES = {
     { year: 2012, event: "Order modified to incorporate waterbody-specific LTCPs", kind: "modification" },
     { year: 2018, event: "Order modified to add green infrastructure targets", kind: "modification" },
     { year: 2024, event: "Order modified to add Bronx River and Coney Island Creek obligations", kind: "modification" }
+  ],
+  "ligon-nypd": [
+    {"year": 2012, "event": "Class action filed challenging NYPD Trespass Affidavit Program stops in and around private Bronx apartment buildings", "kind": "event"},
+    {"year": 2013, "event": "Preliminary injunction granted finding Fourth Amendment violations in TAP stops", "actor": "Judge Shira Scheindlin", "kind": "modification"},
+    {"year": 2017, "event": "Settlement entered jointly with Floyd remedial process; supervised by joint federal monitor", "kind": "entered"},
+    {"year": 2022, "event": "Mylan L. Denerstein succeeds Peter Zimroth as joint Floyd/Ligon monitor", "kind": "monitor"},
+    {"year": 2024, "event": "Joint monitor reports continued undocumented and unconstitutional trespass stops", "kind": "event"}
+  ],
+  "davis-nypd-nycha": [
+    {"year": 2010, "event": "Class action filed by LDF and Legal Aid challenging NYPD vertical-patrol trespass stops and arrests in NYCHA buildings", "kind": "event"},
+    {"year": 2015, "event": "Settlement entered revising NYPD Patrol Guide and NYCHA trespass rules; documentation and training reforms imposed", "kind": "entered"},
+    {"year": 2019, "event": "Court approves updated public-housing training curriculum", "kind": "modification"},
+    {"year": 2024, "event": "Plaintiffs' counsel continue to flag noncompliance in joint Floyd monitor reports", "kind": "event"}
+  ],
+  "raza-nypd": [
+    {"year": 2013, "event": "ACLU/NYCLU/CLEAR file challenge to NYPD blanket surveillance of Muslim New Yorkers", "kind": "event"},
+    {"year": 2017, "event": "Joint Handschu/Raza settlement entered modifying Handschu Guidelines, adding equal-protection bar and Civilian Representative role", "kind": "entered"},
+    {"year": 2017, "event": "Stephen Robinson appointed first Civilian Representative", "kind": "monitor"},
+    {"year": 2023, "event": "Muhammad U. Faridi succeeds Robinson as Civilian Representative", "kind": "monitor"},
+    {"year": 2026, "event": "Seventh Annual Report of the Civilian Representative filed", "kind": "event"}
+  ],
+  "jsm-doe-due-process": [
+    {"year": 2020, "event": "NYLAG files class action over chronic backlog in DOE/NYSED IDEA impartial hearings", "kind": "event"},
+    {"year": 2024, "event": "Preliminary settlement negotiated", "kind": "event"},
+    {"year": 2025, "event": "Final settlement approval granted (Apr. 22) committing DOE to systemic reforms to meet IDEA due-process timelines", "kind": "entered"},
+    {"year": 2026, "event": "Implementation phase underway", "kind": "event"}
+  ],
+  "ng-doe-transition": [
+    {"year": 2014, "event": "Class action filed challenging DOE failure to provide adequate IDEA transition planning for special-education students 14 and older", "kind": "event"},
+    {"year": 2020, "event": "Class certification and merits litigation proceed", "kind": "event"},
+    {"year": 2026, "event": "Settlement/consent posture remains in flux; further motion practice expected", "kind": "event"}
+  ],
+  "eldredge-shelter-women": [
+    {"year": 1982, "event": "Class action filed seeking to extend Callahan right to shelter to single homeless women", "kind": "event"},
+    {"year": 1983, "event": "Consent decree entered requiring parity in women's shelter standards", "kind": "entered"},
+    {"year": 1983, "event": "Appellate Division affirms application of Callahan standards to women's shelters", "kind": "modification"},
+    {"year": 2024, "event": "Modifications run through the 2024 Callahan stipulation framework", "kind": "modification"}
+  ],
+  "boston-mccain-shelter-families": [
+    {"year": 1983, "event": "McCain v. Koch filed seeking right to shelter for homeless families with children", "kind": "event"},
+    {"year": 2008, "event": "Boston v. City of New York 'final, permanent, enforceable' settlement entered superseding 25 years of McCain litigation", "kind": "entered"},
+    {"year": 2024, "event": "Callahan modification expressly carves out families with children, preserving Boston framework", "kind": "event"}
+  ],
+  "reynolds-hra": [
+    {"year": 1998, "event": "Class action filed challenging HRA Job Center practices deterring SNAP, Medicaid, and cash-assistance access", "kind": "event"},
+    {"year": 2001, "event": "Bench trial held", "actor": "Judge William Pauley III", "kind": "event"},
+    {"year": 2005, "event": "Declaratory and injunctive relief entered governing intake, expedited SNAP, and emergency-assistance access", "kind": "entered"},
+    {"year": 2025, "event": "Advocates continue to flag SNAP backlogs at HRA amid staffing shortfalls", "kind": "event"}
+  ],
+  "latino-officers-nypd": [
+    {"year": 1999, "event": "Class action filed by Black and Latino NYPD officers alleging hostile work environment, disparate discipline, and retaliation", "kind": "event"},
+    {"year": 2004, "event": "Settlement approved (Sept.) with $20M damages and structural reforms to NYPD discipline and EEO systems, including disciplinary-outcome audit unit", "actor": "Judge Lewis Kaplan", "kind": "entered"},
+    {"year": 2020, "event": "Periodic disputes over compliance with audit and discipline-equity provisions continue", "kind": "event"}
+  ],
+  "doj-adult-homes-olmstead": [
+    {"year": 2013, "event": "DOJ files ADA/Olmstead action over segregation of people with mental illness in NYC adult homes", "kind": "event"},
+    {"year": 2014, "event": "Settlement Agreement entered requiring State to offer supported housing to thousands of adult-home residents; independent reviewer named", "kind": "entered"},
+    {"year": 2014, "event": "Independent reviewer appointed under settlement", "kind": "monitor"},
+    {"year": 2024, "event": "Supported-housing transitions continue under reviewer oversight", "kind": "event"}
+  ],
+  "payne-nypd-protests": [
+    {"year": 2020, "event": "Class action filed over NYPD 2020 protest response; consolidated track with People of NY v. NYC", "kind": "event"},
+    {"year": 2024, "event": "Joint settlement approved establishing four-tier protest response and structural reforms; over $500,000 secured for individual clients", "kind": "entered"},
+    {"year": 2025, "event": "Implementation overseen by same external committee as People of NY action", "kind": "monitor"}
+  ],
+  "ny-ny-supportive-housing": [
+    {"year": 1990, "event": "NY/NY I City-State agreement signed funding supportive housing for formerly homeless people with mental illness", "kind": "entered"},
+    {"year": 1999, "event": "NY/NY II expansion agreement signed", "kind": "modification"},
+    {"year": 2005, "event": "NY/NY III agreement signed bringing total commitments past 14,000 units", "kind": "modification"},
+    {"year": 2015, "event": "NYC 15/15 city-only successor committing to 15,000 additional supportive units", "kind": "modification"},
+    {"year": 2016, "event": "State launches Empire State Supportive Housing Initiative (ESSHI), funding 26,000+ statewide units to date", "kind": "modification"},
+    {"year": 2024, "event": "NY/NY III commitments largely completed; obligations now run through NYC 15/15 and ESSHI", "kind": "event"}
+  ],
+  "united-spinal-nyc-boe-polling": [
+    {"year": 2010, "event": "ADA and Rehabilitation Act class action filed over inaccessibility of NYC polling places", "kind": "event"},
+    {"year": 2012, "event": "SDNY liability ruling finds widespread accessibility violations", "actor": "Judge Deborah A. Batts", "kind": "event"},
+    {"year": 2014, "event": "Second Circuit affirms liability; remedial plan ordered requiring ADA coordinators, accessibility consultant, and site-by-site remediation", "kind": "entered"},
+    {"year": 2014, "event": "Independent accessibility consultant retained under court order", "kind": "monitor"},
+    {"year": 2024, "event": "Advocates continue to flag specific site failures each election cycle", "kind": "event"}
+  ],
+  "eason-boe-accessible-registration": [
+    {"year": 2016, "event": "ADA and Rehabilitation Act suit filed over inaccessible online voter registration and absentee ballots", "kind": "event"},
+    {"year": 2019, "event": "Settlement entered (Feb.) requiring NYS BOE and DMV to make voter-registration websites screen-reader accessible by 2021", "kind": "entered"},
+    {"year": 2021, "event": "Follow-on agreement requires statewide RAVBM deployment by June 2022", "kind": "modification"},
+    {"year": 2022, "event": "Remote accessible vote-by-mail system used in general election", "kind": "event"},
+    {"year": 2025, "event": "Minor compliance disputes continue but framework operative", "kind": "event"}
+  ],
+  "nysed-cap-nyc-doe": [
+    {"year": 2019, "event": "NYSED places NYC DOE under written Compliance Assurance Plan (May) after 13 years of IDEA disability-subgroup failure", "kind": "entered"},
+    {"year": 2020, "event": "Part 154 corrective action plans issued for English Language Learners", "kind": "modification"},
+    {"year": 2024, "event": "NYC Comptroller 'Course Correction' report documents continuing gaps", "kind": "event"},
+    {"year": 2026, "event": "NYC DOE remains under NYSED scrutiny; successor audits ongoing", "kind": "event"}
+  ],
+  "port-authority-path-grove-street": [
+    {"year": 2014, "event": "ADA suit filed against Port Authority over 2005 Grove Street PATH renovation without elevators", "kind": "event"},
+    {"year": 2021, "event": "Settlement entered requiring southwest-entrance elevator and west-side vertical platform lift — first enforceable PATH ADA decree in decades", "kind": "entered"},
+    {"year": 2023, "event": "NYS OSC audit flags PA Bus Terminal and other gates as inaccessible", "kind": "event"},
+    {"year": 2025, "event": "Construction of Grove Street elevator and lift continues", "kind": "event"}
+  ],
+  "newtown-creek-superfund": [
+    {"year": 2010, "event": "EPA lists Newtown Creek on Superfund NPL; NYC named among six PRPs", "kind": "event"},
+    {"year": 2011, "event": "Administrative Order on Consent entered requiring NYC and co-PRPs to fund and conduct the RI/FS", "kind": "entered"},
+    {"year": 2024, "event": "EPA releases Proposed Plan for lower 3.5 miles of creek (late 2024)", "kind": "event"},
+    {"year": 2026, "event": "Record of Decision expected; remedial-design consent decree to be negotiated with NYC", "kind": "event"}
+  ],
+  "gowanus-canal-superfund": [
+    {"year": 2010, "event": "EPA lists Gowanus Canal on Superfund NPL; NYC identified as PRP", "kind": "event"},
+    {"year": 2013, "event": "EPA Record of Decision issued (Sept. 27); Administrative Settlement Agreement binds NYC to design and build Head-End and Owl's Head/4th Street CSO retention tanks", "kind": "entered"},
+    {"year": 2024, "event": "Dredging of upper canal completed", "kind": "event"},
+    {"year": 2028, "event": "Head-End CSO tank construction targeted for completion", "kind": "event"},
+    {"year": 2030, "event": "Owl's Head/4th Street CSO tank construction targeted for completion", "kind": "event"}
+  ],
+  "nyc-watershed-fad": [
+    {"year": 1993, "event": "EPA notifies NYC it must either filter Catskill/Delaware water or adopt watershed-protection program", "kind": "event"},
+    {"year": 1997, "event": "Watershed Memorandum of Agreement signed and first Filtration Avoidance Determination issued under Safe Drinking Water Act", "kind": "entered"},
+    {"year": 2017, "event": "FAD revised", "kind": "modification"},
+    {"year": 2023, "event": "EPA and NYSDOH issue mid-term FAD revision tightening turbidity reporting after Ashokan Reservoir releases controversy", "kind": "modification"},
+    {"year": 2027, "event": "Next full FAD review scheduled", "kind": "event"}
+  ],
+  "us-v-nyc-boe-chinese": [
+    {"year": 2013, "event": "DOJ sues NYC BOE under Section 203 over inadequate Chinese-language assistance in Manhattan, Queens, and Brooklyn", "kind": "event"},
+    {"year": 2013, "event": "Memorandum of agreement entered requiring bilingual workers, translated materials, and DOJ observer access", "kind": "entered"},
+    {"year": 2013, "event": "DOJ Voting Section observers begin coverage", "kind": "monitor"},
+    {"year": 2024, "event": "DOJ observers cover general election; AALDEF documents persistent poll-site gaps", "kind": "event"}
+  ],
+  "us-v-nyc-boe-bengali": [
+    {"year": 2011, "event": "Census Bureau designates Queens County for Bengali-language coverage under Section 203", "kind": "event"},
+    {"year": 2017, "event": "MOA entered (Mar. 7) requiring Bengali ballots, signage, and bilingual poll workers in covered Queens EDs", "kind": "entered"},
+    {"year": 2017, "event": "DOJ Voting Section observers begin coverage", "kind": "monitor"},
+    {"year": 2025, "event": "AALDEF and Chhaya CDC document continued interpreter-staffing shortfalls at South Asian-heavy sites", "kind": "event"}
+  ],
+  "cchr-douglas-elliman-soi": [
+    {"year": 2020, "event": "CCHR multi-year testing investigation initiated into Douglas Elliman SOI practices", "kind": "event"},
+    {"year": 2022, "event": "Conciliation agreement entered requiring system-wide subsidy acceptance, $120,000 penalty, training, and 3-year compliance reporting", "kind": "entered"},
+    {"year": 2022, "event": "CCHR Law Enforcement Bureau begins 3-year compliance term", "kind": "monitor"},
+    {"year": 2024, "event": "Agreement cited as model in two large management-firm settlements", "kind": "event"},
+    {"year": 2025, "event": "Compliance phase concludes", "kind": "event"}
+  ],
+  "us-v-nyc-dot-aps": [
+    {"year": 2012, "event": "DOJ opens Title II ADA investigation of NYC DOT signalized intersections", "kind": "event"},
+    {"year": 2013, "event": "Settlement Agreement entered requiring APS installation at signalized intersections citywide", "kind": "entered"},
+    {"year": 2013, "event": "DOJ Disability Rights Section monitoring begins", "kind": "monitor"},
+    {"year": 2021, "event": "Largely superseded operationally by ACB v. NYC consent decree mandating full APS coverage by 2031", "kind": "modification"}
+  ],
+  "acb-v-nyc-aps": [
+    {"year": 2018, "event": "ACB-NY files Title II ADA suit challenging absence of Accessible Pedestrian Signals at NYC intersections", "kind": "event"},
+    {"year": 2020, "event": "Liability ruling: DOT's lack of APS violates Title II of the ADA", "actor": "Judge Paul A. Engelmayer", "kind": "event"},
+    {"year": 2021, "event": "Consent decree entered requiring APS at all ~13,200 signalized intersections by 2031; court-appointed monitor named", "kind": "entered"},
+    {"year": 2021, "event": "Court-appointed monitor and DRA compliance counsel begin oversight", "kind": "monitor"},
+    {"year": 2025, "event": "About 5,000 intersections equipped by mid-year; plaintiffs raise maintenance-backlog concerns", "kind": "event"}
+  ],
+  "nypd-columbia-cuny-protest-2024": [
+    {"year": 2024, "event": "Class action filed after April-May NYPD raids at Columbia Hamilton Hall and CUNY City College Gaza encampments", "kind": "event"},
+    {"year": 2025, "event": "Class settlement reached adding binding limits on batons, sound cannons, and mass-arrest processing tied to Sow/Payne frameworks", "actor": "Judge Dale E. Ho", "kind": "entered"},
+    {"year": 2025, "event": "Preliminary approval entered late 2025; coordinated with Sow monitor team", "kind": "monitor"},
+    {"year": 2026, "event": "Final fairness hearing scheduled early 2026", "kind": "event"}
+  ],
+  "nyc-doe-ell-compliance": [
+    {"year": 2014, "event": "U.S. ED Office for Civil Rights opens investigation of NYC DOE ELL services", "kind": "event"},
+    {"year": 2018, "event": "DOJ MOU/compliance agreement entered requiring ELL identification, programming, and exit protocols under Title VI and EEOA", "kind": "entered"},
+    {"year": 2018, "event": "OCR begins ongoing compliance monitoring", "kind": "monitor"},
+    {"year": 2024, "event": "OCR issues corrective-action letter flagging deficiencies in newcomer-student programming amid asylum-seeker enrollment surge", "kind": "modification"}
+  ],
+  "nunez-rikers-receivership": [
+    {"year": 2024, "event": "Judge Swain finds City in contempt of 18 Nunez consent-judgment provisions (Nov.)", "actor": "Judge Laura Taylor Swain", "kind": "contempt"},
+    {"year": 2025, "event": "Court orders appointment of outside Remediation Manager with broad authority over DOC operations (May)", "kind": "contempt"},
+    {"year": 2025, "event": "December order details Remediation Manager's sweeping powers", "kind": "event"},
+    {"year": 2026, "event": "Nicholas Deml named Remediation Manager (Jan. 27)", "kind": "monitor"},
+    {"year": 2026, "event": "Implementation orders and scope litigation expected to continue through 2026-2027", "kind": "event"}
+  ],
+  "dw-doe-evaluations": [
+    {"year": 2023, "event": "Class action filed alleging DOE systematically fails to provide timely IDEA initial and reevaluation assessments", "kind": "event"},
+    {"year": 2025, "event": "Motion to dismiss denied in substantial part (May 27)", "actor": "Judge Edgardo Ramos", "kind": "event"},
+    {"year": 2026, "event": "Class certification and merits proceedings expected", "kind": "event"}
+  ],
+  "lv-doe-enforcement": [
+    {"year": 2023, "event": "Judge Preska's order imposes 51 reforms to fix DOE's hearing-order implementation system", "actor": "Judge Loretta Preska", "kind": "event"},
+    {"year": 2023, "event": "Special Master appointed to oversee implementation", "kind": "monitor"},
+    {"year": 2025, "event": "July monitor report finds DOE has implemented only 21 of 51 reforms", "kind": "event"},
+    {"year": 2026, "event": "Further enforcement orders, potential contempt or modified-decree proceedings anticipated", "kind": "event"}
+  ],
+  "acs-coercive-home-searches": [
+    {"year": 2024, "event": "Gould class action filed (Feb. 20) alleging widespread warrantless, coercive ACS home searches violate the Fourth Amendment", "kind": "event"},
+    {"year": 2025, "event": "Bronx Defenders/Arnold & Porter parallel racial-discrimination and newborn-separation suits filed October", "kind": "event"},
+    {"year": 2026, "event": "Discovery proceeding; possible consolidation of parallel actions", "kind": "event"}
+  ],
+  "nypd-gang-database": [
+    {"year": 2025, "event": "Federal class action filed (Apr. 30) alleging NYPD Criminal Group Database violates First, Fourth, and Fourteenth Amendments and city law", "kind": "event"},
+    {"year": 2025, "event": "City's motion to dismiss denied (Dec.); class certification also denied at same time, limiting case to three named plaintiffs", "actor": "Judge Brian M. Cogan", "kind": "event"},
+    {"year": 2026, "event": "Discovery continues; renewed class-certification motion expected", "kind": "event"}
+  ],
+  "nypd-vehicle-stops": [
+    {"year": 2026, "event": "NAACP NY State Conference files class action (Jan. 26) over NYPD vehicle-search practices targeting Black and Latino drivers", "kind": "event"},
+    {"year": 2026, "event": "Motion-to-dismiss briefing expected", "kind": "event"}
+  ],
+  "doc-phone-surveillance": [
+    {"year": 2024, "event": "Class action filed (Apr. 15) alleging DOC recorded and shared confidential attorney-client phone calls with prosecutors and mass-surveilled all jail calls", "kind": "event"},
+    {"year": 2025, "event": "City Council Intro proposing warrant requirement for jail calls advances in coordination with litigation", "kind": "event"},
+    {"year": 2026, "event": "Sixth Amendment and statutory claims continue in motion practice", "kind": "event"}
+  ],
+  "competency-restoration-delays": [
+    {"year": 2025, "event": "Class action filed (Aug. 13) against NYS OMH, NYC DOHMH, and H+H over systemic delays in transferring Rikers detainees found unfit to stand trial; median waits hit 81 days", "kind": "event"},
+    {"year": 2026, "event": "Initial motion practice expected", "kind": "event"}
+  ],
+  "encampment-sweeps": [
+    {"year": 2024, "event": "Federal civil rights class action filed (Oct. 29) alleging encampment-sweep program violates Fourth Amendment by destroying property without notice or process", "kind": "event"},
+    {"year": 2026, "event": "Salience heightened after Mamdani administration restarts sweeps (Feb.)", "kind": "event"},
+    {"year": 2026, "event": "Preliminary-injunction and class-certification motions expected", "kind": "event"}
+  ],
+  "nypd-domain-awareness": [
+    {"year": 2025, "event": "Federal civil rights suit filed (Oct. 27) alleging NYPD Domain Awareness System conducts unconstitutional mass surveillance including cameras pointed into private residences", "kind": "event"},
+    {"year": 2025, "event": "Parallel FOIL litigation produces 2,700 documents (Nov.) showing facial-recognition use against protesters", "kind": "event"},
+    {"year": 2026, "event": "Motion practice expected on standing and merits", "kind": "event"}
+  ],
+  "callahan-migrant-transfers": [
+    {"year": 2024, "event": "March Callahan stipulation gives NYC flexibility on adult migrant shelter stays", "kind": "event"},
+    {"year": 2024, "event": "Legal Aid files first wave of individual enforcement actions over abrupt hotel-shelter transfers alleged to violate consent decree", "kind": "event"},
+    {"year": 2025, "event": "At least 14 individual enforcement matters pending in NY County Supreme Court", "kind": "event"},
+    {"year": 2026, "event": "Trial or negotiated resolution of test cases expected", "kind": "event"}
+  ],
+  "council-v-adams-rikers-ice": [
+    {"year": 2025, "event": "NYC Council files state-court action (Apr. 15) challenging Mastro executive order inviting ICE office on Rikers as violating 2014 sanctuary laws", "kind": "event"},
+    {"year": 2025, "event": "Final ruling blocks the executive order (Sept. 8)", "actor": "Justice Mary V. Rosado", "kind": "event"},
+    {"year": 2026, "event": "Possible appeal and continued enforcement litigation", "kind": "event"}
+  ],
+  "cidny-curb-ramps": [
+    {"year": 2014, "event": "ADA class action filed over noncompliant NYC pedestrian ramps", "kind": "event"},
+    {"year": 2019, "event": "Settlement entered requiring installation or upgrade of ~108,600 noncompliant pedestrian ramps by 2034 under outside monitor", "kind": "entered"},
+    {"year": 2019, "event": "Court-appointed independent monitor begins oversight", "kind": "monitor"},
+    {"year": 2026, "event": "Enforcement motions and decree modifications anticipated as midpoint deadlines approach", "kind": "event"}
+  ],
+  "mg-v-cuomo": [
+    {"year": 2019, "event": "Class action filed alleging NYS DOCCS and OMH violate ADA, Rehabilitation Act, and Due Process by failing to provide community placements for parole-eligible people with serious mental illness", "kind": "event"},
+    {"year": 2023, "event": "Active in S.D.N.Y.; motion practice ongoing", "kind": "event"},
+    {"year": 2026, "event": "Class certification and merits adjudication anticipated", "kind": "event"}
+  ],
+  "ab-v-ocfs-youth-solitary": [
+    {"year": 2026, "event": "Putative federal class action filed (Jan.) alleging NYS OCFS holds children in solitary confinement at secure-placement facilities for up to 24 hours a day, sometimes for weeks, without working toilets or schooling", "kind": "event"},
+    {"year": 2026, "event": "OCFS denies allegations; initial motion practice expected", "kind": "event"}
+  ],
+  "doccs-marcy-federal-review": [
+    {"year": 2024, "event": "Robert Brooks fatally beaten by Marcy Correctional Facility officers while handcuffed (Dec. 9); FBI Albany and DOJ open review", "kind": "event"},
+    {"year": 2025, "event": "State grand jury indicts nearly a dozen DOCCS officers on murder and related charges (Feb.); Governor Hochul orders outside review of DOCCS culture", "kind": "event"},
+    {"year": 2026, "event": "Federal review remains open; state criminal prosecutions of indicted officers ongoing", "kind": "event"}
+  ],
+  "wilder-v-bernstein": [
+    {"year": 1973, "event": "Class action filed alleging City's reliance on religiously affiliated foster care agencies racially segregated foster children", "kind": "event"},
+    {"year": 1984, "event": "Wilder Decree signed imposing randomized referral system to allocate children without regard to race or religion", "kind": "event"},
+    {"year": 1986, "event": "Decree judicially approved; Special Child Welfare Advisory Panel established", "kind": "entered"},
+    {"year": 1988, "event": "Second Circuit affirms the decree", "kind": "modification"},
+    {"year": 1999, "event": "Court relinquishes jurisdiction; obligations folded into ACS quality-assurance functions", "kind": "terminated"}
+  ],
+  "sheppard-v-phoenix": [
+    {"year": 1991, "event": "Class action filed challenging use of force and conditions in Rikers Central Punitive Segregation Unit", "kind": "event"},
+    {"year": 1995, "event": "Consent decree entered imposing limits on staff use of force and requiring documentation, review, staffing, and supervision reforms", "kind": "entered"},
+    {"year": 1995, "event": "Legal Aid Society monitors compliance under court-supervised reporting", "kind": "monitor"},
+    {"year": 2002, "event": "Court relinquishes jurisdiction; framework later folded into DOC-wide use-of-force directive and Nunez monitorship", "kind": "terminated"}
+  ],
+  "handschu-1985": [
+    {"year": 1971, "event": "Class action filed by political activists challenging NYPD 'Red Squad' surveillance", "kind": "event"},
+    {"year": 1985, "event": "Original Handschu Consent Decree entered; three-member Handschu Authority created", "kind": "entered"},
+    {"year": 1985, "event": "Handschu Authority begins oversight of Intelligence Division investigations", "kind": "monitor"},
+    {"year": 2003, "event": "Modified Handschu Guidelines relax post-9/11 restrictions, superseding 1985 regime", "kind": "terminated"}
+  ],
+  "forts-v-ward": [
+    {"year": 1975, "event": "Class action filed by incarcerated women over privacy violations from male-officer viewing in sleeping and bathing areas", "kind": "event"},
+    {"year": 1978, "event": "District court enters decree restricting male-officer assignments", "kind": "entered"},
+    {"year": 1980, "event": "Second Circuit ruling (621 F.2d 1210) balances privacy rights against officers' employment rights", "kind": "modification"},
+    {"year": 2003, "event": "Prison Rape Elimination Act standards codify much of the Forts framework", "kind": "event"}
+  ],
+  "sharif-v-nysed": [
+    {"year": 1988, "event": "Title IX and Equal Protection challenge filed to NYS exclusive reliance on SAT scores for Regents/Empire State Scholarships", "kind": "event"},
+    {"year": 1989, "event": "Court enjoins SAT-only system as gender discrimination (Feb.); remedy adopts weighted GPA + Regents formula", "actor": "Judge John Walker", "kind": "entered"},
+    {"year": 1989, "event": "NYS implements weighted scholarship formula; case effectively concluded", "kind": "terminated"}
+  ],
+  "klostermann-v-cuomo": [
+    {"year": 1982, "event": "Action filed on behalf of homeless mentally ill former state psychiatric patients seeking community placement and discharge planning", "kind": "event"},
+    {"year": 1984, "event": "NY Court of Appeals (61 N.Y.2d 525) holds courts have jurisdiction to enforce these rights, rejecting nonjusticiability defense", "kind": "entered"},
+    {"year": 1990, "event": "First NY/NY supportive-housing agreement signed in part to satisfy Klostermann obligations", "kind": "modification"}
+  ],
+  "rothenberg-v-daus": [
+    {"year": 2008, "event": "Federal class action filed challenging TLC automatic license revocations based on off-duty conduct without notice or hearing", "kind": "event"},
+    {"year": 2013, "event": "Settlement entered requiring pre-revocation due process and limiting summary revocation to demonstrated passenger-safety risk", "kind": "entered"},
+    {"year": 2014, "event": "TLC rules amended to route fitness hearings through OATH with notice, evidence, and appeal", "kind": "modification"},
+    {"year": 2015, "event": "Court relinquishes jurisdiction", "kind": "terminated"}
+  ],
+  "taxis-for-all-v-tlc": [
+    {"year": 2011, "event": "ADA class action filed seeking accessible yellow taxi service in NYC", "kind": "event"},
+    {"year": 2014, "event": "Settlement entered requiring 50% wheelchair-accessible yellow fleet by 2020 and creation of Accessible Dispatch system", "kind": "entered"},
+    {"year": 2014, "event": "Disability Rights Advocates begin court-supervised compliance reporting", "kind": "monitor"},
+    {"year": 2020, "event": "50% accessibility milestone reached", "kind": "event"},
+    {"year": 2024, "event": "Court jurisdiction terminated; medallion-accessibility and FHV frameworks remain in TLC rules", "kind": "terminated"}
+  ],
+  "us-v-boe-nvra": [
+    {"year": 1993, "event": "DOJ files enforcement action to compel NY compliance with National Voter Registration Act ('Motor Voter')", "kind": "event"},
+    {"year": 1995, "event": "Consent decree entered building NVRA agency-registration infrastructure across DMV, public-assistance, and disability-services offices", "kind": "entered"},
+    {"year": 1995, "event": "DOJ Voting Section begins oversight of state-agency NVRA compliance", "kind": "monitor"},
+    {"year": 2000, "event": "Court relinquishes jurisdiction; HRA SNAP and cash-assistance recertification voter-registration practices remain in place", "kind": "terminated"}
+  ],
+  "bcid-nyc-emergency-planning": [
+    {"year": 2011, "event": "Class action filed after Hurricane Irene exposed gaps in NYC emergency planning for people with disabilities", "kind": "event"},
+    {"year": 2013, "event": "Court rules City violated ADA, Rehabilitation Act, and NYC Human Rights Law (Nov.)", "actor": "Judge Jesse M. Furman", "kind": "event"},
+    {"year": 2014, "event": "Comprehensive remedial settlement reached (Sept. 30)", "kind": "entered"},
+    {"year": 2019, "event": "Court jurisdiction terminated by settlement terms (May); obligations remain embedded in NYC Emergency Management policies", "kind": "terminated"}
+  ],
+  "peoples-v-annucci": [
+    {"year": 2011, "event": "Class action filed challenging DOCCS use of SHU as default discipline", "kind": "event"},
+    {"year": 2016, "event": "Settlement entered (formalizing December 2015 agreement) setting sentencing guidelines, eliminating solitary for certain populations, and committing DOCCS to alternative units", "actor": "Judge Shira A. Scheindlin", "kind": "entered"},
+    {"year": 2016, "event": "Court-supervised reporting begins", "kind": "monitor"},
+    {"year": 2021, "event": "HALT Solitary Confinement Act largely supersedes settlement obligations", "kind": "modification"},
+    {"year": 2021, "event": "Settlement obligations expire in stages; Fields v. Annucci (filed 2023) now drives enforcement", "kind": "terminated"}
+  ],
+  "hurrell-harring-indigent-defense": [
+    {"year": 2007, "event": "State constitutional challenge filed to NY county-by-county public defense system", "kind": "event"},
+    {"year": 2014, "event": "Settlement entered (Oct.) committing State to fund counsel at arraignment, set caseload caps, and ensure quality standards in five named counties", "actor": "Justice Gerald W. Connolly", "kind": "entered"},
+    {"year": 2014, "event": "NYS Office of Indigent Legal Services oversees implementation", "kind": "monitor"},
+    {"year": 2017, "event": "NY enacts Executive Law § 832-a extending reforms statewide", "kind": "modification"},
+    {"year": 2023, "event": "Statewide implementation via ILS continues to underwrite NYC indigent defense; original obligations largely fulfilled", "kind": "terminated"}
+  ],
+  "us-v-nyc-boe-korean-2008": [
+    {"year": 2008, "event": "DOJ sues NYC BOE over Section 203 violations affecting Korean and Chinese voters after repeated AALDEF poll-monitoring findings", "kind": "event"},
+    {"year": 2008, "event": "Consent decree entered requiring translated materials, bilingual workers, and DOJ reporting", "kind": "entered"},
+    {"year": 2008, "event": "DOJ observers begin coverage", "kind": "monitor"},
+    {"year": 2013, "event": "Largely subsumed by 2013 follow-on enforcement litigation", "kind": "terminated"}
+  ],
+  "ny-v-cushman-wakefield-soi": [
+    {"year": 2018, "event": "OAG files action against Cushman & Wakefield over SOI discrimination following FHJC testing investigation", "kind": "event"},
+    {"year": 2019, "event": "Stipulated judgment entered requiring system-wide acceptance of Section 8 and other subsidies and $115,000 in penalties", "kind": "entered"},
+    {"year": 2019, "event": "OAG Civil Rights Bureau begins 3-year compliance review", "kind": "monitor"},
+    {"year": 2022, "event": "Compliance term expires; precedent cited in CCHR Douglas Elliman and 2024 A&E Real Estate portfolio settlements", "kind": "terminated"}
+  ],
+  "nyc-lead-paint-ll1": [
+    {"year": 1995, "event": "Coalition files action to force City to enforce Local Law 1 of 1982 lead-paint hazard provisions", "kind": "event"},
+    {"year": 1999, "event": "Court orders entered directing HPD and DOHMH to inspect, abate, and report on lead hazards", "kind": "entered"},
+    {"year": 2004, "event": "Local Law 1 of 2004 enacted, codifying many decree obligations; case wound down", "kind": "terminated"},
+    {"year": 2020, "event": "Local Law 31 of 2020 strengthens lead enforcement framework", "kind": "modification"},
+    {"year": 2023, "event": "Local Law 123 of 2023 further tightens enforcement; WE ACT presses HPD over NYCHA compliance gaps", "kind": "modification"}
+  ],
+  "davis-nycha-rd-section-504": [
+    {"year": 1990, "event": "Section 504 and FHAA class action filed against NYCHA", "kind": "event"},
+    {"year": 1992, "event": "Consent decree entered requiring meaningful reasonable-accommodation process, accessible-unit set-asides, and disability transfers", "kind": "entered"},
+    {"year": 2013, "event": "Obligations folded into federal HUD/DOJ NYCHA Section 504 voluntary compliance agreement", "kind": "modification"},
+    {"year": 2013, "event": "Court relinquishes jurisdiction", "kind": "terminated"},
+    {"year": 2019, "event": "Successor framework absorbed into HUD/SDNY NYCHA Agreement", "kind": "modification"}
+  ],
+  "monell-v-dss": [
+    {"year": 1971, "event": "Female NYC Board of Education and Department of Social Services employees sue under § 1983 challenging compelled unpaid pregnancy leave", "kind": "event"},
+    {"year": 1978, "event": "Supreme Court overrules Monroe v. Pape and holds municipalities are 'persons' subject to § 1983 liability for official policy or custom", "actor": "Justice Brennan, 7-2", "kind": "entered"}
+  ],
+  "nyc-transit-v-beazer": [
+    {"year": 1976, "event": "Methadone users sue NYC Transit Authority challenging blanket employment ban under Title VII and Equal Protection", "kind": "event"},
+    {"year": 1979, "event": "Supreme Court reverses Second Circuit and upholds the policy as rationally related to legitimate safety and efficiency concerns", "actor": "Justice Stevens, 6-3", "kind": "entered"}
+  ],
+  "caban-v-mohammed": [
+    {"year": 1976, "event": "Caban challenges § 111 of NY Domestic Relations Law permitting adoption over unwed father's objection", "kind": "event"},
+    {"year": 1979, "event": "Supreme Court strikes statute as gender discrimination violating Equal Protection where father has substantial relationship with children", "actor": "Justice Powell, 5-4", "kind": "entered"}
+  ],
+  "new-york-v-belton": [
+    {"year": 1978, "event": "NY courts uphold search of vehicle passenger compartment incident to arrest", "kind": "event"},
+    {"year": 1981, "event": "Supreme Court creates bright-line rule allowing search of passenger compartment and containers incident to custodial arrest of a vehicle occupant", "actor": "Justice Stewart, 6-3", "kind": "entered"},
+    {"year": 2009, "event": "Arizona v. Gant narrows operational scope of Belton", "kind": "modification"}
+  ],
+  "loretto-v-teleprompter": [
+    {"year": 1976, "event": "Manhattan landlord challenges NY law authorizing cable installations on apartment buildings with only nominal compensation", "kind": "event"},
+    {"year": 1982, "event": "Supreme Court establishes per-se physical-takings rule: any permanent physical occupation authorized by government requires just compensation", "actor": "Justice Marshall, 6-3", "kind": "entered"}
+  ],
+  "new-york-v-ferber": [
+    {"year": 1978, "event": "Manhattan bookstore owner prosecuted under NY Penal Law § 263.15 for selling films depicting underage boys", "kind": "event"},
+    {"year": 1982, "event": "Supreme Court upholds statute; child pornography is outside First Amendment protection and may be banned without Miller obscenity test", "actor": "Justice White, 9-0", "kind": "entered"}
+  ],
+  "new-york-v-quarles": [
+    {"year": 1980, "event": "NYPD officer asks Quarles location of gun in Queens A&P before Miranda warnings; Quarles points to carton", "kind": "event"},
+    {"year": 1984, "event": "Supreme Court creates 'public safety exception' to Miranda for objectively reasonable need to protect police or public from immediate danger", "actor": "Justice Rehnquist, 5-4", "kind": "entered"}
+  ],
+  "new-york-v-class": [
+    {"year": 1981, "event": "NYPD officer opens car door during Bronx traffic stop to view VIN and discovers handgun", "kind": "event"},
+    {"year": 1986, "event": "Supreme Court holds limited VIN-area intrusion does not violate Fourth Amendment because no reasonable privacy expectation in a VIN federal law requires visible", "actor": "Justice O'Connor, 7-2", "kind": "entered"}
+  ],
+  "new-york-v-burger": [
+    {"year": 1982, "event": "NYPD auto-crimes division conducts warrantless administrative inspection of Brooklyn vehicle-dismantling yard and finds stolen vehicles", "kind": "event"},
+    {"year": 1987, "event": "Supreme Court upholds warrantless inspection of closely-regulated industry as constitutional substitute for warrant", "actor": "Justice Blackmun, 6-3", "kind": "entered"}
+  ],
+  "nys-club-assn-v-nyc": [
+    {"year": 1984, "event": "Club Association challenges NYC ordinance barring discrimination by large private membership clubs, citing First Amendment associational rights", "kind": "event"},
+    {"year": 1988, "event": "Supreme Court unanimously upholds the law: city's interest in eradicating discrimination justifies modest burden on associational rights", "actor": "Justice White, 9-0", "kind": "entered"}
+  ],
+  "new-york-v-harris": [
+    {"year": 1984, "event": "NYPD enters Harris's home without a warrant in violation of Payton, then obtains stationhouse confession after Miranda warnings", "kind": "event"},
+    {"year": 1990, "event": "Supreme Court holds stationhouse statement following Payton violation is not subject to suppression where police had probable cause", "actor": "Justice White, 5-4", "kind": "entered"}
+  ],
+  "florence-v-burlington": [
+    {"year": 2005, "event": "Florence files suit after being strip-searched on intake at two NJ jails for a minor offense", "kind": "event"},
+    {"year": 2012, "event": "Supreme Court holds jail officials may conduct suspicionless visual strip searches of all arrestees admitted to general population regardless of offense severity", "actor": "Justice Kennedy, 5-4", "kind": "entered"}
+  ],
+  "williams-v-new-york": [
+    {"year": 1947, "event": "Brooklyn jury recommends life; trial judge imposes death sentence based on pre-sentence report with hearsay about uncharged conduct", "kind": "event"},
+    {"year": 1949, "event": "Supreme Court upholds sentencing procedure: judge may consider information from sources not subject to confrontation if procedure is otherwise fair", "actor": "Justice Black, 7-2", "kind": "entered"}
+  ],
+  "trump-v-vance": [
+    {"year": 2019, "event": "Manhattan DA's grand jury subpoenas Trump's accounting firm for financial records", "kind": "event"},
+    {"year": 2020, "event": "Supreme Court rejects absolute presidential immunity from state criminal process and allows subpoena to proceed", "actor": "Chief Justice Roberts, 7-2", "kind": "entered"},
+    {"year": 2024, "event": "Manhattan DA secures conviction in case made possible by Vance ruling", "kind": "event"}
+  ],
+  "city-of-ny-v-fcc": [
+    {"year": 1985, "event": "NYC and other cities challenge FCC regulations preempting local authority over cable technical signal-quality standards", "kind": "event"},
+    {"year": 1988, "event": "Supreme Court unanimously upholds FCC preemption as within its statutory authority under the Cable Communications Policy Act of 1984", "actor": "Justice White, 9-0", "kind": "entered"}
+  ],
+  "sibron-v-new-york": [
+    {"year": 1965, "event": "NYPD officer reaches into Sibron's pocket during street encounter under NY stop-and-frisk statute", "kind": "event"},
+    {"year": 1968, "event": "Supreme Court (companion to Terry v. Ohio) holds the reach exceeded a protective frisk and lacked probable cause", "actor": "Chief Justice Warren, 8-1", "kind": "entered"}
+  ],
+  "mnn-v-halleck": [
+    {"year": 2012, "event": "Producers suspended by Manhattan Neighborhood Network sue claiming First Amendment violations", "kind": "event"},
+    {"year": 2019, "event": "Supreme Court holds 5-4 that MNN is not a state actor and is not bound by the First Amendment in programming decisions", "actor": "Justice Kavanaugh, 5-4", "kind": "entered"}
   ]
 };
 
