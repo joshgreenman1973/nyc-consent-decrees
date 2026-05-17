@@ -1929,5 +1929,738 @@ const DECREES = [
       {"label": "Opinion (Justia)", "url": "https://supreme.justia.com/cases/federal/us/337/241/"},
       {"label": "Oyez", "url": "https://www.oyez.org/cases/1948/671"}
     ]
+  },
+
+  /* ============ SCOTUS additions (Round 2) ============ */
+  {
+    "id": "bd-of-estimate-v-morris",
+    "case_name": "Board of Estimate of City of New York v. Morris",
+    "citation": "489 U.S. 688 (1989)",
+    "year_filed": 1981, "year_entered": 1989, "status": "scotus",
+    "agencies": ["NYC Board of Estimate", "City Council", "Mayor's Office"],
+    "issue_area": "Civil Rights", "court": "U.S. Supreme Court",
+    "plaintiffs": "Beverly Morris and other Brooklyn voters",
+    "summary": "Brooklyn voters challenged the NYC Board of Estimate — on which each of the five borough presidents cast one vote regardless of population — as violating one person, one vote. The Court unanimously held the Board's structure unconstitutional under the Equal Protection Clause.",
+    "daily_effects": "Forced the abolition of the Board of Estimate and triggered the 1989 NYC Charter revision, which transferred the Board's budget, land use, and contracting powers to an expanded City Council and the Mayor. Every ULURP land use decision and most contract approvals now flow through this post-Morris framework.",
+    "monitor": null,
+    "key_obligations": [
+      "Dissolve the Board of Estimate",
+      "Redistribute land use, budget, and franchise powers to City Council and Mayor",
+      "Restructure NYC government to satisfy one person, one vote"
+    ],
+    "holding": "NYC's Board of Estimate, by giving each borough equal representation despite vast population differences, violated the Equal Protection Clause's one person, one vote requirement.",
+    "vote": "9-0", "justice_authoring": "Byron R. White",
+    "legacy": "The most consequential SCOTUS decision ever for NYC governance: it ended a structure that had governed the City since 1898, forced adoption of the 1989 Charter, and created the modern City Council–Mayor balance of power.",
+    "links": [
+      {"label": "Opinion (Justia)", "url": "https://supreme.justia.com/cases/federal/us/489/688/"},
+      {"label": "Oyez", "url": "https://www.oyez.org/cases/1988/87-1022"}
+    ]
+  },
+  {
+    "id": "city-of-ny-v-fcc",
+    "case_name": "City of New York v. FCC",
+    "citation": "486 U.S. 57 (1988)",
+    "year_filed": 1985, "year_entered": 1988, "status": "scotus",
+    "agencies": ["DoITT"], "issue_area": "Civil Rights", "court": "U.S. Supreme Court",
+    "plaintiffs": "City of New York and other municipalities",
+    "summary": "NYC, joined by other cities, challenged FCC regulations preempting local authority to set technical signal-quality standards for cable television systems. The Court unanimously held that the FCC's preemption was within its statutory authority under the Cable Communications Policy Act of 1984.",
+    "daily_effects": "Constrains the NYC Department of Information Technology and Telecommunications (now OTI) when negotiating and enforcing cable franchise agreements: the City cannot impose technical signal-quality requirements stricter than FCC rules, even though it retains authority over franchise terms, build-out, and customer service.",
+    "monitor": null,
+    "key_obligations": [
+      "NYC franchise agreements must defer to FCC technical signal-quality standards",
+      "City may regulate non-technical franchise terms (build-out, fees, customer service)",
+      "Local cable regulators must align engineering specs with federal rules"
+    ],
+    "holding": "The FCC permissibly preempted state and local technical standards governing cable television signal quality that are stricter than federal standards.",
+    "vote": "9-0", "justice_authoring": "Byron R. White",
+    "legacy": "Set the boundary between NYC's cable franchise authority and federal regulation, shaping every subsequent NYC cable and broadband franchise negotiation.",
+    "links": [
+      {"label": "Opinion (Justia)", "url": "https://supreme.justia.com/cases/federal/us/486/57/"},
+      {"label": "Cornell LII", "url": "https://www.law.cornell.edu/supremecourt/text/486/57"}
+    ]
+  },
+  {
+    "id": "sibron-v-new-york",
+    "case_name": "Sibron v. New York",
+    "citation": "392 U.S. 40 (1968)",
+    "year_filed": 1965, "year_entered": 1968, "status": "scotus",
+    "agencies": ["NYPD"], "issue_area": "Policing", "court": "U.S. Supreme Court",
+    "plaintiffs": "Nelson Sibron and John Francis Peters (consolidated)",
+    "summary": "Companion to Terry v. Ohio, decided the same day, testing New York's stop-and-frisk statute as applied by NYPD officers. The Court held that an NYPD officer's reach into Sibron's pocket exceeded a protective frisk and lacked probable cause, while upholding the search in the companion Peters case as incident to a lawful arrest.",
+    "daily_effects": "Limits NYPD officers conducting Terry stops to protective pat-downs for weapons based on specific articulable facts; bars reaching into pockets or other intrusive searches absent probable cause or a lawful arrest. Forms part of the constitutional baseline governing every NYPD street encounter and underlies later stop-and-frisk litigation including Floyd.",
+    "monitor": null,
+    "key_obligations": [
+      "Frisks limited to protective pat-down for weapons",
+      "Officers must have specific articulable facts the suspect is armed and dangerous",
+      "No intrusion into pockets absent probable cause or arrest",
+      "Mere association with known criminals does not justify a search"
+    ],
+    "holding": "A stop-and-frisk that goes beyond a protective pat-down for weapons and lacks probable cause violates the Fourth Amendment.",
+    "vote": "8-1", "justice_authoring": "Earl Warren",
+    "legacy": "The NYPD-specific companion to Terry: established that New York's stop-and-frisk statute could not authorize searches broader than a Terry pat-down, framing 55+ years of NYPD street-encounter doctrine and the foundation Floyd v. City of New York built on.",
+    "links": [
+      {"label": "Opinion (Justia)", "url": "https://supreme.justia.com/cases/federal/us/392/40/"},
+      {"label": "Oyez", "url": "https://www.oyez.org/cases/1967/63"}
+    ]
+  },
+  {
+    "id": "mnn-v-halleck",
+    "case_name": "Manhattan Community Access Corp. v. Halleck",
+    "citation": "587 U.S. 802 (2019)",
+    "year_filed": 2012, "year_entered": 2019, "status": "scotus",
+    "agencies": ["DoITT", "MNN"], "issue_area": "Free Speech", "court": "U.S. Supreme Court",
+    "plaintiffs": "DeeDee Halleck and Jesús Papoleto Meléndez",
+    "summary": "Producers suspended by Manhattan Neighborhood Network (MNN), the private nonprofit designated by NYC to operate Manhattan's public access cable channels, sued claiming First Amendment violations. The Court held 5-4 that MNN is not a state actor and therefore is not bound by the First Amendment in its programming decisions.",
+    "daily_effects": "Lets MNN and other NYC-designated public access operators set viewpoint-based programming rules without First Amendment liability, even though the City required cable franchisees to dedicate channels for public use. Shapes how NYC structures public access designations in cable franchise agreements citywide.",
+    "monitor": null,
+    "key_obligations": [
+      "Private operators of NYC-designated public access channels are not state actors",
+      "MNN may suspend or restrict programmers without First Amendment scrutiny",
+      "NYC's designation of a private operator does not transform that operator into the government"
+    ],
+    "holding": "A private nonprofit operating public access channels under a New York City designation is not a state actor subject to the First Amendment.",
+    "vote": "5-4", "justice_authoring": "Brett M. Kavanaugh",
+    "legacy": "Tightened the state-action doctrine and immunized NYC's privately-operated public access system from constitutional speech claims, with implications across the City's many nonprofit-delivered services.",
+    "links": [
+      {"label": "Opinion (Justia)", "url": "https://supreme.justia.com/cases/federal/us/587/17-1702/"},
+      {"label": "Oyez", "url": "https://www.oyez.org/cases/2018/17-1702"}
+    ]
+  },
+
+  /* ============ NYS & bi-state authority decrees binding NYC ops ============ */
+  {
+    "id": "cidny-mta-subway-accessibility",
+    "case_name": "Center for Independence of the Disabled, NY v. MTA; De La Rosa v. MTA (subway accessibility)",
+    "citation": "Index No. 153765/2017 (N.Y. Sup. Ct.); 19-cv-04406 (S.D.N.Y.)",
+    "year_filed": 2017, "year_entered": 2023, "status": "active",
+    "agencies": ["MTA", "NYC Transit"], "issue_area": "Disability Rights",
+    "court": "S.D.N.Y. / N.Y. Sup. Ct.",
+    "plaintiffs": "CIDNY, BCID, Bronx Independent Living, Harlem ILC, Disabled In Action, and individual riders (Disability Rights Advocates and Sheppard Mullin)",
+    "summary": "Twin state and federal class actions challenged the MTA's pattern of renovating subway stations without adding elevators or stair-free routes. The June 2022 settlement, granted final approval in April 2023, commits the MTA to making at least 95% of NYC subway stations accessible by 2055 and dedicating 14.69% of every five-year Capital Plan to station accessibility.",
+    "daily_effects": "Every MTA five-year capital plan must carve out roughly 15% for ADA accessibility work, locking in dozens of new elevator projects each cycle. Stations being renovated must include accessibility upgrades by default. NYC riders who use wheelchairs, walkers, or strollers gain enforceable milestones (85 more stations by 2035, 90 more by 2045, 90 more by 2055), and advocates can return to court if benchmarks slip.",
+    "monitor": "Court-supervised compliance reporting",
+    "key_obligations": [
+      "Dedicate ≥14.69% of each five-year MTA Capital Plan to subway station accessibility",
+      "Make 95% of subway stations ADA-accessible by 2055 on the agreed schedule",
+      "Include accessibility in any station renovation triggering ADA obligations",
+      "Provide periodic compliance reports to plaintiffs",
+      "Maintain elevator uptime and notify riders of outages"
+    ],
+    "recent_status": "Settlement remains in implementation; the 2025-2029 MTA Capital Plan is the first full plan subject to the 14.69% set-aside.",
+    "judge": "Hon. Edgardo Ramos",
+    "judge_note": "S.D.N.Y.; granted final federal approval April 24, 2023",
+    "links": [
+      {"label": "Disability Rights Advocates: MTA Settlement press release", "url": "https://dralegal.org/press/mta-settlement/"},
+      {"label": "DRA: Final approval announcement", "url": "https://dralegal.org/press/mta-settlement-approval/"},
+      {"label": "MTA Notice of Proposed Settlement", "url": "https://www.mta.info/accessibility/ada-settlement-notice"}
+    ]
+  },
+  {
+    "id": "bcid-nyc-emergency-planning",
+    "case_name": "Brooklyn Center for Independence of the Disabled v. Bloomberg (NYC emergency planning ADA)",
+    "citation": "11-cv-6690 (S.D.N.Y.)",
+    "year_filed": 2011, "year_entered": 2014, "year_terminated": 2019, "status": "historical",
+    "agencies": ["NYCEM", "HRA", "DOHMH"], "issue_area": "Disability Rights",
+    "court": "S.D.N.Y.",
+    "plaintiffs": "Brooklyn Center for Independence of the Disabled, CIDNY, and individual New Yorkers with disabilities",
+    "summary": "Class action filed after Hurricane Irene exposed gaps in NYC's emergency planning for people with disabilities. Judge Jesse M. Furman ruled in November 2013 that the City violated the ADA, Rehabilitation Act, and NYC Human Rights Law; the parties reached a comprehensive remedial settlement on September 30, 2014.",
+    "daily_effects": "NYC Emergency Management must operate evacuation centers and shelters that meet accessibility standards, maintain a high-rise evacuation plan, and stock accessible transportation and communications during disasters. The City created a Disability and Access and Functional Needs Coordinator position and a Disability Community Panel that advises on planning.",
+    "monitor": null,
+    "key_obligations": [
+      "Survey and identify accessible shelter and evacuation center facilities citywide",
+      "Maintain a high-rise evacuation plan for people with mobility disabilities",
+      "Provide accessible transportation and communications during emergencies",
+      "Hire a Disability and Access and Functional Needs Coordinator at NYCEM",
+      "Establish and consult a Disability Community Panel"
+    ],
+    "legacy": "Court jurisdiction terminated in May 2019 by the settlement's terms; obligations remain embedded in NYC Emergency Management policies and procedures, though advocates continue to flag gaps during real emergencies.",
+    "judge": "Hon. Jesse M. Furman",
+    "judge_note": "S.D.N.Y.; issued the 2013 liability ruling and approved the 2014 settlement",
+    "links": [
+      {"label": "Civil Rights Litigation Clearinghouse", "url": "https://clearinghouse.net/case/13015/"},
+      {"label": "DRA case page", "url": "https://dralegal.org/case/brooklyn-center-for-independence-of-the-disabled-bcid-et-al-v-mayor-bloomberg-et-al/"},
+      {"label": "Yale Law Journal: The Right To Be Rescued", "url": "https://yalelawjournal.org/note/the-right-to-be-rescued"}
+    ]
+  },
+  {
+    "id": "ny-ny-supportive-housing",
+    "case_name": "New York/New York Supportive Housing Agreements (NY/NY I, II, III)",
+    "citation": "City-State agreements (1990, 1999, 2005); driven by Klostermann v. Cuomo",
+    "year_filed": 1990, "year_entered": 1990, "status": "historical",
+    "agencies": ["NYS OMH", "HPD", "DOHMH", "HRA", "DHS"], "issue_area": "Homelessness",
+    "court": "N/A (negotiated city-state agreements)",
+    "plaintiffs": "Negotiated agreements influenced by Klostermann v. Cuomo (1984) and Coalition for the Homeless advocacy",
+    "summary": "A series of joint city-state pacts (NY/NY I 1990, NY/NY II 1999, NY/NY III 2005, plus successor 2015 NYC 15/15 and 2016 ESSHI state commitments) funded more than 14,000 supportive housing units in NYC for formerly homeless people with mental illness, HIV/AIDS, substance use disorders, and other disabilities. Not judicially entered consent decrees, but treated by both governments as binding operational commitments.",
+    "daily_effects": "NYC HRA, DOHMH, DHS, and HPD jointly screen, refer, and place tens of thousands of formerly homeless New Yorkers into supportive housing developed and operated under the agreements. State OMH, OASAS, DOH, and OTDA pay for on-site services and rental subsidies, allowing NYC shelter and hospital systems to discharge people with serious mental illness into permanent housing.",
+    "monitor": null,
+    "key_obligations": [
+      "Develop and operate jointly funded supportive housing units in NYC",
+      "Maintain eligibility categories tied to NYC homelessness and disability",
+      "Provide ongoing state-funded services and rental subsidies",
+      "Coordinate intake through HRA's 2010e referral system",
+      "Report production and occupancy to both governments"
+    ],
+    "legacy": "NY/NY III commitments largely completed; obligations now run through NYC 15/15 (city-only commitment to 15,000 units) and the state's Empire State Supportive Housing Initiative (ESSHI), which has funded over 26,000 statewide units.",
+    "links": [
+      {"label": "Supportive Housing Network of NY: History", "url": "https://shnny.org/supportive-housing/what-is-supportive-housing/history-of-supportive-housing/"},
+      {"label": "Furman Center: NY/NY Agreements", "url": "https://furmancenter.org/coredata/directory/entry/new-york-new-york"}
+    ]
+  },
+  {
+    "id": "peoples-v-annucci",
+    "case_name": "Peoples v. Annucci (NYS solitary confinement)",
+    "citation": "11-cv-2694 (S.D.N.Y.)",
+    "year_filed": 2011, "year_entered": 2016, "year_terminated": 2021, "status": "historical",
+    "agencies": ["NYS DOCCS"], "issue_area": "Jails/Corrections", "court": "S.D.N.Y.",
+    "plaintiffs": "Leroy Peoples and class of people in DOCCS Special Housing Units (NYCLU and Morrison & Foerster)",
+    "summary": "Class action challenging DOCCS' use of solitary confinement (SHU) as a default discipline tool. A December 2015 settlement set sentencing guidelines, eliminated solitary for certain populations, and committed DOCCS to building alternative units. Largely superseded by the 2021 HALT Solitary Confinement Act.",
+    "daily_effects": "Thousands of NYC residents incarcerated in NYS prisons saw reductions in maximum SHU sentences for non-violent infractions and bans on solitary for youth, pregnant people, and those with developmental disabilities. NYC re-entry providers, defenders, and family members rely on these limits to track upstate placements.",
+    "monitor": "Court-supervised reporting",
+    "key_obligations": [
+      "Adopt new SHU sentencing guidelines capping disciplinary terms",
+      "Bar solitary for youth, pregnant people, and people with developmental disabilities",
+      "Develop Residential Rehabilitation Units as step-down housing",
+      "Train staff on revised disciplinary procedures"
+    ],
+    "legacy": "Settlement obligations expired in stages through 2020-2021; the HALT Act and Fields v. Annucci (filed 2023) now drive enforcement.",
+    "judge": "Hon. Shira A. Scheindlin",
+    "judge_note": "S.D.N.Y. (retired 2016)",
+    "links": [
+      {"label": "Solitary Watch on Peoples settlement", "url": "https://solitarywatch.org/2016/04/04/how-the-landmark-settlement-will-and-will-not-change-solitary-confinement-in-new-yorks-prisons-redux/"},
+      {"label": "NYS OIG HALT report (Aug 2024)", "url": "https://ig.ny.gov/system/files/documents/2024/08/nys-oig-doccs-halt-report-8.5.24.pdf"}
+    ]
+  },
+  {
+    "id": "mg-v-cuomo",
+    "case_name": "M.G. v. Cuomo (NYS DOCCS / OMH community placement)",
+    "citation": "19-cv-00639 (S.D.N.Y.)",
+    "year_filed": 2019, "year_entered": null, "status": "pending",
+    "agencies": ["NYS DOCCS", "NYS OMH", "DOHMH"], "issue_area": "Mental Health", "court": "S.D.N.Y.",
+    "plaintiffs": "Indigent prisoners with serious mental illness eligible for release (Legal Aid Society and co-counsel)",
+    "summary": "Class action alleging NYS DOCCS and OMH violate the ADA, Rehabilitation Act, and Due Process Clause by failing to provide community-based housing and supportive services that people with serious mental illness need to be released on parole. Plaintiffs say class members are warehoused in state prisons past their release dates because no integrated NYC placement exists.",
+    "daily_effects": "If plaintiffs succeed, NYS OMH and DOCCS would have to coordinate with NYC providers (especially supportive housing in the five boroughs, which receives the bulk of returning class members) to ensure releasable people have a community placement. Today, NYC homelessness, mental-health, and re-entry agencies absorb the consequences.",
+    "monitor": null,
+    "key_obligations": [
+      "Provide community-based housing and supportive services to releasable class members",
+      "Stop prolonged confinement of class members past parole eligibility",
+      "Coordinate discharge planning with NYC supportive-housing systems"
+    ],
+    "recent_status": "Active in S.D.N.Y. as of late 2023; motion practice ongoing.",
+    "expected_resolution": "Motion practice continuing; settlement or trial 2026+",
+    "links": [
+      {"label": "Civil Rights Litigation Clearinghouse: M.G. v. Cuomo", "url": "https://clearinghouse.net/case/17096/"},
+      {"label": "DOJ Statement of Interest", "url": "https://www.justice.gov/crt/case/mg-v-cuomo"}
+    ]
+  },
+  {
+    "id": "ab-v-ocfs-youth-solitary",
+    "case_name": "A.B. v. New York State Office of Children and Family Services",
+    "citation": "S.D.N.Y. (filed Jan. 2026)",
+    "year_filed": 2026, "year_entered": null, "status": "pending",
+    "agencies": ["NYS OCFS", "ACS"], "issue_area": "Child Welfare", "court": "S.D.N.Y.",
+    "plaintiffs": "Four named youth in OCFS custody (Legal Aid Society and Jenner & Block)",
+    "summary": "Putative federal class action alleging NYS OCFS holds children — including NYC kids placed by ACS and Family Court — in solitary confinement at secure-placement facilities for up to 24 hours a day, sometimes for weeks or months, without working toilets and without schooling. Plaintiffs assert Eighth Amendment, Fourteenth Amendment, and ADA violations.",
+    "daily_effects": "If a class is certified and relief granted, OCFS would have to overhaul disciplinary, education, and mental-health practices at the five secure facilities that house many NYC youth post-disposition. NYC ACS, Family Court judges, and public defenders would gain enforceable limits on what happens to NYC youth they remand upstate.",
+    "monitor": null,
+    "key_obligations": [
+      "End prolonged solitary confinement of youth in OCFS secure placement facilities",
+      "Provide IDEA-compliant education during disciplinary confinement",
+      "Ensure access to toilets, water, and basic necessities in disciplinary cells",
+      "Comply with ADA in disciplinary practices affecting youth with disabilities"
+    ],
+    "recent_status": "Filed January 2026; OCFS denies allegations.",
+    "expected_resolution": "Early motion stage 2026",
+    "links": [
+      {"label": "Legal Aid Society press release", "url": "https://legalaidnyc.org/news/lawsuit-end-solitary-confinement-children/"},
+      {"label": "New York Focus investigation", "url": "https://nysfocus.com/2026/01/09/ocfs-children-solitary-confinement-bathrooms-secure-facilities-lawsuit"}
+    ]
+  },
+  {
+    "id": "hurrell-harring-indigent-defense",
+    "case_name": "Hurrell-Harring v. State of New York",
+    "citation": "Index No. 8866-07 (Albany Co. Sup. Ct.)",
+    "year_filed": 2007, "year_entered": 2014, "status": "historical",
+    "agencies": ["NYS Office of Indigent Legal Services"], "issue_area": "Civil Rights", "court": "N.Y. Sup. Ct., Albany County",
+    "plaintiffs": "Indigent criminal defendants in five counties (NYCLU and Schulte Roth & Zabel)",
+    "summary": "State constitutional challenge to New York's county-by-county public defense system. The October 2014 settlement committed New York to fund counsel at arraignment, set caseload caps, and ensure quality standards in five named counties. In 2017 the State enacted Executive Law § 832-a extending the reforms statewide.",
+    "daily_effects": "Although NYC was not a named county, the statewide rollout funded by the post-Hurrell-Harring 2017 statute reimburses NYC's indigent-defense providers (Legal Aid, the institutional defenders, and assigned counsel) for caseload reduction, counsel-at-arraignment expansion, and quality enhancements.",
+    "monitor": "NYS Office of Indigent Legal Services",
+    "key_obligations": [
+      "Provide counsel at every criminal defendant's first court appearance",
+      "Set and enforce maximum caseload standards",
+      "Hire sufficient lawyers, investigators, and support staff",
+      "Provide state funding for compliance"
+    ],
+    "legacy": "Settlement obligations largely fulfilled; statewide implementation via ILS continues to underwrite NYC indigent defense operations.",
+    "judge": "Hon. Gerald W. Connolly",
+    "judge_note": "Albany Co. Sup. Ct.; approved 2015 settlement",
+    "links": [
+      {"label": "NYCLU case page", "url": "https://www.nyclu.org/court-cases/hurrell-harring-et-al-v-state-new-york-challenging-new-york-states-failure-provide-adequate"},
+      {"label": "NYS ILS Hurrell-Harring page", "url": "https://www.ils.ny.gov/node/55/hurrell-harring-lawsuit"}
+    ]
+  },
+  {
+    "id": "united-spinal-nyc-boe-polling",
+    "case_name": "United Spinal Association v. Board of Elections in the City of New York",
+    "citation": "10-cv-5653 (S.D.N.Y.)",
+    "year_filed": 2010, "year_entered": 2014, "status": "active",
+    "agencies": ["BOE"], "issue_area": "Voting", "court": "S.D.N.Y. / 2d Cir.",
+    "plaintiffs": "United Spinal Association, Disabled In Action, and individual voters (Disability Rights Advocates)",
+    "summary": "ADA and Rehabilitation Act class action over physical inaccessibility of NYC polling places. After a 2012 SDNY liability ruling and a 2014 Second Circuit affirmance, the court ordered a remedial plan requiring NYC BOE to designate ADA coordinators at every poll site, retain an accessibility consultant, survey ~1,300 sites, and remediate or relocate inaccessible ones.",
+    "daily_effects": "Every Election Day, an ADA coordinator must be on site at NYC polling locations to address barriers. The Board must survey and either fix or relocate inaccessible polling sites. Voters with mobility and vision disabilities have an enforceable right to private, independent voting at their designated site.",
+    "monitor": "Independent accessibility consultant retained per court order",
+    "key_obligations": [
+      "Designate an ADA coordinator at every poll site on Election Day",
+      "Retain an outside accessibility consultant",
+      "Survey ~1,300 polling sites and remediate barriers",
+      "Replace inaccessible sites with accessible alternates where remediation is infeasible",
+      "Report compliance to plaintiffs and the court"
+    ],
+    "recent_status": "Remedial plan remains in effect; advocates continue to flag specific site failures each election cycle.",
+    "judge": "Hon. Deborah A. Batts",
+    "judge_note": "S.D.N.Y. (deceased Feb. 2020); successor judge for enforcement not publicly verified",
+    "links": [
+      {"label": "Civil Rights Litigation Clearinghouse", "url": "https://www.clearinghouse.net/detail.php?id=12320"},
+      {"label": "DRA case page", "url": "https://dralegal.org/case/united-spinal-association-et-al-v-board-of-elections-boe/"}
+    ]
+  },
+  {
+    "id": "eason-boe-accessible-registration",
+    "case_name": "Eason v. New York State Board of Elections",
+    "citation": "16-cv-04292 (S.D.N.Y.)",
+    "year_filed": 2016, "year_entered": 2019, "status": "active",
+    "agencies": ["NYS BOE", "BOE"], "issue_area": "Voting", "court": "S.D.N.Y.",
+    "plaintiffs": "Voters with print disabilities (Disability Rights Advocates and ACLU)",
+    "summary": "ADA and Rehabilitation Act challenge to inaccessible online voter registration and absentee ballots. The February 2019 settlement required NYS BOE and DMV to make voter-registration websites screen-reader accessible by 2021; a follow-on agreement required the State to deploy a remote accessible vote-by-mail (RAVBM) system by June 2022 statewide.",
+    "daily_effects": "NYC voters with visual or print disabilities can register online and request, receive, and mark absentee ballots electronically through the state RAVBM system, with NYC BOE handling local intake and counting.",
+    "monitor": "Outside accessibility consultant; court-supervised compliance",
+    "key_obligations": [
+      "Make NYS BOE and DMV voter-registration websites WCAG-compliant",
+      "Maintain ongoing accessibility audits with an outside consultant",
+      "Deploy and maintain an accessible electronic absentee ballot system statewide",
+      "Train county BOE staff on RAVBM procedures"
+    ],
+    "recent_status": "RAVBM system used in 2022-2025 elections; minor compliance disputes continue but the framework is operative.",
+    "links": [
+      {"label": "DRA: Eason case page", "url": "https://dralegal.org/case/eason-v-new-york-state-board-elections/"},
+      {"label": "DRA: Statewide accessible absentee settlement", "url": "https://dralegal.org/press/ny-absentee-voting-settlement/"}
+    ]
+  },
+  {
+    "id": "nysed-cap-nyc-doe",
+    "case_name": "NYSED Compliance Assurance Plan for NYC DOE (special education / IDEA)",
+    "citation": "NYSED administrative; CAP May 2019",
+    "year_filed": null, "year_entered": 2019, "status": "active",
+    "agencies": ["NYSED", "DOE"], "issue_area": "Education", "court": "Administrative (NYSED)",
+    "plaintiffs": "NYSED administrative action (not a court case)",
+    "summary": "An administrative compliance regime in which NYSED placed NYC DOE under a written Compliance Assurance Plan in May 2019 after identifying NYC DOE as failing IDEA requirements for the disability subgroup for 13 consecutive years. NYSED has also issued Part 154 corrective action plans for English Language Learners.",
+    "daily_effects": "NYC DOE special-education leadership must report progress on timely IEP implementation, related-services delivery, impartial hearing system performance, and procedural safeguards. NYSED's continued 'needs intervention' designation drives city budget priorities and special-ed initiatives.",
+    "monitor": "NYSED special education and bilingual education oversight offices",
+    "key_obligations": [
+      "Submit and execute IDEA corrective action steps with measurable goals",
+      "Comply with Part 154 plan for English Language Learner services",
+      "Provide periodic data reports to NYSED on disability subgroup outcomes",
+      "Remediate procedural-safeguards failures",
+      "Risk withholding of federal IDEA funds for continued noncompliance"
+    ],
+    "recent_status": "NYC DOE remains under NYSED scrutiny in 2024-2026; NYC Comptroller's 2024 'Course Correction' report and successor audits continue to document gaps.",
+    "links": [
+      {"label": "NYCDOE Compliance Assurance Plan May 2019 (NYSED)", "url": "https://www.p12.nysed.gov/compcontracts/nysed-rfi-21-003-iho-nyc/nycdoe-compliance-assurance-plan-may-2019.pdf"},
+      {"label": "NYC Comptroller: Course Correction", "url": "https://comptroller.nyc.gov/reports/course-correction/"}
+    ]
+  },
+  {
+    "id": "port-authority-path-grove-street",
+    "case_name": "Heightened Independence and Progress / United Spinal v. Port Authority (Grove Street PATH)",
+    "citation": "Settled 2021 (D.N.J.)",
+    "year_filed": 2014, "year_entered": 2021, "status": "active",
+    "agencies": ["Port Authority of NY & NJ"], "issue_area": "Disability Rights", "court": "D.N.J.",
+    "plaintiffs": "Heightened Independence and Progress (hip) and United Spinal Association",
+    "summary": "ADA suit against the bi-state Port Authority over its 2005 renovation of the Grove Street PATH station without elevators. The 2021 settlement requires installation of an elevator at the southwest entrance and a vertical platform lift on the west side, the first enforceable PATH-system ADA decree in decades.",
+    "daily_effects": "Tens of thousands of daily NYC-bound commuters using wheelchairs or strollers gain a path between Grove Street and the World Trade Center / Exchange Place stops. The settlement is a template for ongoing pressure on the Port Authority Bus Terminal, WTC PATH hub, and JFK/LGA AirTrains.",
+    "monitor": null,
+    "key_obligations": [
+      "Construct an elevator at the southwest entrance of Grove Street PATH",
+      "Install a vertical platform lift on the west side",
+      "Maintain accessibility features once installed",
+      "Report progress to plaintiffs"
+    ],
+    "recent_status": "Construction underway; companion DOJ settlements and audits (NYS OSC 2023 Port Authority audit) continue to flag PA Bus Terminal and other gates as inaccessible.",
+    "links": [
+      {"label": "Community Health Law Project: Grove Street PATH settlement", "url": "https://chlp.org/2021-07-13-settlement-reached-in-path-accessibility-lawsuit"},
+      {"label": "USAO-NJ Port Authority ADA settlement", "url": "https://www.justice.gov/usao-nj/pr/us-attorney-s-office-reaches-ada-settlement-port-authority-new-york-and-new-jersey"}
+    ]
+  },
+  {
+    "id": "doccs-marcy-federal-review",
+    "case_name": "U.S. DOJ / FBI review of NYS DOCCS (Marcy Correctional Facility; killing of Robert Brooks)",
+    "citation": "Federal investigation (no public docket); parallel Oneida County state prosecution",
+    "year_filed": 2024, "year_entered": null, "status": "pending",
+    "agencies": ["NYS DOCCS"], "issue_area": "Jails/Corrections", "court": "Federal investigation",
+    "plaintiffs": "Federal investigation; parallel state prosecution of indicted officers",
+    "summary": "After the December 9, 2024 fatal beating of Robert Brooks by Marcy Correctional Facility officers while he was handcuffed, the FBI Albany field office and DOJ opened a review. A state grand jury indicted nearly a dozen DOCCS officers on murder and related charges in February 2025; Governor Hochul also ordered an outside review of DOCCS culture and practices.",
+    "daily_effects": "Roughly a third of people in NYS DOCCS custody are from NYC, so any federal reforms (use-of-force directives, body-worn cameras, supervision protocols) ripple into how NYC residents are treated upstate. NYC re-entry providers, families, and defenders directly engage with the indicted facility.",
+    "monitor": null,
+    "key_obligations": [
+      "Cooperate with federal investigation and any resulting consent decree",
+      "Implement Hochul-ordered outside review recommendations",
+      "Expand body-worn camera use and supervision in DOCCS facilities",
+      "Discipline and prosecute implicated officers"
+    ],
+    "recent_status": "Federal review remains open as of May 2026; state criminal prosecutions of indicted officers are ongoing.",
+    "expected_resolution": "Federal findings or consent decree 2026-2027",
+    "links": [
+      {"label": "Spectrum News: FBI/DOJ reviewing Marcy death", "url": "https://spectrumlocalnews.com/nys/rochester/public-safety/2024/12/29/fbi--doj-reviewing-death-of-marcy-correctional-facility-inmate"},
+      {"label": "NYCLU: 20 years of NYS prison misconduct records", "url": "https://www.nyclu.org/press-release/nyclu-releases-20-years-of-state-prison-misconduct-records"}
+    ]
+  },
+
+  /* ============ Fair housing, voting, environmental, and other NYC decrees ============ */
+  {
+    "id": "us-v-nyc-dep-cso",
+    "case_name": "United States and State of NY v. City of New York (DEP Combined Sewer Overflow / Citywide LTCP)",
+    "citation": "NYSDEC CO2-20050121-25 (modified 2012, 2018, 2024); federal Clean Water Act enforcement",
+    "year_filed": 2005, "year_entered": 2005, "status": "active",
+    "agencies": ["DEP"], "issue_area": "Environmental Justice",
+    "court": "NYSDEC administrative + federal Clean Water Act",
+    "plaintiffs": "U.S. EPA and NYS Department of Environmental Conservation",
+    "summary": "A series of state and federal Clean Water Act consent orders requiring NYC DEP to reduce Combined Sewer Overflows (CSO) into NY Harbor, the East River, Newtown Creek, the Bronx River, Flushing Bay, Jamaica Bay, and other waterbodies. The 2005 CSO Consent Order, modified in 2012, 2018, and 2024, governs DEP's $4+ billion long-term capital program of grey and green infrastructure.",
+    "daily_effects": "Drives DEP's capital plan for sewer separation, holding tanks (Paerdegat, Flushing Bay, Gowanus, Newtown Creek), bluebelt expansion, and the NYC Green Infrastructure Program. Establishes deadlines for waterbody-specific LTCPs reviewed and approved by DEC. Triggers stipulated penalties when milestones slip and shapes water/sewer rates the Water Board sets annually.",
+    "monitor": "NYSDEC Region 2; EPA Region 2 federal oversight",
+    "key_obligations": [
+      "Submit and implement waterbody-specific Long-Term Control Plans",
+      "Construct CSO storage facilities and high-level storm sewers on enforceable schedules",
+      "Install ≥10% impervious-area green infrastructure capture in priority CSO watersheds",
+      "Report annually on CSO volumes, capital progress, and water-quality monitoring",
+      "Pay stipulated penalties for missed milestones"
+    ],
+    "recent_status": "DEC issued a modified CSO order in 2024 extending several LTCP deadlines and adding Bronx River and Coney Island Creek obligations; DEP's FY2026 capital plan reflects roughly $1.9B in compliance spend.",
+    "links": [
+      {"label": "NYC DEP — Combined Sewer Overflow Program", "url": "https://www.nyc.gov/site/dep/water/combined-sewer-overflows.page"},
+      {"label": "NYSDEC — NYC CSO Consent Order documents", "url": "https://www.dec.ny.gov/regulations/68637.html"}
+    ]
+  },
+  {
+    "id": "newtown-creek-superfund",
+    "case_name": "Newtown Creek Superfund Site (CERCLA Administrative Order on Consent)",
+    "citation": "CERCLA Docket No. 02-2011-2010",
+    "year_filed": 2010, "year_entered": 2011, "status": "active",
+    "agencies": ["DEP", "DSNY", "EDC"], "issue_area": "Environmental Justice",
+    "court": "U.S. EPA Region 2 administrative",
+    "plaintiffs": "U.S. EPA",
+    "summary": "EPA listed Newtown Creek on the Superfund NPL in 2010 and named NYC as one of six Potentially Responsible Parties under a 2011 Administrative Order on Consent. The City — through DEP and historical DSNY incinerators and EDC-controlled uplands — must fund and conduct the remedial investigation/feasibility study.",
+    "daily_effects": "Obligates ongoing City contributions to the RI/FS and any subsequent remedial design, and constrains DEP's CSO and bulkhead work along the creek. Coordinates with the parallel CSO Consent Order's Newtown Creek LTCP.",
+    "monitor": null,
+    "key_obligations": [
+      "Fund and execute RI/FS work under EPA oversight",
+      "Coordinate creek-side CSO and bulkhead projects with Superfund remedy",
+      "Participate in allocation/contribution proceedings among PRPs",
+      "Submit periodic progress reports to EPA Region 2",
+      "Maintain institutional controls on City-owned uplands"
+    ],
+    "recent_status": "EPA released the Proposed Plan for the lower 3.5 miles in late 2024; a Record of Decision is expected 2026, after which a remedial-design consent decree will be negotiated with NYC as a named PRP.",
+    "links": [
+      {"label": "EPA — Newtown Creek Superfund Site", "url": "https://www.epa.gov/superfund/newtown-creek"}
+    ]
+  },
+  {
+    "id": "gowanus-canal-superfund",
+    "case_name": "Gowanus Canal Superfund Site (EPA Record of Decision and Consent Decrees)",
+    "citation": "EPA ROD Sept. 27, 2013",
+    "year_filed": 2010, "year_entered": 2013, "status": "active",
+    "agencies": ["DEP"], "issue_area": "Environmental Justice",
+    "court": "U.S. EPA Region 2; S.D.N.Y. for judicial consent decrees",
+    "plaintiffs": "U.S. EPA",
+    "summary": "EPA's 2013 Record of Decision for the Gowanus Canal Superfund site allocated cleanup responsibility among PRPs including NYC (as historical operator of municipal incinerators and current owner of CSO outfalls). The City is bound by an Administrative Settlement Agreement to design and build two CSO retention tanks (Head-End and Owl's Head/4th Street) integrated with the dredging remedy.",
+    "daily_effects": "Forces DEP to build the 8-million-gallon Head-End tank and the 4-million-gallon Owl's Head tank under EPA-enforceable schedules. Construction has displaced city property at Thomas Greene Playground and the Double D Pool, requiring replacement facilities. Sets the tempo for adjacent Gowanus rezoning infrastructure work.",
+    "monitor": null,
+    "key_obligations": [
+      "Design, build, and operate two CSO retention tanks per EPA schedule",
+      "Coordinate tank construction with EPA dredging and capping of canal sediments",
+      "Replace Thomas Greene Playground and provide interim community amenities",
+      "Reimburse EPA past response costs",
+      "Submit quarterly progress reports"
+    ],
+    "recent_status": "Dredging of the upper canal completed in 2024; tank construction continues with revised completion targets of 2028 (Head-End) and 2030 (Owl's Head).",
+    "links": [
+      {"label": "EPA — Gowanus Canal Superfund Site", "url": "https://www.epa.gov/superfund/gowanus-canal"},
+      {"label": "NYC DEP — Gowanus CSO Facilities", "url": "https://www.nyc.gov/site/dep/water/gowanus-canal.page"}
+    ]
+  },
+  {
+    "id": "nyc-watershed-fad",
+    "case_name": "NYC Watershed Memorandum of Agreement and Filtration Avoidance Determination",
+    "citation": "1997 Watershed MOA; EPA FAD (revised 2017, modified 2023)",
+    "year_filed": 1993, "year_entered": 1997, "status": "active",
+    "agencies": ["DEP"], "issue_area": "Environmental Justice",
+    "court": "Administrative (EPA and NYSDOH); enforceable via Safe Drinking Water Act",
+    "plaintiffs": "U.S. EPA, NYS Department of Health, watershed municipalities, and environmental coalition",
+    "summary": "The 1997 NYC Watershed MOA and federal Filtration Avoidance Determination (FAD) bind NYC DEP to a watershed-protection program in lieu of building a $10+ billion filtration plant for the Catskill/Delaware system. The FAD is renewed roughly every 5-10 years and is enforceable under the Safe Drinking Water Act.",
+    "daily_effects": "Drives DEP's land acquisition program in the Catskills, septic-system rehabilitation grants, stream-corridor restoration, and the West-of-Hudson farm and forestry programs. Funds Catskill Watershed Corporation grants to upstate towns. Failure to meet FAD criteria would force filtration construction and large water-rate increases.",
+    "monitor": null,
+    "key_obligations": [
+      "Acquire or conserve watershed land per annual targets",
+      "Fund septic remediation and stormwater retrofits in West-of-Hudson towns",
+      "Operate Catskill turbidity-control and UV disinfection facilities",
+      "Submit annual FAD compliance reports to EPA and NYSDOH",
+      "Maintain Watershed Rules and Regulations enforcement"
+    ],
+    "recent_status": "EPA and NYSDOH issued a mid-term FAD revision in 2023 tightening turbidity reporting after the 2020-2022 Ashokan Reservoir releases controversy; next full FAD review is 2027.",
+    "links": [
+      {"label": "NYC DEP — Filtration Avoidance Determination", "url": "https://www.nyc.gov/site/dep/water/filtration-avoidance.page"},
+      {"label": "NYSDOH — 2017 FAD and revisions", "url": "https://www.health.ny.gov/environmental/water/drinking/nycfad/"}
+    ]
+  },
+  {
+    "id": "us-v-nyc-boe-chinese",
+    "case_name": "United States v. NYC Board of Elections (Section 203 / Chinese-language assistance)",
+    "citation": "1:13-cv-04114 (E.D.N.Y.)",
+    "year_filed": 2013, "year_entered": 2013, "status": "active",
+    "agencies": ["BOE"], "issue_area": "Voting", "court": "E.D.N.Y.",
+    "plaintiffs": "U.S. Department of Justice, Civil Rights Division",
+    "summary": "DOJ sued NYC BOE under Section 203 of the Voting Rights Act for failing to provide adequate Chinese-language assistance in Manhattan, Queens, and Brooklyn. A memorandum of agreement and federal-monitor stipulation requires bilingual poll workers, translated materials, and DOJ observer access.",
+    "daily_effects": "Forces BOE to recruit and assign Chinese-speaking poll workers and interpreters to covered poll sites every primary, runoff, and general election. Requires translated ballots, signage, and voter-information materials in Chinese. BOE must report deployments to DOJ pre- and post-election.",
+    "monitor": "DOJ federal election observers (Voting Section)",
+    "key_obligations": [
+      "Recruit and deploy bilingual Chinese-language poll workers at all covered sites",
+      "Translate ballots, signage, and voter education materials",
+      "Provide pre-election training and post-election reporting to DOJ",
+      "Permit DOJ federal observers on election day",
+      "Maintain a language-assistance coordinator at BOE"
+    ],
+    "recent_status": "DOJ observers continued to monitor the 2024 general election; AALDEF documented persistent gaps in poll-site coverage.",
+    "links": [
+      {"label": "DOJ press release — 2013 filing", "url": "https://www.justice.gov/opa/pr/justice-department-files-lawsuit-against-new-york-city-board-elections-violations-voting"},
+      {"label": "AALDEF — NYC poll monitoring", "url": "https://www.aaldef.org/program/voting-rights/"}
+    ]
+  },
+  {
+    "id": "us-v-nyc-boe-bengali",
+    "case_name": "United States v. NYC Board of Elections (Bengali-language assistance, Queens)",
+    "citation": "MOA Mar. 7, 2017 (related to 13-cv-04114)",
+    "year_filed": 2017, "year_entered": 2017, "status": "active",
+    "agencies": ["BOE"], "issue_area": "Voting", "court": "E.D.N.Y.",
+    "plaintiffs": "U.S. Department of Justice, Civil Rights Division",
+    "summary": "Following the 2011 Census Bureau designation of Queens County for Bengali-language coverage under Section 203, DOJ negotiated a 2017 MOA requiring NYC BOE to provide Bengali ballots, signage, and bilingual poll workers in covered Queens election districts.",
+    "daily_effects": "BOE must print Bengali ballots for designated Queens AD election districts each cycle. Requires bilingual Bengali interpreters at designated sites and Bengali voter-education mailings. DOJ retains site-visit and document-inspection rights.",
+    "monitor": "DOJ Voting Section observers",
+    "key_obligations": [
+      "Translate Queens ballots and election materials into Bengali",
+      "Recruit Bengali-speaking poll workers and interpreters",
+      "Conduct Bengali voter outreach and education",
+      "Report compliance to DOJ before and after each election",
+      "Allow DOJ inspection of poll sites and records"
+    ],
+    "recent_status": "Coverage continued through 2024; AALDEF and Chhaya CDC documented continued interpreter-staffing shortfalls at South Asian-heavy sites in 2024-2025.",
+    "links": [
+      {"label": "DOJ — 2017 NYC Bengali MOA", "url": "https://www.justice.gov/opa/pr/justice-department-secures-agreement-new-york-city-board-elections-protect-rights-bengali"}
+    ]
+  },
+  {
+    "id": "us-v-nyc-boe-korean-2008",
+    "case_name": "United States v. NYC Board of Elections (Korean and Chinese assistance, 2008)",
+    "citation": "1:08-cv-04567 (E.D.N.Y.)",
+    "year_filed": 2008, "year_entered": 2008, "year_terminated": 2013, "status": "historical",
+    "agencies": ["BOE"], "issue_area": "Voting", "court": "E.D.N.Y.",
+    "plaintiffs": "U.S. Department of Justice (following AALDEF complaints)",
+    "summary": "After repeated AALDEF poll-monitoring reports documented failures in Asian-language assistance, DOJ sued NYC BOE in 2008 over Section 203 violations affecting Korean and Chinese voters. The 2008 consent decree required translated materials, bilingual workers, and DOJ reporting; largely subsumed by the 2013 follow-on litigation.",
+    "daily_effects": "Established the template for Asian-language compliance still followed by BOE — translated ballots, designated bilingual coordinators, and pre-election DOJ reporting. Day-to-day obligations carried forward into the active 2013 framework.",
+    "monitor": "DOJ observers",
+    "key_obligations": [
+      "Provide Chinese and Korean ballots in covered districts",
+      "Train and deploy bilingual poll workers",
+      "Report staffing and complaint data to DOJ",
+      "Permit federal observers",
+      "Designate a language-assistance coordinator"
+    ],
+    "legacy": "Largely superseded by 2013 enforcement and 2017 Bengali MOA; historical reference for Asian-language compliance baseline.",
+    "links": [
+      {"label": "DOJ — 2008 NYC BOE complaint", "url": "https://www.justice.gov/crt/case-document/file/1118396/download"}
+    ]
+  },
+  {
+    "id": "ny-v-cushman-wakefield-soi",
+    "case_name": "People of the State of NY v. Cushman & Wakefield (source-of-income discrimination)",
+    "citation": "Index No. 451444/2018 (N.Y. Sup. Ct., N.Y. County)",
+    "year_filed": 2018, "year_entered": 2019, "year_terminated": 2022, "status": "historical",
+    "agencies": ["NYC Commission on Human Rights"], "issue_area": "Housing",
+    "court": "N.Y. Sup. Ct., New York County",
+    "plaintiffs": "NYS Attorney General with NYC Commission on Human Rights cooperation",
+    "summary": "Following a Fair Housing Justice Center testing investigation, the NY Attorney General secured a stipulated judgment requiring Cushman & Wakefield to accept Section 8 and other rental subsidies across its NYC brokerage portfolio and pay $115,000.",
+    "daily_effects": "Required affirmative changes to listing software, agent training, and complaint intake at one of the largest NYC commercial/residential brokerages. NYC CCHR used the model in dozens of follow-on cases against smaller brokers.",
+    "monitor": "OAG Civil Rights Bureau compliance review (3 years)",
+    "key_obligations": [
+      "Accept Section 8, CityFHEPS, and other lawful sources of income",
+      "Train all NYC-licensed agents on source-of-income protections",
+      "Adopt revised advertising and listing policies",
+      "Report complaints to OAG for 3-year compliance term",
+      "Pay $115,000 in penalties and costs"
+    ],
+    "legacy": "Compliance term expired in 2022; precedent cited in CCHR enforcement against Douglas Elliman (2022) and a 2024 portfolio settlement with A&E Real Estate.",
+    "links": [
+      {"label": "NYS OAG — 2019 settlement", "url": "https://ag.ny.gov/press-release/2019/ag-james-announces-settlement-cushman-wakefield-discriminating-against-tenants"}
+    ]
+  },
+  {
+    "id": "cchr-douglas-elliman-soi",
+    "case_name": "NYC Commission on Human Rights v. Douglas Elliman (source-of-income discrimination)",
+    "citation": "CCHR Conciliation Agreement (2022)",
+    "year_filed": 2020, "year_entered": 2022, "status": "active",
+    "agencies": ["NYC Commission on Human Rights"], "issue_area": "Housing",
+    "court": "NYC CCHR administrative",
+    "plaintiffs": "NYC Commission on Human Rights Law Enforcement Bureau",
+    "summary": "After a multi-year testing investigation, CCHR entered a conciliation agreement with Douglas Elliman in 2022 requiring system-wide acceptance of rental subsidies, $120,000 in penalties, mandatory training, and three years of compliance reporting.",
+    "daily_effects": "Forces real-time training and monitoring of one of NYC's largest residential brokerages, with quarterly reports to CCHR. Created a template for follow-on agreements with other brokerages through 2025.",
+    "monitor": "CCHR Law Enforcement Bureau (3-year compliance term)",
+    "key_obligations": [
+      "Maintain anti-discrimination policy accepting all lawful sources of income",
+      "Train all NYC agents and brokers annually",
+      "Quarterly reporting of complaints and testing-based audits to CCHR",
+      "Post anti-discrimination notice on listings",
+      "Pay $120,000 penalty"
+    ],
+    "recent_status": "Agreement remains in compliance phase through 2025; cited as model in 2024 settlements with two large management firms.",
+    "links": [
+      {"label": "NYC CCHR press page", "url": "https://www.nyc.gov/site/cchr/media/press-releases.page"}
+    ]
+  },
+  {
+    "id": "nyc-lead-paint-ll1",
+    "case_name": "NYC Coalition to End Lead Poisoning v. Vallone (Local Law 1 enforcement)",
+    "citation": "Index No. 41011/95 (N.Y. Sup. Ct., N.Y. County)",
+    "year_filed": 1995, "year_entered": 1999, "year_terminated": 2004, "status": "historical",
+    "agencies": ["HPD", "DOHMH"], "issue_area": "Housing",
+    "court": "N.Y. Sup. Ct., New York County",
+    "plaintiffs": "NYC Coalition to End Lead Poisoning",
+    "summary": "Years of litigation forced the City to enforce Local Law 1 of 1982's lead-paint hazard provisions, culminating in court orders directing HPD and DOHMH to inspect, abate, and report on lead hazards. Prompted Local Law 1 of 2004.",
+    "daily_effects": "Established HPD's Lead Hazard Reduction Unit workflow — annual landlord notices, in-unit inspections at turnover, abatement enforcement, and DOHMH blood-lead surveillance linkage. Court-ordered remedial framework was succeeded by Local Law 1 of 2004 statutory regime still in force.",
+    "monitor": null,
+    "key_obligations": [
+      "Inspect known lead-hazard buildings at turnover",
+      "Enforce abatement orders against landlords",
+      "Coordinate DOHMH blood-lead case follow-up",
+      "Report annually on enforcement metrics",
+      "Maintain registry of buildings with children under 6"
+    ],
+    "legacy": "Active 2024-2025 enforcement under Local Law 31 of 2020 and Local Law 123 of 2023; HPD facing renewed legal pressure from WE ACT for Environmental Justice over compliance gaps in NYCHA.",
+    "links": [
+      {"label": "NYC HPD — Lead Paint", "url": "https://www.nyc.gov/site/hpd/services-and-information/lead-based-paint.page"}
+    ]
+  },
+  {
+    "id": "davis-nycha-rd-section-504",
+    "case_name": "Davis v. NYC Housing Authority (Section 504 reasonable accommodation)",
+    "citation": "1:90-cv-00628 (S.D.N.Y.)",
+    "year_filed": 1990, "year_entered": 1992, "year_terminated": 2013, "status": "historical",
+    "agencies": ["NYCHA"], "issue_area": "Disability Rights",
+    "court": "S.D.N.Y.",
+    "plaintiffs": "NYCHA tenants with disabilities (MFY Legal Services and Disability Rights Advocates)",
+    "summary": "Class action under Section 504 and the FHAA producing a consent decree requiring NYCHA to provide a meaningful reasonable-accommodation process, accessible-unit set-asides, and transfers for tenants with disabilities. Framework later subsumed by the 2013 federal HUD/DOJ NYCHA Section 504 voluntary compliance agreement.",
+    "daily_effects": "Created NYCHA's Department of Reasonable Accommodations and the disability-transfer waiting list. Established procedural rights still relied on by tenants in 2024-2026 even after the agreement formally closed.",
+    "monitor": null,
+    "key_obligations": [
+      "Establish written reasonable-accommodation policy and intake process",
+      "Convert minimum percentage of units to accessibility standards on turnover",
+      "Provide expedited transfers for qualifying tenants",
+      "Train property managers on Section 504 obligations",
+      "Report annually on accommodation requests and outcomes"
+    ],
+    "legacy": "Obligations folded into the 2013 NYCHA Section 504 voluntary compliance agreement with HUD and the 2019 HUD/SDNY Agreement (already in this database).",
+    "links": [
+      {"label": "DRA — NYCHA cases", "url": "https://dralegal.org/case/davis-v-new-york-city-housing-authority/"}
+    ]
+  },
+  {
+    "id": "us-v-nyc-dot-aps",
+    "case_name": "United States v. City of New York (DOT Accessible Pedestrian Signals)",
+    "citation": "Settlement Agreement, DJ No. 204-52-104 (2013)",
+    "year_filed": 2012, "year_entered": 2013, "status": "active",
+    "agencies": ["DOT"], "issue_area": "Disability Rights", "court": "S.D.N.Y.",
+    "plaintiffs": "U.S. Department of Justice, Civil Rights Division",
+    "summary": "DOJ and NYC DOT entered a Title II ADA settlement requiring installation of Accessible Pedestrian Signals (APS) at signalized intersections citywide. Complements the separate curb-ramp consent decree and covers audible/vibrotactile signals for blind and low-vision pedestrians.",
+    "daily_effects": "DOT installs hundreds of APS units annually under court-enforceable schedules; complaints are routed to a designated DOT ADA coordinator.",
+    "monitor": "DOJ Disability Rights Section",
+    "key_obligations": [
+      "Install APS at a minimum annual number of signalized intersections",
+      "Prioritize intersections near schools for the blind and senior centers",
+      "Maintain a complaint and request log accessible to the public",
+      "Train DOT signal engineers on APS standards",
+      "Submit annual compliance reports to DOJ"
+    ],
+    "recent_status": "Largely superseded operationally by the 2021 ACB v. NYC consent decree, which mandates full APS coverage by 2031.",
+    "links": [
+      {"label": "DOJ — 2013 NYC APS settlement", "url": "https://www.ada.gov/nyc_pedestrian_sa.html"}
+    ]
+  },
+  {
+    "id": "acb-v-nyc-aps",
+    "case_name": "American Council of the Blind of NY v. City of New York (APS consent decree)",
+    "citation": "1:18-cv-05792 (S.D.N.Y.)",
+    "year_filed": 2018, "year_entered": 2021, "status": "active",
+    "agencies": ["DOT"], "issue_area": "Disability Rights", "court": "S.D.N.Y.",
+    "plaintiffs": "American Council of the Blind of NY and individual blind pedestrians (Disability Rights Advocates)",
+    "summary": "Following a 2020 liability ruling that DOT's lack of Accessible Pedestrian Signals violated Title II of the ADA, the parties entered a 2021 consent decree requiring APS installation at all of NYC's ~13,200 signalized intersections by 2031.",
+    "daily_effects": "DOT must install APS at roughly 9% of remaining intersections each year and prioritize sites near schools, hospitals, senior centers, and transit hubs. Decree triggers stipulated penalties for missed targets and required hiring of additional traffic engineers.",
+    "monitor": "Court-appointed monitor and DRA compliance counsel",
+    "key_obligations": [
+      "Install APS at 100% of signalized intersections by 2031",
+      "Meet annual installation milestones (~1,200 intersections/yr)",
+      "Maintain APS once installed",
+      "Submit semi-annual reports to plaintiffs and court",
+      "Pay attorney fees and compliance-monitoring costs"
+    ],
+    "recent_status": "DOT remained on schedule through 2024 reporting, with about 5,000 intersections equipped by mid-2025; plaintiffs raised concerns about maintenance backlog at older installations.",
+    "judge": "Hon. Paul A. Engelmayer",
+    "judge_note": "S.D.N.Y.; issued 2020 liability ruling and approved 2021 decree",
+    "links": [
+      {"label": "DRA — ACB v. NYC", "url": "https://dralegal.org/case/american-council-of-the-blind-of-new-york-et-al-v-city-of-new-york/"}
+    ]
+  },
+  {
+    "id": "nypd-columbia-cuny-protest-2024",
+    "case_name": "Doe v. City of New York (NYPD Columbia/CUNY protest mass-arrest settlement)",
+    "citation": "1:24-cv-05153 (S.D.N.Y.)",
+    "year_filed": 2024, "year_entered": 2025, "status": "active",
+    "agencies": ["NYPD"], "issue_area": "Policing", "court": "S.D.N.Y.",
+    "plaintiffs": "Arrested protesters (NYCLU, CUNY CLEAR, and CCR)",
+    "summary": "Class settlement arising from the April-May 2024 NYPD raids at Columbia University's Hamilton Hall and CUNY's City College Gaza solidarity encampments. The agreement adds binding limitations on use of batons, sound cannons, and mass-arrest processing tied to the existing Sow/Payne post-2020-protest frameworks.",
+    "daily_effects": "Constrains NYPD Strategic Response Group and Disorder Control Unit deployments at campus protests, requires expedited processing and counsel access for arrestees, and obliges retraining tied to the federal-monitor structure operating under Sow v. City of New York.",
+    "monitor": "Coordinated with Sow monitor team",
+    "key_obligations": [
+      "Restrict mass-arrest tactics at campus protests",
+      "Provide arrestee access to counsel within set timeframes",
+      "Document and review every use of force at protests",
+      "Retraining of SRG and DCU personnel",
+      "Pay damages to class members and attorney fees"
+    ],
+    "recent_status": "Preliminary approval entered late 2025; final fairness hearing scheduled early 2026.",
+    "judge": "Hon. Dale E. Ho",
+    "judge_note": "S.D.N.Y.",
+    "links": [
+      {"label": "NYCLU — Columbia/CUNY protest litigation", "url": "https://www.nyclu.org/en/cases/columbia-cuny-protest-litigation"}
+    ]
+  },
+  {
+    "id": "nyc-doe-ell-compliance",
+    "case_name": "U.S. v. NYC DOE (English Language Learners Compliance Agreement)",
+    "citation": "OCR Case No. 02-10-1083; DOJ MOU (2018)",
+    "year_filed": 2014, "year_entered": 2018, "status": "active",
+    "agencies": ["DOE"], "issue_area": "Education",
+    "court": "U.S. Dept. of Education OCR / DOJ administrative",
+    "plaintiffs": "U.S. Department of Education Office for Civil Rights and DOJ Civil Rights Division",
+    "summary": "Following OCR investigations of ELL services across NYC DOE, the City entered a 2018 compliance agreement requiring identification, programming, and exit protocols for English Language Learners consistent with Title VI and the EEOA. Updates obligations originally rooted in the 1974 ASPIRA Consent Decree.",
+    "daily_effects": "Drives DOE's Division of Multilingual Learners staffing, mandates bilingual program seats at specified schools, and sets reporting on ELL identification timeliness, services, and graduation outcomes. Triggers OCR site visits and corrective-action plans for non-compliant districts.",
+    "monitor": "U.S. ED Office for Civil Rights",
+    "key_obligations": [
+      "Timely identify and place ELL students",
+      "Provide bilingual or ENL services per state regulation",
+      "Translate parent communications in 9+ languages",
+      "Report annual ELL outcome data to OCR/DOJ",
+      "Conduct annual self-audits at flagged schools"
+    ],
+    "recent_status": "OCR issued a 2024 corrective-action letter flagging continuing deficiencies in newcomer-student programming amid the asylum-seeker enrollment surge.",
+    "links": [
+      {"label": "USDOE OCR — Resolution Agreement", "url": "https://www2.ed.gov/about/offices/list/ocr/docs/investigations/more/02101083-b.pdf"}
+    ]
   }
 ];
