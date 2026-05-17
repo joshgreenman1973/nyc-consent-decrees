@@ -46,7 +46,14 @@ code, .acronym {
 <main>
 
 <h2>What this is</h2>
-<p>This is a hand-curated, public-facing inventory of the consent decrees, court-ordered settlements, and federal monitorships that currently constrain how New York City government agencies operate. Every entry is sourced. Nothing here is generated from a black-box list.</p>
+<p>This is a hand-curated, public-facing inventory of the consent decrees, court-ordered settlements, and federal monitorships that constrain how New York City government agencies operate — past, present, and likely future. Every entry is sourced. Nothing here is generated from a black-box list.</p>
+
+<h2>The three sections</h2>
+<ul>
+  <li><strong>Currently in force</strong> &mdash; standing court orders, monitorships, and settlements that bind a New York City agency as of 2026.</li>
+  <li><strong>Pending &amp; on the horizon</strong> &mdash; active litigation, federal investigations, and enforcement motions that have a credible likelihood of producing a new consent decree, settlement, or court-ordered injunction in the next 6 to 36 months. Inclusion requires (a) a filed case, (b) public sources documenting current posture, and (c) injunctive relief being sought.</li>
+  <li><strong>Historical &amp; resolved</strong> &mdash; foundational decrees where a court has formally terminated jurisdiction, the decree has been fully superseded, or the original framework has been replaced by a successor agreement. Each entry includes a <em>legacy</em> note describing what residue of the decree remains embedded in current agency practice.</li>
+</ul>
 
 <h2>What counts as a "consent decree" here</h2>
 <p>The term is used broadly. The database includes:</p>
@@ -81,6 +88,10 @@ code, .acronym {
   <dt>key_obligations</dt><dd>The concrete operational requirements the decree imposes.</dd>
   <dt>daily_effects</dt><dd>A plain-language summary of what the decree changes about how a New York City agency must function and what protections residents gain.</dd>
   <dt>recent_status</dt><dd>Material developments in 2024-2026, including contempt findings, modifications, and receivership motions.</dd>
+  <dt>judge</dt><dd>The currently assigned district judge, justice, or chief judge presiding over enforcement (for active and pending cases) or the historically assigned judge (for closed cases). Null where current assignment could not be verified from public sources.</dd>
+  <dt>expected_resolution</dt><dd><em>Pending only.</em> Short string describing the likely next procedural step or timeframe.</dd>
+  <dt>year_terminated</dt><dd><em>Historical only.</em> Year the court relinquished jurisdiction or the decree was formally superseded.</dd>
+  <dt>legacy</dt><dd><em>Historical only.</em> What of the decree's reforms remain embedded in current agency practice even after closure.</dd>
   <dt>links</dt><dd>Primary sources: court orders, monitor reports, official agency notices, advocacy-group case pages, and reputable news coverage.</dd>
 </dl>
 

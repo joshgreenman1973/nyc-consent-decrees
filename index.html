@@ -247,6 +247,62 @@ select {
 .tag-status.active-receivership { background: var(--red); color: white; }
 .tag-status.in-modification { background: var(--amber); color: white; }
 .tag-status.terminated-recent { background: var(--slate); color: white; }
+.tag-status.pending { background: var(--navy-mid); color: white; }
+.tag-status.historical { background: #5d4e36; color: white; }
+
+/* TABS */
+.tabs {
+  background: var(--ink);
+  border-bottom: 1px solid var(--rule-heavy);
+}
+.tabs-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  padding: 0 1.5rem;
+  gap: 0;
+  overflow-x: auto;
+}
+.tab {
+  flex: 0 0 auto;
+  background: none;
+  border: none;
+  color: rgba(245, 240, 232, 0.55);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+.tab:hover { color: var(--cream); }
+.tab.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+.tab-count {
+  background: rgba(245, 240, 232, 0.12);
+  padding: 0.1rem 0.45rem;
+  margin-left: 0.5rem;
+  font-size: 0.65rem;
+}
+.tab.active .tab-count { background: rgba(200, 164, 58, 0.25); color: var(--gold); }
+.tab-intro {
+  max-width: 1280px;
+  margin: 1.5rem auto 0;
+  padding: 0 1.5rem;
+  font-size: 1rem;
+  color: var(--slate);
+  font-style: italic;
+  line-height: 1.5;
+  border-left: 3px solid var(--gold);
+  padding-left: 1rem;
+  margin-left: 1.5rem;
+  max-width: calc(1280px - 3rem);
+}
 
 .card h3 {
   font-family: 'Playfair Display', Georgia, serif;
@@ -451,6 +507,16 @@ select {
   <div class="stats-inner" id="stats"></div>
 </section>
 
+<nav class="tabs" aria-label="Database section">
+  <div class="tabs-inner">
+    <button class="tab active" data-category="current">Currently in force <span class="tab-count" id="count-current">0</span></button>
+    <button class="tab" data-category="pending">Pending &amp; on the horizon <span class="tab-count" id="count-pending">0</span></button>
+    <button class="tab" data-category="historical">Historical &amp; resolved <span class="tab-count" id="count-historical">0</span></button>
+  </div>
+</nav>
+
+<p class="tab-intro" id="tab-intro"></p>
+
 <div class="controls">
   <div class="controls-inner">
     <input type="search" id="search" placeholder="Search by case, agency, or topic..." aria-label="Search">
@@ -486,48 +552,91 @@ select {
   </div>
 </footer>
 
-<script src="data.js"></script>
+<script src="data.js?v=20260517"></script>
+<script>
+// Merge judge data into decree entries
+DECREES.forEach(d => {
+  const j = (typeof JUDGES !== 'undefined') && JUDGES[d.id];
+  if (j) { d.judge = j.judge; d.judge_note = j.judge_note; }
+});
+</script>
 <script>
 const STATUS_LABEL = {
   'active': 'Active',
   'active-receivership': 'In receivership',
   'in-modification': 'In modification',
-  'terminated-recent': 'Recently terminated'
+  'terminated-recent': 'Recently terminated',
+  'pending': 'Pending',
+  'historical': 'Historical'
 };
-const ISSUE_LABEL = (s) => s;
+const TAB_INTRO = {
+  'current': 'Standing court orders, monitorships, and settlements that constrain New York City agencies as of 2026. Each card opens a plain-language explainer with sources.',
+  'pending': 'Active litigation and federal investigations that may produce new consent decrees, settlements, or court-ordered relief in the next 6 to 36 months. Posture as of late 2025 / early 2026.',
+  'historical': 'Foundational New York City decrees that have been formally terminated or fully superseded but whose reforms remain embedded in how agencies operate today.'
+};
 
-const state = { search: '', agency: '', issue: '', status: '' };
+const state = { category: 'current', search: '', agency: '', issue: '', status: '' };
 
 function uniqueSorted(arr) { return [...new Set(arr)].sort(); }
 
+function inCategory(d, cat) {
+  if (cat === 'current') return !['pending','historical','terminated-recent'].includes(d.status);
+  if (cat === 'pending') return d.status === 'pending';
+  if (cat === 'historical') return d.status === 'historical' || d.status === 'terminated-recent';
+  return true;
+}
+
 function buildFilters() {
-  const agencies = uniqueSorted(DECREES.flatMap(d => d.agencies || []));
-  const issues = uniqueSorted(DECREES.map(d => d.issue_area).filter(Boolean));
+  const pool = DECREES.filter(d => inCategory(d, state.category));
+  const agencies = uniqueSorted(pool.flatMap(d => d.agencies || []));
+  const issues = uniqueSorted(pool.map(d => d.issue_area).filter(Boolean));
   const aSel = document.getElementById('filter-agency');
-  agencies.forEach(a => aSel.insertAdjacentHTML('beforeend', `<option value="${a}">${a}</option>`));
+  aSel.innerHTML = '<option value="">All agencies</option>' + agencies.map(a => `<option value="${a}">${a}</option>`).join('');
   const iSel = document.getElementById('filter-issue');
-  issues.forEach(i => iSel.insertAdjacentHTML('beforeend', `<option value="${i}">${i}</option>`));
+  iSel.innerHTML = '<option value="">All issues</option>' + issues.map(i => `<option value="${i}">${i}</option>`).join('');
 }
 
 function buildStats() {
-  const total = DECREES.length;
-  const active = DECREES.filter(d => d.status === 'active' || d.status === 'active-receivership' || d.status === 'in-modification').length;
-  const monitors = DECREES.filter(d => d.monitor).length;
-  const agencies = new Set(DECREES.flatMap(d => d.agencies || [])).size;
-  const oldest = Math.min(...DECREES.map(d => d.year_entered || d.year_filed || 9999).filter(y => y < 9999));
-  const stats = [
-    [total, 'Decrees tracked'],
-    [active, 'Currently active'],
-    [monitors, 'With federal monitors'],
-    [agencies, 'NYC agencies bound'],
-    [oldest === Infinity ? '—' : oldest, 'Oldest still in force']
-  ];
+  const pool = DECREES.filter(d => inCategory(d, state.category));
+  const total = pool.length;
+  const monitors = pool.filter(d => d.monitor).length;
+  const agencies = new Set(pool.flatMap(d => d.agencies || [])).size;
+  let stats;
+  if (state.category === 'current') {
+    const oldest = Math.min(...pool.map(d => d.year_entered || d.year_filed || 9999).filter(y => y < 9999));
+    stats = [
+      [total, 'Decrees in force'],
+      [monitors, 'With monitors / oversight'],
+      [agencies, 'NYC agencies bound'],
+      [oldest === Infinity ? '—' : oldest, 'Oldest still in force']
+    ];
+  } else if (state.category === 'pending') {
+    stats = [
+      [total, 'Pending matters'],
+      [agencies, 'NYC agencies potentially affected']
+    ];
+  } else {
+    const oldest = Math.min(...pool.map(d => d.year_entered || 9999).filter(y => y < 9999));
+    stats = [
+      [total, 'Historical decrees'],
+      [agencies, 'NYC agencies reshaped'],
+      [oldest === Infinity ? '—' : oldest, 'Earliest entered']
+    ];
+  }
   document.getElementById('stats').innerHTML = stats.map(([n, l]) =>
     `<div class="stat"><div class="stat-num">${n}</div><div class="stat-label">${l}</div></div>`
   ).join('');
+
+  // Update tab counts
+  ['current','pending','historical'].forEach(cat => {
+    const el = document.getElementById('count-' + cat);
+    if (el) el.textContent = DECREES.filter(d => inCategory(d, cat)).length;
+  });
+  document.getElementById('tab-intro').textContent = TAB_INTRO[state.category] || '';
 }
 
 function matches(d) {
+  if (!inCategory(d, state.category)) return false;
   if (state.agency && !(d.agencies || []).includes(state.agency)) return false;
   if (state.issue && d.issue_area !== state.issue) return false;
   if (state.status && d.status !== state.status) return false;
@@ -551,7 +660,15 @@ function renderGrid() {
     grid.innerHTML = `<div class="empty-state"><h3>No decrees match.</h3><p>Try broader filters or a different search term.</p></div>`;
     return;
   }
-  grid.innerHTML = filtered.map(d => `
+  grid.innerHTML = filtered.map(d => {
+    let cite = d.citation || '';
+    if (d.status === 'pending' && d.year_filed) cite += ' &middot; filed ' + d.year_filed;
+    else if (d.status === 'historical' && d.year_entered) cite += ' &middot; ' + d.year_entered + (d.year_terminated ? '–' + d.year_terminated : '');
+    else if (d.year_entered) cite += ' &middot; entered ' + d.year_entered;
+    let footL = d.court || '';
+    if (d.status === 'pending' && d.expected_resolution) footL = d.expected_resolution;
+    else if (d.monitor) footL = 'Monitor: ' + d.monitor.split(',')[0];
+    return `
     <article class="card" data-id="${d.id}">
       <div class="card-tags">
         <span class="tag tag-status ${d.status}">${STATUS_LABEL[d.status] || d.status}</span>
@@ -559,14 +676,14 @@ function renderGrid() {
         ${d.issue_area ? `<span class="tag tag-issue">${d.issue_area}</span>` : ''}
       </div>
       <h3>${d.case_name}</h3>
-      <div class="citation">${d.citation || ''}${d.year_entered ? ' &middot; entered ' + d.year_entered : ''}</div>
+      <div class="citation">${cite}</div>
       <p class="summary">${d.summary || ''}</p>
       <div class="footer">
-        <span>${d.monitor ? 'Monitor: ' + d.monitor.split(',')[0] : (d.court || '')}</span>
+        <span>${footL}</span>
         <span class="read-more">Read &rarr;</span>
       </div>
     </article>
-  `).join('');
+  `;}).join('');
 }
 
 function openModal(id) {
@@ -585,30 +702,41 @@ function openModal(id) {
 
     <div class="modal-meta-grid">
       ${d.year_filed ? `<div class="meta-item"><div class="meta-label">Filed</div><div class="meta-value">${d.year_filed}</div></div>` : ''}
-      ${d.year_entered ? `<div class="meta-item"><div class="meta-label">Decree entered</div><div class="meta-value">${d.year_entered}</div></div>` : ''}
+      ${d.year_entered ? `<div class="meta-item"><div class="meta-label">${d.status === 'historical' ? 'Decree entered' : 'Decree entered'}</div><div class="meta-value">${d.year_entered}</div></div>` : ''}
+      ${d.year_terminated ? `<div class="meta-item"><div class="meta-label">Terminated</div><div class="meta-value">${d.year_terminated}</div></div>` : ''}
+      ${d.expected_resolution ? `<div class="meta-item"><div class="meta-label">Posture</div><div class="meta-value">${d.expected_resolution}</div></div>` : ''}
+      ${d.judge ? `<div class="meta-item"><div class="meta-label">Presiding judge</div><div class="meta-value">${d.judge}${d.judge_note ? ' <span style="color:var(--slate); font-weight:400; font-size:0.78rem;">(' + d.judge_note + ')</span>' : ''}</div></div>` : ''}
+      ${d.court && !d.judge ? `<div class="meta-item"><div class="meta-label">Court</div><div class="meta-value">${d.court}</div></div>` : ''}
       ${d.monitor ? `<div class="meta-item"><div class="meta-label">Monitor / oversight</div><div class="meta-value">${d.monitor}</div></div>` : ''}
       ${d.plaintiffs ? `<div class="meta-item"><div class="meta-label">Plaintiffs</div><div class="meta-value">${d.plaintiffs}</div></div>` : ''}
     </div>
 
     <div class="modal-section">
-      <h4>What the case is about</h4>
+      <h4>${d.status === 'pending' ? 'What the case alleges' : 'What the case is about'}</h4>
       <p>${d.summary || ''}</p>
     </div>
 
+    ${d.daily_effects ? `
     <div class="modal-section">
-      <h4>What it changes day-to-day</h4>
-      <p>${d.daily_effects || ''}</p>
-    </div>
+      <h4>${d.status === 'pending' ? 'What relief is being sought' : (d.status === 'historical' ? 'What it changed' : 'What it changes day-to-day')}</h4>
+      <p>${d.daily_effects}</p>
+    </div>` : ''}
 
     ${d.key_obligations && d.key_obligations.length ? `
     <div class="modal-section">
-      <h4>Key obligations</h4>
+      <h4>${d.status === 'pending' ? 'Relief sought' : 'Key obligations'}</h4>
       <ul>${d.key_obligations.map(o => `<li>${o}</li>`).join('')}</ul>
+    </div>` : ''}
+
+    ${d.legacy ? `
+    <div class="modal-section">
+      <h4>Legacy today</h4>
+      <p>${d.legacy}</p>
     </div>` : ''}
 
     ${d.recent_status ? `
     <div class="modal-section">
-      <h4>Current status (2025-2026)</h4>
+      <h4>${d.status === 'pending' ? 'Where the case stands' : 'Current status (2025-2026)'}</h4>
       <p>${d.recent_status}</p>
     </div>` : ''}
 
@@ -648,6 +776,21 @@ document.getElementById('modal-backdrop').addEventListener('click', e => {
   if (e.target.id === 'modal-backdrop') closeModal();
 });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+document.querySelectorAll('.tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.category = btn.dataset.category;
+    state.search = state.agency = state.issue = state.status = '';
+    document.getElementById('search').value = '';
+    document.getElementById('filter-status').value = '';
+    buildFilters();
+    buildStats();
+    renderGrid();
+    window.scrollTo({ top: document.querySelector('.controls').offsetTop - 20, behavior: 'smooth' });
+  });
+});
 
 const now = new Date();
 const dateStr = now.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
